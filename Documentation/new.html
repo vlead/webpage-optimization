@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title><b>Testing Framework</b></title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-07-01 22:48:08 "/>
+<meta name="author" content=""/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title"><b>Testing Framework</b></h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 <b>Introduction</b> </a></li>
+<li><a href="#sec-2">2 <b>Background Knowledge</b> </a>
+<ul>
+<li><a href="#sec-2.1">2.1 Linux Distributions </a>
+<ul>
+<li><a href="#sec-2.1.1">2.1.1 Ubuntu </a></li>
+<li><a href="#sec-2.1.2">2.1.2 CentOS </a></li>
+</ul>
+</li>
+<li><a href="#sec-2.2">2.2 Apache server </a></li>
+<li><a href="#sec-2.3">2.3 Shell Script </a></li>
+<li><a href="#sec-2.4">2.4 Matplotlib </a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 <b>Investigation</b> </a>
+<ul>
+<li><a href="#sec-3.1">3.1 Best practices </a></li>
+<li><a href="#sec-3.2">3.2 YSlow </a>
+<ul>
+<li><a href="#sec-3.2.1">3.2.1 YSlow.js </a></li>
+<li><a href="#sec-3.2.2">3.2.2 How YSlow.js works </a></li>
+</ul>
+</li>
+<li><a href="#sec-3.3">3.3 Pagespeed </a>
+<ul>
+<li><a href="#sec-3.3.1">3.3.1 Module </a></li>
+<li><a href="#sec-3.3.2">3.3.2 Features </a></li>
+<li><a href="#sec-3.3.3">3.3.3 Working </a></li>
+<li><a href="#sec-3.3.4">3.3.4 Risks </a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 <b>Installation</b> </a>
+<ul>
+<li><a href="#sec-4.1">4.1 Apache2 </a></li>
+<li><a href="#sec-4.2">4.2 YSlow </a></li>
+<li><a href="#sec-4.3">4.3 Pagespeed </a></li>
+<li><a href="#sec-4.4">4.4 Installation from packages </a>
+<ul>
+<li><a href="#sec-4.4.1">4.4.1 Installation from packages </a></li>
+<li><a href="#sec-4.4.2">4.4.2 Installation form sources </a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 <b>Experimentation</b> </a>
+<ul>
+<li><a href="#sec-5.1">5.1 URL collection </a></li>
+<li><a href="#sec-5.2">5.2 Report generation using YSlow </a>
+<ul>
+<li><a href="#sec-5.2.1">5.2.1 Issues </a></li>
+</ul>
+</li>
+<li><a href="#sec-5.3">5.3 Generating CSV file </a></li>
+<li><a href="#sec-5.4">5.4 Graph Generation </a></li>
+<li><a href="#sec-5.5">5.5 Statistics for URL under http://deploy.virtual-labs.ac.in </a></li>
+<li><a href="#sec-5.6">5.6 Bar graph for landing page of different education websites </a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 <b>Analysis</b> </a>
+<ul>
+<li><a href="#sec-6.1">6.1 Statistics for 42 URLs under cse14 (VLSI lab) and bio16 (Biomedical and signal processing lab) </a>
+<ul>
+<li><a href="#sec-6.1.1">6.1.1 Without Pagespeed </a></li>
+<li><a href="#sec-6.1.2">6.1.2 With Pagespeed and with default filters </a></li>
+<li><a href="#sec-6.1.3">6.1.3 With Pagespeed and with more filters </a></li>
+</ul>
+</li>
+<li><a href="#sec-6.2">6.2 Technical Reviews </a></li>
+<li><a href="#sec-6.3">6.3 Further scope of project </a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 <b>Conclusion</b> </a></li>
+<li><a href="#sec-8">8 <b>References</b> </a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <b>Introduction</b> </h2>
+<div class="outline-text-2" id="text-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> <b>Background Knowledge</b> </h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2.1" class="outline-3">
+<h3 id="sec-2.1"><span class="section-number-3">2.1</span> Linux Distributions </h3>
+<div class="outline-text-3" id="text-2.1">
+
+
+</div>
+
+<div id="outline-container-2.1.1" class="outline-4">
+<h4 id="sec-2.1.1"><span class="section-number-4">2.1.1</span> Ubuntu </h4>
+<div class="outline-text-4" id="text-2.1.1">
+
+<p>Debian based Linux operating system. It is most popular Linux distribution. Familiar with
+commands of ubuntu. ex.sudo apt-get install python ex.sudo cp -r foldername destination and many more.
+</p></div>
+
+</div>
+
+<div id="outline-container-2.1.2" class="outline-4">
+<h4 id="sec-2.1.2"><span class="section-number-4">2.1.2</span> CentOS </h4>
+<div class="outline-text-4" id="text-2.1.2">
+
+<p>Linux operating system. Comfortabl with yum commands.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-2.2" class="outline-3">
+<h3 id="sec-2.2"><span class="section-number-3">2.2</span> Apache server </h3>
+<div class="outline-text-3" id="text-2.2">
+
+<p>Apache2 should be installed in the machine. Knowledge of apache configuration file is required. It is in /etc/apache2/apache2.conf .
+</p></div>
+
+</div>
+
+<div id="outline-container-2.3" class="outline-3">
+<h3 id="sec-2.3"><span class="section-number-3">2.3</span> Shell Script </h3>
+<div class="outline-text-3" id="text-2.3">
+
+<p>A shell script is a computer program designed to be run by the Unix shell, a command line interpreter. Basic understanding of shell scripting and bash commands.
+</p></div>
+
+</div>
+
+<div id="outline-container-2.4" class="outline-3">
+<h3 id="sec-2.4"><span class="section-number-3">2.4</span> Matplotlib </h3>
+<div class="outline-text-3" id="text-2.4">
+
+<p>Matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
+You can generate plots, histograms, power spectra, bar charts, errorcharts, scatterplots, etc, with just a few lines of code.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> <b>Investigation</b> </h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3.1" class="outline-3">
+<h3 id="sec-3.1"><span class="section-number-3">3.1</span> Best practices </h3>
+<div class="outline-text-3" id="text-3.1">
+
+<p>1.Make fewer HTTP requests.
+</p>
+<p>
+2.Use a CDNs.
+</p>
+<p>
+3.Avoid empty src or href
+</p>
+<p>
+4.Add an Expires header
+</p>
+<p>
+5.Compress components
+</p>
+<p>
+6.Put CSS at top
+</p>
+<p>
+7.Put Javascript at the bottom
+</p>
+<p>
+8.Avoid CSS expression
+</p>
+<p>
+9.Make JS and CSS external
+</p>
+<p>
+10.Reduce DNS lookups
+</p>
+<p>
+11.Minify JS and CSS
+</p>
+<p>
+12.Avoid redirects
+</p>
+<p>
+13.Remove duplicate JS and CSS
+</p>
+<p>
+14.Configure ETags
+</p>
+<p>
+15.Make Ajax cacheable
+</p>
+<p>
+16.Use GET for AJAX requests
+</p>
+<p>
+17.Reduce the Number of DOM elements
+</p>
+<p>
+18.No 404s
+</p>
+<p>
+19.Reduce Cookie Size
+</p>
+<p>
+20.Use Cookie-free
+</p>
+<p>
+21.Avoid filters
+</p>
+<p>
+22.Don't Scale Images in HTML
+</p>
+<p>
+23.Make favicon Small and Cacheable
+</p>
+<p>
+For details: <a href="https://developer.yahoo.com/performance/rules.html">rules details</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-3.2" class="outline-3">
+<h3 id="sec-3.2"><span class="section-number-3">3.2</span> YSlow </h3>
+<div class="outline-text-3" id="text-3.2">
+
+
+</div>
+
+<div id="outline-container-3.2.1" class="outline-4">
+<h4 id="sec-3.2.1"><span class="section-number-4">3.2.1</span> YSlow.js </h4>
+<div class="outline-text-4" id="text-3.2.1">
+
+<p>It runs on phantomjs.
+</p>
+<p>
+Phantomjs is headless webkit with javascript api. Using best practices ,it has defined set of rules for which it generates scores and grade for each web practices and a overall score for a web page.
+Each rule has certain weight for overall score.This report is in human readable format.
+</p></div>
+
+</div>
+
+<div id="outline-container-3.2.2" class="outline-4">
+<h4 id="sec-3.2.2"><span class="section-number-4">3.2.2</span> How YSlow.js works </h4>
+<div class="outline-text-4" id="text-3.2.2">
+
+<p>1.It crawl the DOM.
+</p>
+<p>
+2.It collects information about each component.
+</p>
+<p>
+3.It generates grades and give suggestions for each rule which produces overall grade.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3.3" class="outline-3">
+<h3 id="sec-3.3"><span class="section-number-3">3.3</span> Pagespeed </h3>
+<div class="outline-text-3" id="text-3.3">
+
+
+</div>
+
+<div id="outline-container-3.3.1" class="outline-4">
+<h4 id="sec-3.3.1"><span class="section-number-4">3.3.1</span> Module </h4>
+<div class="outline-text-4" id="text-3.3.1">
+
+<p>This Google module not only analyses web pages performances but it automatically applies best practices to web pages
+,so developer need not to change his contents.
+</p></div>
+
+</div>
+
+<div id="outline-container-3.3.2" class="outline-4">
+<h4 id="sec-3.3.2"><span class="section-number-4">3.3.2</span> Features </h4>
+<div class="outline-text-4" id="text-3.3.2">
+
+<p>Free and open source.
+</p>
+<p>
+Automatic web optimization. 
+</p>
+<p>
+40+ filters to rewrite pages at run time.
+</p>
+<p>
+Reduces response time.
+</p>
+<p>
+Can be used for individual sites or CDNs.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3.3.3" class="outline-4">
+<h4 id="sec-3.3.3"><span class="section-number-4">3.3.3</span> Working </h4>
+<div class="outline-text-4" id="text-3.3.3">
+
+<p>It has optimization filters in the pagespeed module written in C++.
+Whenever a requests comes to server,this filters takes html as input and dynamically rewrites web pages to follow performance web practices and give optimized web pages.
+</p>
+<p>
+For ex:See the working of <b>combine_css</b> filters.
+</p><ul>
+<li>
+Input
+
+</li>
+</ul>
+
+
+<pre class="example">&lt;head&gt;
+  &lt;link rel="stylesheet" type="text/css" href="styles/yellow.css"&gt;
+  &lt;link rel="stylesheet" type="text/css" href="styles/blue.css"&gt;
+  &lt;link rel="stylesheet" type="text/css" href="styles/big.css"&gt;
+  &lt;link rel="stylesheet" type="text/css" href="styles/bold.css"&gt;
+&lt;/head&gt;
+</pre>
+
+
+
+
+<ul>
+<li>
+Output
+
+
+</li>
+</ul>
+
+
+<pre class="example">&lt;head&gt;
+   &lt;link rel="stylesheet" type="text/css" href="styles/yellow.css+blue.css+big.css+bold.css.pagespeed.cc.xo4He3_gYf.css"&gt;
+&lt;/head&gt;
+</pre>
+
+
+
+
+<p>
+Pagespeed can enabled and disabled acoording to our need.Also,Filters can be configured according to our use.
+These filters  can be enabled and disabled whenver we want according to our requirements.
+There is pagespeed.conf  file located in etc/apache2/mods-available and etc/apache2/mods-enabled folder.First make a link for both file so that change in one file effects change in other file.
+Initially only some default core filters are enabled.Core filters are set of those which are safe for every websites.For list visit <a href="https://developers.google.com/speed/pagespeed/module/config_filters">Configuring filters</a>.
+To enable pagespeed ,go to pagespeed.conf file and specify at the top
+</p>
+
+
+
+<pre class="example">ModPagespeed on
+</pre>
+
+
+
+
+<p>
+To completely disable,go to pagespeed.conf file and specify at the top
+</p>
+
+
+
+<pre class="example">ModPagespeed off
+</pre>
+
+
+
+
+
+<p>
+Filters can be enabled by specifying following command in the pagespeed.conf file.
+</p>
+<p>
+For ex.we want to enable combine_css filters,extend_cache ,etc
+</p>
+
+
+
+<pre class="example">ModPagespeedEnableFilters combine_css,extend_cache,rewrite_images
+</pre>
+
+
+
+
+<p>
+For disabling  filter <b>a</b> and <b>b</b> specify
+</p>
+
+
+
+<pre class="example">ModPagespeedDisableFilters filtera,filterb
+</pre>
+
+
+
+
+<p>
+After making any changes , you have to again compile mod_pagespeed .Type the following command:
+</p>
+
+
+
+<pre class="example">
+cd ~/mod_pagespeed/src/install
+./ubuntu.sh staging
+sudo ./ubuntu.sh install
+sudo ./ubuntu.sh stop start
+
+</pre>
+
+
+
+
+<p>
+For details of filters visit[[https://developers.google.com/speed/pagespeed/module/config<sub>filters][</sub> <a href="https://developers.google.com/speed/pagespeed/module/config_filters">Filters</a>]]
+</p></div>
+
+</div>
+
+<div id="outline-container-3.3.4" class="outline-4">
+<h4 id="sec-3.3.4"><span class="section-number-4">3.3.4</span> Risks </h4>
+<div class="outline-text-4" id="text-3.3.4">
+
+<p>There is some risk associated with every filters.It should be identified according to our use.Basically, it should be identified so that these filters should not change the semantics of page.
+</p>
+<p>
+For ex. There is one filters defer_javascript.It postpone the parallel execution of script tag.
+</p>
+<p>
+Calls to document.write fail in cases where they span multiple script tags.
+</p>
+<p>
+An example is:
+</p>
+
+
+
+<pre class="example">&lt;script&gt;document.write('&lt;div&gt;')&lt;/script&gt;
+&lt;span&gt;&lt;/span&gt;
+&lt;script&gt;document.write('&lt;/div&gt;')&lt;/script&gt; 
+</pre>
+
+
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> <b>Installation</b> </h2>
+<div class="outline-text-2" id="text-4">
+
+
+</div>
+
+<div id="outline-container-4.1" class="outline-3">
+<h3 id="sec-4.1"><span class="section-number-3">4.1</span> Apache2 </h3>
+<div class="outline-text-3" id="text-4.1">
+
+<p>open terminal and type the following command.
+</p>
+
+
+
+<pre class="example">#sudo apt-get update
+#sudo apt-get install apache2
+#sudo service apache2 start
+</pre>
+
+
+
+
+<p>
+Then open any browser and type 127.0.0.1
+</p>
+<p>
+If it shows like this:
+</p>
+
+
+<pre class="example">It works
+</pre>
+
+
+
+<p>
+Then your apache2 is installed.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4.2" class="outline-3">
+<h3 id="sec-4.2"><span class="section-number-3">4.2</span> YSlow </h3>
+<div class="outline-text-3" id="text-4.2">
+
+<p>Yslow runs on PhantomJS.
+</p>
+<p>
+PhantomJS is headless webkit with javascript APIs.
+</p>
+<p>
+1.To install PhantomJS ,go to terminal and type  :
+</p>
+
+
+<pre class="example">
+$sudo apt-get install phantomjs
+</pre>
+
+
+
+
+<p>
+2.then go to <a href="http://yslow.org/phantomjs/">http://yslow.org/phantomjs/</a> and download yslow for PhantomJS.
+</p>
+<p>
+Extract it into folder.
+</p></div>
+
+</div>
+
+<div id="outline-container-4.3" class="outline-3">
+<h3 id="sec-4.3"><span class="section-number-3">4.3</span> Pagespeed </h3>
+<div class="outline-text-3" id="text-4.3">
+
+<p>Supported platforms.
+</p><ul>
+<li>
+CentOS/Fedora (32-bit and 64-bit)
+</li>
+<li>
+Debian/Ubuntu (32-bit and 64-bit)
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-4.4" class="outline-3">
+<h3 id="sec-4.4"><span class="section-number-3">4.4</span> Installation from packages </h3>
+<div class="outline-text-3" id="text-4.4">
+
+<p>To install the packages, on Debian/Ubuntu, please run the following command:
+</p>
+
+
+
+<pre class="example">$sudo dpkg -i mod-pagespeed-*.deb
+$sudo apt-get -f install
+</pre>
+
+
+
+
+<p>
+For CentOS/Fedora, please execute:
+</p>
+
+
+
+<pre class="example">$sudo yum install at  # if you do not already have 'at' installed
+$sudo rpm -U mod-pagespeed-*.rpm
+</pre>
+
+
+
+
+<p>
+This will install latest updated version of modpagespeed.
+</p>
+</div>
+
+<div id="outline-container-4.4.1" class="outline-4">
+<h4 id="sec-4.4.1"><span class="section-number-4">4.4.1</span> Installation from packages </h4>
+<div class="outline-text-4" id="text-4.4.1">
+
+</div>
+
+</div>
+
+<div id="outline-container-4.4.2" class="outline-4">
+<h4 id="sec-4.4.2"><span class="section-number-4">4.4.2</span> Installation form sources </h4>
+<div class="outline-text-4" id="text-4.4.2">
+
+<ul>
+<li id="sec-4.4.2.1">Installing dependencies <br/>
+To install these on Debian or Ubuntu run:
+
+
+
+
+<pre class="example">sudo apt-get install apache2 g++ python subversion gperf make devscripts fakeroot git
+</pre>
+
+
+
+</li>
+<li id="sec-4.4.2.2">Installing the chromium depot tols. <br/>
+We require the Chromium depot_tools, which are used to build open-source projects with dependencies on other open-source projects. Download it with:
+
+
+
+
+<pre class="example">mkdir -p ~/bin
+cd ~/bin
+svn co http://src.chromium.org/svn/trunk/tools/depot_tools
+</pre>
+
+
+
+<p>
+You will need to add the depot_tools to your path. In bash you would run:
+</p>
+
+
+<pre class="example">export PATH=$PATH:~/bin/depot_tools
+</pre>
+
+
+
+
+</li>
+<li id="sec-4.4.2.3">Check out mod<sub>pagespeed</sub> and dependencies <br/>
+You need to download the source code for mod_pagespeed and all of its dependenceies. The gclient command (which is one of the depot_tools) will do this for you:
+
+
+
+
+<pre class="example">mkdir ~/mod_pagespeed    # Any directory is fine.
+cd ~/mod_pagespeed
+</pre>
+
+
+
+
+<p>
+Use it to get the latest stable version:
+</p>
+
+
+<pre class="example">gclient config http://modpagespeed.googlecode.com/svn/branches/latest-beta/src
+gclient sync --force --jobs=1
+</pre>
+
+
+
+
+<p>
+The current trunk uses https URLs to fetch some third party dependencies.
+</p>
+<p>
+Depending on your system, you may need to verify and accept an updated SSL certificate for SourceForge. You can test by running:
+</p>
+
+
+
+<pre class="example">svn ls https://svn.code.sf.net/p/jsoncpp/code/trunk/jsoncpp
+</pre>
+
+
+
+
+<p>
+If you see a message like the following, you'll need to accept the new certificate.
+</p>
+
+
+<pre class="example">Error validating server certificate for 'https://svn.code.sf.net:443':
+ - The certificate is not issued by a trusted authority. Use the
+   fingerprint to validate the certificate manually!
+Certificate information:
+ - Hostname: *.code.sf.net
+ - Valid: from Tue, 18 Mar 2014 00:00:00 GMT until Fri, 17 Apr 2015 23:59:59 GMT
+ - Issuer: GeoTrust Inc., US
+ - Fingerprint: 5e:d2:2a:09:0a:39:5e:f4:05:87:03:3a:13:2b:7d:52:3f:b8:1e:45
+(R)eject, accept (t)emporarily or accept (p)ermanently?
+</pre>
+
+
+
+
+
+<p>
+You should open <a href="https://svn.code.sf.net/p/jsoncpp/code/trunk/jsoncpp">https://svn.code.sf.net/p/jsoncpp/code/trunk/jsoncpp</a> in a browser and verify that the fingerprint matches.
+</p>
+<p>
+In Chrome, this can be done by clicking the lock icon next to the URL, clicking the "Certificate Information" link underneath the "Connection" tab, and verifying that the SHA-1 fingerprint matches.
+</p>
+</li>
+<li id="sec-4.4.2.4">Run tests <br/>
+The commands below will first build mod_pagespeed and then run the tests:
+
+
+
+
+<pre class="example">cd ~/mod_pagespeed/src
+make AR.host=`pwd`/build/wrappers/ar.sh AR.target=`pwd`/build/wrappers/ar.sh \
+   BUILDTYPE=Release mod_pagespeed_test pagespeed_automatic_test
+./out/Release/mod_pagespeed_test
+./out/Release/pagespeed_automatic_test 
+</pre>
+
+
+
+
+</li>
+<li id="sec-4.4.2.5">Compile <br/>
+To compile mod_pagespeed, run:
+
+
+
+
+<pre class="example">cd ~/mod_pagespeed/src
+make AR.host=`pwd`/build/wrappers/ar.sh AR.target=`pwd`/build/wrappers/ar.sh BUILDTYPE=Release
+</pre>
+
+
+
+</li>
+<li id="sec-4.4.2.6">Install <br/>
+
+
+
+<pre class="example">cd install
+./install_apxs.sh
+
+./ubuntu.sh staging
+sudo ./ubuntu.sh install
+sudo ./ubuntu.sh stop start
+</pre>
+
+
+
+</li>
+<li id="sec-4.4.2.7">To check pagespeed is installed <br/>
+Go to terminal and type command:
+
+
+
+<pre class="example">curl -D- http://localhost | less
+</pre>
+
+
+
+<p>
+You should get something like:
+</p>
+
+
+<pre class="example">Date: Thu, 19 June 2014 19:16:32 GMT
+Server: Apache/2.4.6 (Ubuntu)
+...
+X-Mod-Pagespeed: 1.8.31.3-4020
+...
+</pre>
+
+
+
+<p>
+If you didn't get pagespeed in your http response header,then your web server isn't letting pagespeed to run or it is not installed properly or it is off from the pagespeed configuration file
+</p>
+
+<p>
+<b>For more detailed information regarding installation ,you can visit:</b> <a href="https://developers.google.com/speed/pagespeed/module/build_mod_pagespeed_from_source#build-packages">pagespeed web-site</a>
+</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> <b>Experimentation</b> </h2>
+<div class="outline-text-2" id="text-5">
+
+<p>To start with experimentation on web performance test for urls in virtual-labs and vlab using yslow.
+Our first need is collect the urls in <b>deploy.virtuals-labs.ac.in</b> and <b>www.vlab.co.in</b>.
+</p>
+</div>
+
+<div id="outline-container-5.1" class="outline-3">
+<h3 id="sec-5.1"><span class="section-number-3">5.1</span> URL collection </h3>
+<div class="outline-text-3" id="text-5.1">
+
+<p>For url collection,we needed to have some crawler to extract all the urls inside it.Therefore ,we started with <b>nutch</b>, but we could not install it properly on our system, so we left using <b>nutch</b> and   
+queried on internet for sitemap generator.We got one sitemap generator which give 5000 urls under the seed url.Link for that website is <a href="http://www.internetmarketingninjas.com/seo-tools/google-sitemap-generator/">http://www.internetmarketingninjas.com/seo-tools/google-sitemap-generator/</a>.
+Only thing we have to do is to give the seed url in it and it will give list of 5000 urls in excel format or Xml format.We downloaded report in XML format and wrote a script to store it in text file containing urls in each line.
+Here in our case we have given seed url <a href="http://vlab.co.in">http://vlab.co.in</a>. and <a href="http://deploy.virtual-labs.ac.in">http://deploy.virtual-labs.ac.in</a>
+</p>
+<p>
+Script to generate url file 
+This script will take two command line arguments ,$1 will be given XML file and $2 will be output text file. 
+</p>
+
+
+
+<pre class="example">grep -o '&lt;loc&gt;.*&lt;/loc&gt;' $1 | sed 's/\(&lt;loc&gt;\|&lt;\/loc&gt;\)//g' &gt; $2
+#extracts all the urls which is present between &lt;loc&gt; and &lt;/loc&gt;from given XML file i.e $1  and will stote it into the destination file i.e $2
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5.2" class="outline-3">
+<h3 id="sec-5.2"><span class="section-number-3">5.2</span> Report generation using YSlow </h3>
+<div class="outline-text-3" id="text-5.2">
+
+<p>For report generation  using yslow,firstly,we have to install <b>phantomjs</b> on machine. Phantomjs is the headless webkit with javascript APIs. <b>Yslow.js</b> runs on phantomjs. It can be install simply by following command.
+</p>
+
+
+<pre class="example">sudo apt-get install phantomjs
+</pre>
+
+
+
+
+<p>
+Then we download the yslow.js file from <a href="http://yslow.org/phantomjs/">http://yslow.org/phantomjs/</a> and we save this file in the folder where url file is present.
+To generate full report for each url ,we wrote a automated script which will read url line by line and will generate report for each url.
+This script will take only one command line argument ,$1 i.e. file containing url
+</p>
+
+
+
+<pre class="example">
+#function to run phantomjs for each url
+Fulltest() 
+{
+while read url; do                    #loop reads a line from urls file i.e $1 
+echo "Running tests for $url"         #echo on outputstream to indicate flow
+dir=$(echo $url | sed 's/[:/.-]/_/g') #extracting filename 'dir' from 'url'     
+phantomjs yslow.js --info grade --format tap --threshold '{"overall": "B", "ycdn": 65}' $url &gt; $dir #running phantomjs command with url and redirecting output to a file named $dir
+done &lt; $1       #passing 'urls' file as parameter
+}
+
+Fulltest $1   #invoking Fulltest() function with command line arguments $1
+
+</pre>
+
+
+
+
+<p>
+Above script will generate report for each url present in the url file.These report will have overall score  out of 100 for each url and score out of 100 for each rule and
+suggestions on how to improve this scores
+.The sample report has been added to my bit-bucket account.
+</p>
+</div>
+
+<div id="outline-container-5.2.1" class="outline-4">
+<h4 id="sec-5.2.1"><span class="section-number-4">5.2.1</span> Issues </h4>
+<div class="outline-text-4" id="text-5.2.1">
+
+<p>Sometimes phantomjs crashes for some url and hence it doesn't generate report for that url.
+Also, as the number of urls increases ,these script takes larger time.
+We thought this was problem for a url i.e url is bad but we went to community and saw this is problem of phantomjs.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-5.3" class="outline-3">
+<h3 id="sec-5.3"><span class="section-number-3">5.3</span> Generating CSV file </h3>
+<div class="outline-text-3" id="text-5.3">
+
+<p>For graph generation ,we need to have a CSV file which will contain in each line  name of the url,Overallscore,scores and scores for each rule separated with a <b>comma</b>.
+We wrote a automated script to generate CSV file extracting scores from each report.
+This script should be kept in the same folder where all the reports are present and the url file.
+</p>
+
+
+
+<pre class="example">
+#FUNCTION TO EXTRACT REQUIRED FIELDS REPORTS PREVIOUSLY GENERATED
+EXTRACTCSV() {
+RES="URL,OVERALL_SCORE,URL,Overall_Score,Make fewer HTTP requests,Use a Content Delivery Network (CDN),Avoid empty src or href,Add Expires headers,Compress components with gzip,Put CSS at top,Put JavaScript at bottom,Avoid CSS expressions,Reduce DNS lookups,Minify JavaScript and CSS,Avoid URL redirects,Remove duplicate JavaScript and CSS,Configure entity tags (ETags),Make AJAX cacheable,Use GET for AJAX requests,Reduce the number of DOM elements,Avoid HTTP 404 (Not Found) error,Reduce cookie size,Use cookie-free domains,Avoid AlphaImageLoader filter,Do not scale images in HTML,Make favicon small and cacheable"
+WHILE READ URL; DO #LOOP TO READ URL FROM 'URL' FILE
+  RES="$RES"$'\N'
+  RES="$RES$URL"
+  DIR=$(ECHO $URL | SED 'S/[:/.-]/_/G') #EXTRACTING FILENAME 'DIR' FROM 'URL'
+  RES="$RES,$(CAT $DIR | GREP -O '[A-Z] ([[:DIGIT:]]*)' | AWK -VORS=, '{ PRINT $1 $2 }' | SED 'S/,$/\N/')"
+DONE &lt; $1
+ECHO "$RES" &gt; STATS.CSV #REDIRECTING CONTENT IN 'RES' TO A CSV FILE NAMED STATS.CSV
+ECHO "REPORTS ARE GENERATED SUCCESSFULLY IN CSV FORMAT"  #ECHOING SCRIPT COMPLETION       
+}
+
+#INVOKING EXTRACCSV() FUNTION
+EXTRACTCSV $1
+
+</pre>
+
+
+
+
+<p>
+THIS SCRIPT WILL TAKE  ONE COMMAND LINE ARGUMENT,$1 I.E. URL FILE AND WILL STORE OUTPUT IN STATS.CSV FILE.
+</p></div>
+
+</div>
+
+<div id="outline-container-5.4" class="outline-3">
+<h3 id="sec-5.4"><span class="section-number-3">5.4</span> Graph Generation </h3>
+<div class="outline-text-3" id="text-5.4">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5.5" class="outline-3">
+<h3 id="sec-5.5"><span class="section-number-3">5.5</span> Statistics for URL under <a href="http://deploy.virtual-labs.ac.in">http://deploy.virtual-labs.ac.in</a> </h3>
+<div class="outline-text-3" id="text-5.5">
+
+<ul>
+<li>
+ We collected around 21000 urls from the deploy server.
+</li>
+<li>
+ Then we ran the above script for fulltest to generate yslow report for each url.For some url its crashes on its own and it  took time around one day ,but it could generate report only 2700 urls.
+</li>
+<li>
+ So we stopped the script and will generate statistics for only these 2700 urls
+</li>
+<li>
+ Then we ran script to generate csv file.
+</li>
+<li>
+ After generating csv file for all the url,I removed those url from csv file for which there was no statistics because matplotlib will not plot graph for empty fields.
+</li>
+<li>
+After getting a fully correct csv, we plotted graphs for each rules and overall score.
+</li>
+<li>
+In these bar graphs, there is plot for no. of urls falling in each grade.
+</li>
+<li>
+These graphs gave us idea how good are web pages.and each graph also tells about how many urls are following best practices as we ave generated graph for each rule.
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5.6" class="outline-3">
+<h3 id="sec-5.6"><span class="section-number-3">5.6</span> Bar graph for landing page of different education websites </h3>
+<div class="outline-text-3" id="text-5.6">
+
+<p>we collected url of landing page  of <b>coursera.org</b>, <b>edx.org</b>, <b>nptel.ac.in</b> , <b>vlab.co.in</b>, <b>virtual-labs.ac.in</b> .
+and ran the script for report generation for yslow.
+After report generation, we made csv file for it.
+But this time ,our aim was to show the difference between the overall scores of the landing page of educational web sites.
+So we used only first field of csv file and generated graph for it.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> <b>Analysis</b> </h2>
+<div class="outline-text-2" id="text-6">
+
+
+</div>
+
+<div id="outline-container-6.1" class="outline-3">
+<h3 id="sec-6.1"><span class="section-number-3">6.1</span> Statistics for 42 URLs under cse14 (VLSI lab) and bio16 (Biomedical and signal processing lab) </h3>
+<div class="outline-text-3" id="text-6.1">
+
+
+</div>
+
+<div id="outline-container-6.1.1" class="outline-4">
+<h4 id="sec-6.1.1"><span class="section-number-4">6.1.1</span> Without Pagespeed </h4>
+<div class="outline-text-4" id="text-6.1.1">
+
+<p>we collected 42 urls for the above mentioned two labs.
+Then we ran our reportgeneration script to generate reports for yslow.
+Then we ran our csv file generation script .
+Now, for this csv file we plotted graph with respect to overall score.
+from this graph , we observed that  out of 42,only 11 were in grade A,24 in grade B ,7 in grade C and none in other grades.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6.1.2" class="outline-4">
+<h4 id="sec-6.1.2"><span class="section-number-4">6.1.2</span> With Pagespeed and with default filters </h4>
+<div class="outline-text-4" id="text-6.1.2">
+
+<p>This time ,we enabled pagespeed on our system with only default filters .
+Then again we ran the same scripts to generate csv file.
+Again,we plotted graph .
+From this we observed that out of 42,27 url were in grade A,12 in grade B and 3 in grade C.
+That is no.of url grade A increases.This means performance of web pages was improved by pagespeed.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6.1.3" class="outline-4">
+<h4 id="sec-6.1.3"><span class="section-number-4">6.1.3</span> With Pagespeed and with more filters </h4>
+<div class="outline-text-4" id="text-6.1.3">
+
+<p>This time , we enabled some more filters other than default filters.
+To enable we went to pagespeed.conf file which is located in etc/apaache2/mods-enabled folder and mods-avaliable folder. and enabled some filters like combine<sub>css</sub>,collapse<sub>whitespaces</sub>,rewrite<sub>images</sub>,css<sub>sprites</sub>.
+Again we ran our scripts to generate the CSV file.
+Again , we plotted graph for it. 
+From this ,we observed that out of 42 urls,26 url were in grade A,15 in grade B and only 1 in grade C.
+That again pagespeed with its filters improves the performance of the web page.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6.2" class="outline-3">
+<h3 id="sec-6.2"><span class="section-number-3">6.2</span> Technical Reviews </h3>
+<div class="outline-text-3" id="text-6.2">
+
+</div>
+
+</div>
+
+<div id="outline-container-6.3" class="outline-3">
+<h3 id="sec-6.3"><span class="section-number-3">6.3</span> Further scope of project </h3>
+<div class="outline-text-3" id="text-6.3">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> <b>Conclusion</b> </h2>
+<div class="outline-text-2" id="text-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> <b>References</b> </h2>
+<div class="outline-text-2" id="text-8">
+
+
+</div>
+</div>
+<div id="postamble">
+<p class="author"> Author: 
+<a href="mailto:khushpreet@DELL">&lt;khushpreet@DELL&gt;</a>
+</p>
+<p class="date"> Date: 2014-07-01 22:48:08 </p>
+<p class="creator">HTML generated by org-mode 6.33x in emacs 23</p>
+</div>
+</div>
+</body>
+</html>

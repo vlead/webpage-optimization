@@ -1,0 +1,38 @@
+			 *Testing Framework*
+* *Introduction*
+The main goal of this project is to test the various runtime metrics collections used for continuous 
+system performance, quality and availability purposes and to further improve the availabilty of web pages.
+This is a performance comparison of many web application frameworks executing fundamental tasks 
+such as client requets, server responses and rendering of web pages.
+* *Background Knowlegde*
+|---------------------+---------------------------------------------------------------------------------------------------------------|
+| System requirements | Description                                                                                                   |
+|---------------------+---------------------------------------------------------------------------------------------------------------|
+| Linux Distribution  | Ubuntu/centOs, must familiar with basic commands of these linux distributions                                 |
+|---------------------+---------------------------------------------------------------------------------------------------------------|
+| Apache server       | Knowledge of Apache configuration file is required and it is in /etc/apache2/apache2.config                   |
+|---------------------+---------------------------------------------------------------------------------------------------------------|
+| Shell Script        | Command line Interpreter and basic understanding of shell script and bash commands                            |
+|---------------------+---------------------------------------------------------------------------------------------------------------|
+| Matplotlib          | It is a python 2D plotting library used to produce quality figures such as plots, histograms, bar charts etc. |
+|---------------------+---------------------------------------------------------------------------------------------------------------|
+
+
+|
+** Linux Distribution
+*** Ubuntu
+ It is Debian based and most popular Linux distribution.
+*** CentOS
+** Apache Server
+** Shell Script
+** Matplotlib
+* *Investigation*
+** Yslow
+*** YSlow.js
+*** How YSlow.js works
+** Pagespeed
+* *Installation*
+* *Experimentation*
+* *Analysis*
+* *Conclusion*
+* *Refernces* 
