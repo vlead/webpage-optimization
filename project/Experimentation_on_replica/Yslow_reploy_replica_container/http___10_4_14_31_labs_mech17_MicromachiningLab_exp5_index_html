@@ -1,0 +1,140 @@
+TAP version 13
+1..24
+not ok 1 C (75) overall score
+not ok 2 F (9) ynumreq: Make fewer HTTP requests
+  ---
+  message: This page has 15 external Javascript scripts.  Try combining them into one.
+This page has 9 external stylesheets.  Try combining them into one.
+This page has 11 external background images.  Try combining them with CSS sprites.
+  ...
+not ok 3 F (0) ycdn: Use a Content Delivery Network (CDN)
+  ---
+  message: There are 38 static components that are not on CDN. <p>You can specify CDN hostnames in your preferences. See <a href="https://github.com/marcelduran/yslow/wiki/FAQ#wiki-faq_cdn">YSlow FAQ</a> for details.</p>
+  ...
+ok 4 A (100) yemptysrc: Avoid empty src or href
+not ok 5 F (0) yexpires: Add Expires headers
+  ---
+  message: There are 38 static components without a far-future expiration date.
+  offenders:
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/yagLaser.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/jquery-ui-1.8.16.custom.css"
+    - "http://10.4.14.31/labs/mech17/css/common.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/chosen.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/css3.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/model.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/website.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/jquery.qtip.min.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/header.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/jquery-1.6.2.min.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/jsxgraphcore.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/swfobject.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/chosen.jquery.min.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/jquery.simplemodal.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/model.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/model1.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/model2.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/model3.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/jquery.tinyscrollbar.min.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/jquery.qtip.min.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/highcharts.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/modules/exporting.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/raphael.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/yagLaser.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/images/noise.png"
+    - "http://10.4.14.31/labs/mech17/images/ui-bg_gloss-wave_35_f6a828_500x100.png"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/chosen-sprite.png"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/images/add.png"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/images/rf.png"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/images/plot.png"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/images/start.png"
+    - "http://10.4.14.31/labs/mech17/css/images/header.png"
+    - "http://10.4.14.31/labs/mech17/css/images/footer_s.png"
+    - "http://10.4.14.31/labs/mech17/css/images/footer_b.png"
+    - "http://10.4.14.31/labs/mech17/css/images/rssicon.png"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/images/led.jpg"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/images/lens.png"
+    - "http://10.4.14.31/favicon.ico"
+  ...
+ok 6 A (100) ycompress: Compress components with gzip
+ok 7 A (100) ycsstop: Put CSS at top
+ok 8 A (100) yjsbottom: Put JavaScript at bottom
+ok 9 A (100) yexpressions: Avoid CSS expressions
+ok 10 N/A (-1) yexternal: Make JavaScript and CSS external # SKIP score N/A
+  ---
+  message: Only consider this if your property is a common user home page.
+  offenders:
+    - "There is a total of 3 inline scripts"
+  ...
+ok 11 A (100) ydns: Reduce DNS lookups
+not ok 12 F (40) yminify: Minify JavaScript and CSS
+  ---
+  message: There are 6 components that can be minified
+  offenders:
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/jsxgraphcore.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/model.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/model1.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/model2.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/model3.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/raphael.js"
+  ...
+ok 13 A (100) yredirects: Avoid URL redirects
+ok 14 A (100) ydupes: Remove duplicate JavaScript and CSS
+not ok 15 F (0) yetags: Configure entity tags (ETags)
+  ---
+  message: There are 32 components with misconfigured ETags
+  offenders:
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/yagLaser.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/jquery-ui-1.8.16.custom.css"
+    - "http://10.4.14.31/labs/mech17/css/common.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/chosen.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/css3.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/model.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/website.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/jquery.qtip.min.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/header.css"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/jquery-1.6.2.min.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/jsxgraphcore.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/swfobject.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/chosen.jquery.min.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/jquery.simplemodal.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/model.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/model1.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/model2.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/model3.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/jquery.tinyscrollbar.min.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/jquery.qtip.min.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/highcharts.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/modules/exporting.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/raphael.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/js/yagLaser.js"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/images/noise.png"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/chosen-sprite.png"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/images/add.png"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/images/rf.png"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/images/plot.png"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/css/images/start.png"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/images/led.jpg"
+    - "http://10.4.14.31/labs/mech17/MicromachiningLab/exp5/images/lens.png"
+  ...
+ok 16 A (100) yxhr: Make AJAX cacheable
+ok 17 A (100) yxhrmethod: Use GET for AJAX requests
+ok 18 A (100) ymindom: Reduce the number of DOM elements
+not ok 19 C (75) yno404: Avoid HTTP 404 (Not Found) error
+  ---
+  message: There are 5 requests that are 404 Not Found
+  offenders:
+    - "http://10.4.14.31/labs/mech17/css/images/header.png"
+    - "http://10.4.14.31/labs/mech17/css/images/footer_s.png"
+    - "http://10.4.14.31/labs/mech17/css/images/footer_b.png"
+    - "http://10.4.14.31/labs/mech17/css/images/rssicon.png"
+    - "http://10.4.14.31/favicon.ico"
+  ...
+ok 20 A (100) ymincookie: Reduce cookie size
+ok 21 A (100) ycookiefree: Use cookie-free domains
+ok 22 A (100) ynofilter: Avoid AlphaImageLoader filter
+ok 23 A (100) yimgnoscale: Do not scale images in HTML
+ok 24 A (90) yfavicon: Make favicon small and cacheable
+  ---
+  message: Favicon was not found
+Favicon is not cacheable
+  ...

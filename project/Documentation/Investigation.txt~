@@ -1,0 +1,160 @@
+Reading
+
+We saw many tools that can used to analyze performance of web pages.We had chosen yslow  and pagespeed to cater our need.Both are free and open source projects.
+Yslow is developed by Yahoo. and mod\_pagespeed is developed by Google.Below ,we will see how both works.
+They both follow performance best practices.
+
+* Best Practices
+1.Make fewer HTTP requests.
+
+2.Use a CDNs.
+
+3.Avoid empty src or href
+	
+4.Add an Expires header
+
+5.Compress components
+	
+6.Put CSS at top
+	
+7.Put Javascript at the bottom
+	
+8.Avoid CSS expression
+
+9.Make JS and CSS external
+
+10.Reduce DNS lookups
+
+11.Minify JS and CSS
+
+12.Avoid redirects
+		
+13.Remove duplicate JS and CSS
+
+14.Configure ETags
+		
+15.Make Ajax cacheable
+
+16.Use GET for AJAX requests
+	
+17.Reduce the Number of DOM elements
+
+18.No 404s
+	
+19.Reduce Cookie Size
+
+20.Use Cookie-free
+ 
+21.Avoid filters
+		
+22.Don't Scale Images in HTML
+	
+23.Make favicon Small and Cacheable
+
+For details go to [[https://developer.yahoo.com/performance/rules.html][rules details]]
+
+* yslow
+** Yslow.js
+
+It runs on phantomjs.
+
+Phantomjs is headless webkit with javascript api.
+Using best practices ,it has defined set of rules for which it generates scores and grade for each web practices and a overall score for a web page.Each rule has certain weight for overall score.This report is in human readable format.
+ 
+** How Yslow works
+1.It crawl the DOM.
+
+2.It collects information about each component.
+
+3.It generates grades and give suggestions for each rule which produces overall grade.
+
+For grade computation, Visit [[http://yslow.org/ruleset-matrix/][rule matrix]].
+
+* Pagespeed
+** Module
+This Google module not only analyses web pages performances but it automatically applies best practices to web pages,so developer need not to change his contents.
+
+** Features
+
+Free and open source.
+
+Automatic web optimization. 
+
+40+ filters to rewrite pages at run time.
+
+Reduces response time.
+
+Can be used for individual sites or CDNs.
+
+** Working
+
+It has optimization filters in the pagespeed module written in C++.
+Whenever a requests comes to server,this filters takes html as input and dynamically rewrites web pages to follow performance web practices and give optimized web pages.
+
+For ex:See the working of *combine\_css* filters.
+- Input
+#+begin_src :tangle a.py
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles/yellow.css">
+    <link rel="stylesheet" type="text/css" href="styles/blue.css">
+    <link rel="stylesheet" type="text/css" href="styles/big.css">
+    <link rel="stylesheet" type="text/css" href="styles/bold.css">
+  </head>
+#+end_src
+
+- Output
+
+#+begin_src :tangle a.py
+ <head>
+    <link rel="stylesheet" type="text/css" href="styles/yellow.css+blue.css+big.css+bold.css.pagespeed.cc.xo4He3_gYf.css">
+ </head>
+#+end_src
+
+Pagespeed can enabled and disabled acoording to our need.Also,Filters can be configured according to our use.
+These filters  can be enabled and disabled whenver we want according to our requirements.
+There is pagespeed.conf  file located in etc/apache2/mods-available and etc/apache2/mods-enabled folder.First make a link for both file so that change in one file effects change in other file.
+Initially only some default core filters are enabled.Core filters are set of those which are safe for every websites.For list visit [[https://developers.google.com/speed/pagespeed/module/config_filters][Configuring filters]].
+To enable pagespeed ,go to pagespeed.conf file and specify at the top
+
+#+begin_src :tangle a.py
+ModPagespeed on
+#+end_src
+
+To completely disable,go to pagespeed.conf file and specify at the top
+
+#+begin_src :tangle a.py
+ModPagespeed off
+#+end_src
+
+
+Filters can be enabled by specifying following command in the pagespeed.conf file.
+
+For ex.we want to enable combine\_css filters,extend\_cache ,etc
+
+#+begin_src :tangle a.py
+ModPagespeedEnableFilters combine_css,extend_cache,rewrite_images
+#+end_src  
+
+For disabling  filter specify
+
+#+begin_src : tangle a.py
+ModPagespeedDisableFilters filtera,filterb
+#+end_src
+
+For details of filters visit [[https://developers.google.com/speed/pagespeed/module/config_filters][Filters]]
+
+** Risks
+
+There is some risk associated with every filters.It should be identified according to our use.Basically, it should be identified so that these filters should not change the semantics of page.
+
+For ex. There is one filters defer\_javascript.It postpone the parallel execution of script tag.
+
+        Calls to document.write fail in cases where they span multiple script tags.
+
+        An example is:
+
+#+begin_src :tangle a.py
+<script>document.write('<div>')</script>
+<span></span>
+<script>document.write('</div>')</script> 
+#+end_src 

@@ -1,0 +1,139 @@
+TAP version 13
+1..24
+not ok 1 C (79) overall score
+not ok 2 D (63) ynumreq: Make fewer HTTP requests
+  ---
+  message: This page has 6 external Javascript scripts.  Try combining them into one.
+This page has 6 external stylesheets.  Try combining them into one.
+This page has 9 external background images.  Try combining them with CSS sprites.
+  ...
+not ok 3 F (0) ycdn: Use a Content Delivery Network (CDN)
+  ---
+  message: There are 33 static components that are not on CDN. <p>You can specify CDN hostnames in your preferences. See <a href="https://github.com/marcelduran/yslow/wiki/FAQ#wiki-faq_cdn">YSlow FAQ</a> for details.</p>
+  offenders:
+    - "deploy.virtual-labs.ac.in: 33 components, 1222.5K (242.6K GZip)"
+  ...
+ok 4 A (100) yemptysrc: Avoid empty src or href
+not ok 5 F (0) yexpires: Add Expires headers
+  ---
+  message: There are 34 static components without a far-future expiration date.
+  offenders:
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/psd2css.css"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/dark-hive/jquery-ui-1.8.4.custom.css"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/carpe-slider.css"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/menu/menu_style.css"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/imgareaselect-default.css"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/jquery-slider.css"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/jquery-1.4.2.min.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/psd2css.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/jquery-ui-1.8.4.custom.min.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/carpe-slider.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/jquery.imgareaselect.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/jquery.flot.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/menu/images/seperator.gif"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/menu/images/hover2.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/menu/images/sub_sep.gif"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/dark-hive/images/ui-bg_highlight-soft_33_003147_1x100.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/dark-hive/images/ui-bg_highlight-soft_35_222222_1x100.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/dark-hive/images/ui-bg_highlight-hard_20_0972a5_1x100.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/dark-hive/images/ui-bg_loop_25_000000_21x21.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/border-v.gif"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/border-h.gif"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/images/Mosaic.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/images/Mosaichisto.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/images/Layer-5.jpg"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/images/Layer-4.jpg"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/images/Layer-3.jpg"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/images/iiit.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/fourier/choice1.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/fourier/choice2.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/fourier/choice3.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/fourier/choice4.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/fourier/choice5.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/fourier/choice6.png"
+    - "http://deploy.virtual-labs.ac.in/favicon.ico"
+  ...
+ok 6 A (100) ycompress: Compress components with gzip
+ok 7 A (100) ycsstop: Put CSS at top
+ok 8 A (100) yjsbottom: Put JavaScript at bottom
+ok 9 A (100) yexpressions: Avoid CSS expressions
+ok 10 N/A (-1) yexternal: Make JavaScript and CSS external # SKIP score N/A
+  ---
+  message: Only consider this if your property is a common user home page.
+  offenders:
+    - "There is a total of 6 inline scripts"
+  ...
+ok 11 A (100) ydns: Reduce DNS lookups
+  ---
+  offenders:
+    - "deploy.virtual-labs.ac.in: 35 components, 1240.8K (260.6K GZip)"
+  ...
+not ok 12 F (40) yminify: Minify JavaScript and CSS
+  ---
+  message: There are 6 components that can be minified
+  offenders:
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/jquery.imgareaselect.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/jquery.flot.js"
+    - "inline &lt;script&gt; tag #3"
+    - "inline &lt;script&gt; tag #4"
+    - "inline &lt;script&gt; tag #5"
+    - "inline &lt;script&gt; tag #6"
+  ...
+ok 13 A (100) yredirects: Avoid URL redirects
+ok 14 A (100) ydupes: Remove duplicate JavaScript and CSS
+not ok 15 F (0) yetags: Configure entity tags (ETags)
+  ---
+  message: There are 27 components with misconfigured ETags
+  offenders:
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/psd2css.css"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/dark-hive/jquery-ui-1.8.4.custom.css"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/carpe-slider.css"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/menu/menu_style.css"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/imgareaselect-default.css"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/jquery-slider.css"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/jquery-1.4.2.min.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/psd2css.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/jquery-ui-1.8.4.custom.min.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/carpe-slider.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/jquery.imgareaselect.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/js/jquery.flot.js"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/menu/images/seperator.gif"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/menu/images/hover2.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/dark-hive/images/ui-bg_highlight-soft_33_003147_1x100.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/dark-hive/images/ui-bg_highlight-soft_35_222222_1x100.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/dark-hive/images/ui-bg_highlight-hard_20_0972a5_1x100.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/dark-hive/images/ui-bg_loop_25_000000_21x21.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/border-v.gif"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/css/border-h.gif"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/images/Mosaic.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/images/Mosaichisto.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/images/Layer-5.jpg"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/images/Layer-4.jpg"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/images/Layer-3.jpg"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/images/iiit.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/fourier/choice1.png"
+  ...
+ok 16 A (100) yxhr: Make AJAX cacheable
+ok 17 A (100) yxhrmethod: Use GET for AJAX requests
+ok 18 A (100) ymindom: Reduce the number of DOM elements
+not ok 19 D (65) yno404: Avoid HTTP 404 (Not Found) error
+  ---
+  message: There are 7 requests that are 404 Not Found
+  offenders:
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/menu/images/sub_sep.gif"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/fourier/choice2.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/fourier/choice3.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/fourier/choice4.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/fourier/choice5.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/fourier/choice6.png"
+    - "http://deploy.virtual-labs.ac.in/favicon.ico"
+  ...
+ok 20 A (100) ymincookie: Reduce cookie size
+ok 21 A (100) ycookiefree: Use cookie-free domains
+ok 22 A (100) ynofilter: Avoid AlphaImageLoader filter
+ok 23 A (100) yimgnoscale: Do not scale images in HTML
+ok 24 A (90) yfavicon: Make favicon small and cacheable
+  ---
+  message: Favicon was not found
+Favicon is not cacheable
+  ...

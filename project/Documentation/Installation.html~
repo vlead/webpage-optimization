@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>Installation</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-06-19 15:22:06 IST"/>
+<meta name="author" content="utkarsh"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">Installation</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Apache2 </a></li>
+<li><a href="#sec-2">2 Yslow </a></li>
+<li><a href="#sec-3">3 Pagespeed </a>
+<ul>
+<li><a href="#sec-3.1">3.1 Installation from packages </a></li>
+<li><a href="#sec-3.2">3.2 Installation from source </a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Apache2 </h2>
+<div class="outline-text-2" id="text-1">
+
+<p>open terminal and type the following command.
+</p>
+
+
+
+<pre class="example">$sudo apt-get update
+
+$sudo apt-get install apache2
+</pre>
+
+
+
+
+<p>
+Then open any browser and type your IP address.
+</p>
+<p>
+If it shows like this:
+</p>
+
+
+<pre class="example">It works
+</pre>
+
+
+
+<p>
+Then your apache2 is installed.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Yslow </h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Yslow runs on PhantomJS.
+</p>
+<p>
+PhantomJS is headless webkit with javascript APIs.
+</p>
+<p>
+1.To install PhantomJS ,go to terminal and type  :
+</p>
+
+
+<pre class="example">
+$sudo apt-get install phantomjs
+</pre>
+
+
+
+
+<p>
+2.then go to <a href="http://yslow.org/phantomjs/">http://yslow.org/phantomjs/</a> and download yslow for PhantomJS.
+</p>
+<p>
+Extract it into folder.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Pagespeed </h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Supported platforms.
+</p><ul>
+<li>
+CentOS/Fedora (32-bit and 64-bit)
+</li>
+<li>
+Debian/Ubuntu (32-bit and 64-bit)
+</li>
+</ul>
+
+</div>
+
+<div id="outline-container-3.1" class="outline-3">
+<h3 id="sec-3.1"><span class="section-number-3">3.1</span> Installation from packages </h3>
+<div class="outline-text-3" id="text-3.1">
+
+<p>To install the packages, on Debian/Ubuntu, please run the following command:
+</p>
+
+
+
+<pre class="example">$sudo dpkg -i mod-pagespeed-*.deb
+$sudo apt-get -f install
+</pre>
+
+
+
+
+<p>
+For CentOS/Fedora, please execute:
+</p>
+
+
+
+<pre class="example">$sudo yum install at  # if you do not already have 'at' installed
+$sudo rpm -U mod-pagespeed-*.rpm
+</pre>
+
+
+
+
+<p>
+This will install latest updated version of modpagespeed.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3.2" class="outline-3">
+<h3 id="sec-3.2"><span class="section-number-3">3.2</span> Installation from source </h3>
+<div class="outline-text-3" id="text-3.2">
+
+
+<p>
+To install these on Debian or Ubuntu run:
+</p>
+
+
+
+<pre class="example">sudo apt-get install apache2 g++ python subversion gperf make devscripts fakeroot git
+</pre>
+
+
+
+
+<p>
+We require the Chromium depot_tools, which are used to build open-source projects with dependencies on other open-source projects. Download it with:
+</p>
+
+
+
+<pre class="example">mkdir -p ~/bin
+cd ~/bin
+svn co http://src.chromium.org/svn/trunk/tools/depot_tools
+</pre>
+
+
+
+<p>
+You will need to add the depot_tools to your path. In bash you would run:
+</p>
+
+
+<pre class="example">export PATH=$PATH:~/bin/depot_tools
+</pre>
+
+
+
+
+<p>
+<b>Check out mod_pagespeed and dependencies</b>
+</p>
+<p>
+You need to download the source code for mod_pagespeed and all of its dependenceies. The gclient command (which is one of the depot_tools) will do this for you:
+</p>
+
+
+
+<pre class="example">mkdir ~/mod_pagespeed    # Any directory is fine.
+cd ~/mod_pagespeed
+</pre>
+
+
+
+
+<p>
+Use it to get the latest stable version:
+</p>
+
+
+<pre class="example">gclient config http://modpagespeed.googlecode.com/svn/branches/latest-beta/src
+gclient sync --force --jobs=1
+</pre>
+
+
+
+
+<p>
+The current trunk uses https URLs to fetch some third party dependencies.
+</p>
+<p>
+Depending on your system, you may need to verify and accept an updated SSL certificate for SourceForge. You can test by running:
+</p>
+
+
+
+<pre class="example">svn ls https://svn.code.sf.net/p/jsoncpp/code/trunk/jsoncpp
+</pre>
+
+
+
+
+<p>
+If you see a message like the following, you'll need to accept the new certificate.
+</p>
+
+
+<pre class="example">Error validating server certificate for 'https://svn.code.sf.net:443':
+ - The certificate is not issued by a trusted authority. Use the
+   fingerprint to validate the certificate manually!
+Certificate information:
+ - Hostname: *.code.sf.net
+ - Valid: from Tue, 18 Mar 2014 00:00:00 GMT until Fri, 17 Apr 2015 23:59:59 GMT
+ - Issuer: GeoTrust Inc., US
+ - Fingerprint: 5e:d2:2a:09:0a:39:5e:f4:05:87:03:3a:13:2b:7d:52:3f:b8:1e:45
+(R)eject, accept (t)emporarily or accept (p)ermanently?
+</pre>
+
+
+
+
+
+<p>
+You should open <a href="https://svn.code.sf.net/p/jsoncpp/code/trunk/jsoncpp">https://svn.code.sf.net/p/jsoncpp/code/trunk/jsoncpp</a> in a browser and verify that the fingerprint matches.
+</p>
+<p>
+In Chrome, this can be done by clicking the lock icon next to the URL, clicking the "Certificate Information" link underneath the "Connection" tab, and verifying that the SHA-1 fingerprint matches.
+</p>
+
+<p>
+<b>Run Tests</b>
+</p>
+<p>
+The commands below will first build mod<sub>pagespeed</sub> and then run the tests:
+</p>
+
+
+
+<pre class="example">cd ~/mod_pagespeed/src
+make AR.host=`pwd`/build/wrappers/ar.sh AR.target=`pwd`/build/wrappers/ar.sh \
+   BUILDTYPE=Release mod_pagespeed_test pagespeed_automatic_test
+./out/Release/mod_pagespeed_test
+./out/Release/pagespeed_automatic_test 
+</pre>
+
+
+
+
+<p>
+<b>Compile</b>
+</p>
+<p>
+To compile mod_pagespeed, run:
+</p>
+
+
+
+<pre class="example">cd ~/mod_pagespeed/src
+make AR.host=`pwd`/build/wrappers/ar.sh AR.target=`pwd`/build/wrappers/ar.sh BUILDTYPE=Release
+</pre>
+
+
+
+
+<p>
+<b>Install</b>
+</p>
+
+
+
+<pre class="example">cd install
+./install_apxs.sh
+
+./ubuntu.sh staging
+sudo ./ubuntu.sh install
+sudo ./ubuntu.sh stop start
+</pre>
+
+
+
+
+<p>
+<b>For more detailed information regarding installation ,you can visit:</b> <a href="https://developers.google.com/speed/pagespeed/module/build_mod_pagespeed_from_source#build-packages">pagespeed web-site</a>
+</p></div>
+</div>
+</div>
+<div id="postamble">
+<p class="author"> Author: utkarsh
+<a href="mailto:utkarsh@utkarsh-Inspiron-N5110">&lt;utkarsh@utkarsh-Inspiron-N5110&gt;</a>
+</p>
+<p class="date"> Date: 2014-06-19 15:22:06 IST</p>
+<p class="creator">HTML generated by org-mode 6.33x in emacs 23</p>
+</div>
+</div>
+</body>
+</html>
