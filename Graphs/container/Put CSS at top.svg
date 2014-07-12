@@ -35,7 +35,7 @@ L110.817 388.8
 L110.817 51.4176
 L72 51.4176
 z
-" style="fill:url(#h6a20e58515);stroke:#000000;"/>
+" style="fill:url(#hcad88ede71);stroke:#000000;"/>
    </g>
    <g id="patch_4">
     <path clip-path="url(#p7ff5b81e1d)" d="
@@ -44,7 +44,7 @@ L149.635 388.8
 L149.635 388.8
 L110.817 388.8
 z
-" style="fill:url(#h6a20e58515);stroke:#000000;"/>
+" style="fill:url(#hcad88ede71);stroke:#000000;"/>
    </g>
    <g id="patch_5">
     <path clip-path="url(#p7ff5b81e1d)" d="
@@ -53,7 +53,7 @@ L188.452 388.8
 L188.452 388.8
 L149.635 388.8
 z
-" style="fill:url(#he4d754adb3);stroke:#000000;"/>
+" style="fill:url(#hcad88ede71);stroke:#000000;"/>
    </g>
    <g id="patch_6">
     <path clip-path="url(#p7ff5b81e1d)" d="
@@ -62,7 +62,7 @@ L227.27 388.8
 L227.27 388.8
 L188.452 388.8
 z
-" style="fill:url(#he4d754adb3);stroke:#000000;"/>
+" style="fill:url(#hcad88ede71);stroke:#000000;"/>
    </g>
    <g id="patch_7">
     <path clip-path="url(#p7ff5b81e1d)" d="
@@ -71,7 +71,7 @@ L266.087 388.8
 L266.087 388.8
 L227.27 388.8
 z
-" style="fill:url(#he4d754adb3);stroke:#000000;"/>
+" style="fill:url(#hcad88ede71);stroke:#000000;"/>
    </g>
    <g id="patch_8">
     <path clip-path="url(#p7ff5b81e1d)" d="
@@ -80,7 +80,7 @@ L304.904 388.8
 L304.904 388.8
 L266.087 388.8
 z
-" style="fill:url(#he4d754adb3);stroke:#000000;"/>
+" style="fill:url(#hcad88ede71);stroke:#000000;"/>
    </g>
    <g id="patch_9">
     <path clip-path="url(#p7ff5b81e1d)" d="
@@ -1618,38 +1618,6 @@ L72 43.2" style="fill:none;stroke:#000000;"/>
   </clipPath>
  </defs>
  <defs>
-  <pattern height="72" id="he4d754adb3" patternUnits="userSpaceOnUse" width="72" x="0" y="0">
-   <rect fill="#ffffff" height="73" width="73" x="0" y="0"/>
-   <path d="
-M-36 36
-L36 -36
-M-24 48
-L48 -24
-M-12 60
-L60 -12
-M0 72
-L72 0
-M12 84
-L84 12
-M24 96
-L96 24
-M36 108
-L108 36
-M-36 36
-L36 108
-M-24 24
-L48 96
-M-12 12
-L60 84
-M0 0
-L72 72
-M12 -12
-L84 60
-M24 -24
-L96 48
-M36 -36
-L108 36" style="fill:#000000;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-width:1.0;"/>
-  </pattern>
   <pattern height="72" id="hcad88ede71" patternUnits="userSpaceOnUse" width="72" x="0" y="0">
    <rect fill="#ffffff" height="73" width="73" x="0" y="0"/>
    <path d="
@@ -1678,38 +1646,6 @@ L96 24
 M30 102
 L102 30
 M36 108
-L108 36" style="fill:#000000;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-width:1.0;"/>
-  </pattern>
-  <pattern height="72" id="h6a20e58515" patternUnits="userSpaceOnUse" width="72" x="0" y="0">
-   <rect fill="none" height="73" width="73" x="0" y="0"/>
-   <path d="
-M-36 36
-L36 -36
-M-24 48
-L48 -24
-M-12 60
-L60 -12
-M0 72
-L72 0
-M12 84
-L84 12
-M24 96
-L96 24
-M36 108
-L108 36
-M-36 36
-L36 108
-M-24 24
-L48 96
-M-12 12
-L60 84
-M0 0
-L72 72
-M12 -12
-L84 60
-M24 -24
-L96 48
-M36 -36
 L108 36" style="fill:#000000;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-width:1.0;"/>
   </pattern>
  </defs>
