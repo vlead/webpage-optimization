@@ -1,0 +1,166 @@
+TAP version 13
+1..24
+not ok 1 C (77) overall score
+not ok 2 F (0) ynumreq: Make fewer HTTP requests
+  ---
+  message: This page has 94 external Javascript scripts.  Try combining them into one.
+  ...
+not ok 3 F (0) ycdn: Use a Content Delivery Network (CDN)
+  ---
+  message: There are 100 static components that are not on CDN. <p>You can specify CDN hostnames in your preferences. See <a href="https://github.com/marcelduran/yslow/wiki/FAQ#wiki-faq_cdn">YSlow FAQ</a> for details.</p>
+  ...
+ok 4 A (100) yemptysrc: Avoid empty src or href
+not ok 5 F (0) yexpires: Add Expires headers
+  ---
+  message: There are 99 static components without a far-future expiration date.
+  offenders:
+    - "http://10.4.14.31/labs/eee10/css/common.css"
+    - "http://10.4.14.31/labs/eee10/lib/jquery.min.js"
+    - "http://10.4.14.31/labs/eee10/lib/jquery-ui-1.8.18.custom.min.js"
+    - "http://10.4.14.31/labs/eee10/lib/backbone.js"
+    - "http://10.4.14.31/labs/eee10/lib/kendo.all.js"
+    - "http://10.4.14.31/labs/eee10/lib/tmpl.js"
+    - "http://10.4.14.31/labs/eee10/lib/highcharts.js"
+    - "http://10.4.14.31/labs/eee10/js/view/Switch.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp3Switch.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp3Switch1.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp2Switch1.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp2Switch2.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp2Switch3.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp2Switch4.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp2Switch5.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp1bSwitch.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp4aSwitch.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp4bSwitch.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp5Switch.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp7aSwitch.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp7aSwitch1.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp7bSwitch.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp8Switch.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp9Switch.js"
+    - "http://10.4.14.31/labs/eee10/js/landing.js"
+    - "http://10.4.14.31/labs/eee10/js/controller/controller.js"
+    - "http://10.4.14.31/labs/eee10/js/model/elementmodel.js"
+    - "http://10.4.14.31/labs/eee10/js/collection/elementcollection.js"
+    - "http://10.4.14.31/labs/eee10/js/data/datastore.js"
+    - "http://10.4.14.31/labs/eee10/js/data/Exp4aDataStore.js"
+    - "http://10.4.14.31/labs/eee10/js/data/Exp4bDataStore.js"
+    - "http://10.4.14.31/labs/eee10/js/data/Exp5DataStore.js"
+    - "http://10.4.14.31/labs/eee10/js/data/Exp9DataStore.js"
+    - "http://10.4.14.31/labs/eee10/js/data/Exp1bDataStore.js"
+    - "http://10.4.14.31/labs/eee10/js/data/Exp2DataStore.js"
+    - "http://10.4.14.31/labs/eee10/js/data/Exp3DataStore.js"
+    - "http://10.4.14.31/labs/eee10/js/data/Exp7aDataStore.js"
+    - "http://10.4.14.31/labs/eee10/js/data/Exp7bDataStore.js"
+    - "http://10.4.14.31/labs/eee10/js/data/Exp8DataStore.js"
+    - "http://10.4.14.31/labs/eee10/js/graph/graph.js"
+    - "http://10.4.14.31/labs/eee10/js/view/view.js"
+    - "http://10.4.14.31/labs/eee10/js/view/boilerplate.js"
+    - "http://10.4.14.31/labs/eee10/js/view/singlephasercload.js"
+    - "http://10.4.14.31/labs/eee10/js/view/voltmeterdc.js"
+    - "http://10.4.14.31/labs/eee10/js/view/ammeterdc.js"
+    - "http://10.4.14.31/labs/eee10/js/view/coupling.js"
+    - "http://10.4.14.31/labs/eee10/js/view/threephivvf.js"
+    - "http://10.4.14.31/labs/eee10/js/view/spst.js"
+    - "http://10.4.14.31/labs/eee10/js/view/dpst.js"
+    - "http://10.4.14.31/labs/eee10/js/view/dpdt.js"
+    - "http://10.4.14.31/labs/eee10/js/view/slippingRotor.js"
+    - "http://10.4.14.31/labs/eee10/js/view/dcVariable.js"
+    - "http://10.4.14.31/labs/eee10/js/view/shortCircuit.js"
+    - "http://10.4.14.31/labs/eee10/js/view/mechRotor.js"
+    - "http://10.4.14.31/labs/eee10/js/view/powerFactor.js"
+    - "http://10.4.14.31/labs/eee10/js/view/threepRLLoad.js"
+    - "http://10.4.14.31/labs/eee10/js/view/threepRCLoad.js"
+    - "http://10.4.14.31/labs/eee10/js/view/threepResisLoad.js"
+    - "http://10.4.14.31/labs/eee10/js/view/byPass.js"
+    - "http://10.4.14.31/labs/eee10/js/view/swiTPST.js"
+    - "http://10.4.14.31/labs/eee10/js/view/swiTPDT.js"
+    - "http://10.4.14.31/labs/eee10/js/view/singlepACvol.js"
+    - "http://10.4.14.31/labs/eee10/js/view/dcVoltage.js"
+    - "http://10.4.14.31/labs/eee10/js/view/salientRotor.js"
+    - "http://10.4.14.31/labs/eee10/js/view/squiRotor.js"
+    - "http://10.4.14.31/labs/eee10/js/view/rheostat.js"
+    - "http://10.4.14.31/labs/eee10/js/view/spresisLoad.js"
+    - "http://10.4.14.31/labs/eee10/js/view/sprlLoad.js"
+    - "http://10.4.14.31/labs/eee10/js/view/variactphac.js"
+    - "http://10.4.14.31/labs/eee10/js/view/threephacvoltsrc.js"
+    - "http://10.4.14.31/labs/eee10/js/view/acvoltmeter.js"
+    - "http://10.4.14.31/labs/eee10/js/view/tachometer.js"
+    - "http://10.4.14.31/labs/eee10/js/view/variacspac.js"
+    - "http://10.4.14.31/labs/eee10/js/view/cylrotor.js"
+    - "http://10.4.14.31/labs/eee10/js/view/selfexciteddc.js"
+    - "http://10.4.14.31/labs/eee10/js/view/sepexciteddc.js"
+    - "http://10.4.14.31/labs/eee10/js/view/wattmeter.js"
+    - "http://10.4.14.31/labs/eee10/js/view/ammeterac.js"
+    - "http://10.4.14.31/labs/eee10/js/view/sinphvvvf.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp2.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp3.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp1a.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp5.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp6a.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp1b.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp8.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp9.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp7a.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp7b.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp4a.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp6b.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp4b.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp10a.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp10b.js"
+    - "http://10.4.14.31/labs/eee10/js/view/viewGraph.js"
+    - "http://10.4.14.31/labs/eee10/images/ui-bg_gloss-wave_35_f6a828_500x100.png"
+    - "http://10.4.14.31/labs/eee10/css/textures/glass.png"
+    - "http://10.4.14.31/labs/eee10/css/Black/sprite.png"
+    - "http://10.4.14.31/favicon.ico"
+  ...
+ok 6 A (100) ycompress: Compress components with gzip
+ok 7 A (100) ycsstop: Put CSS at top
+ok 8 A (100) yjsbottom: Put JavaScript at bottom
+ok 9 A (100) yexpressions: Avoid CSS expressions
+ok 10 N/A (-1) yexternal: Make JavaScript and CSS external # SKIP score N/A
+  ---
+  message: Only consider this if your property is a common user home page.
+  offenders:
+    - "There is a total of 2 inline scripts"
+  ...
+ok 11 A (100) ydns: Reduce DNS lookups
+ok 12 A (100) yminify: Minify JavaScript and CSS
+ok 13 A (100) yredirects: Avoid URL redirects
+ok 14 A (100) ydupes: Remove duplicate JavaScript and CSS
+not ok 15 F (0) yetags: Configure entity tags (ETags)
+  ---
+  message: There are 10 components with misconfigured ETags
+  offenders:
+    - "http://10.4.14.31/labs/eee10/js/view/exp8.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp9.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp7a.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp7b.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp4a.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp6b.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp4b.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp10a.js"
+    - "http://10.4.14.31/labs/eee10/js/view/exp10b.js"
+    - "http://10.4.14.31/labs/eee10/css/Black/sprite.png"
+  ...
+ok 16 A (100) yxhr: Make AJAX cacheable
+ok 17 A (100) yxhrmethod: Use GET for AJAX requests
+ok 18 A (100) ymindom: Reduce the number of DOM elements
+ok 19 B (80) yno404: Avoid HTTP 404 (Not Found) error
+  ---
+  message: There are 4 requests that are 404 Not Found
+  offenders:
+    - "http://10.4.14.31/labs/eee10/css/common.css"
+    - "http://10.4.14.31/labs/eee10/js/data/datastore.js"
+    - "http://10.4.14.31/labs/eee10/css/textures/glass.png"
+    - "http://10.4.14.31/favicon.ico"
+  ...
+ok 20 A (100) ymincookie: Reduce cookie size
+ok 21 A (100) ycookiefree: Use cookie-free domains
+ok 22 A (100) ynofilter: Avoid AlphaImageLoader filter
+ok 23 A (100) yimgnoscale: Do not scale images in HTML
+ok 24 A (90) yfavicon: Make favicon small and cacheable
+  ---
+  message: Favicon was not found
+Favicon is not cacheable
+  ...

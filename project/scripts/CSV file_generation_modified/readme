@@ -1,0 +1,8 @@
+Assumption to run this scripts:
+Firstly the command line arguments should be passed without any ambiguity.
+You have to check whether all the reports for yslow is in the same folder from where this script is running .Also, file containing urls should be in the same folder. 
+Script csvfilegeneration.sh takes one command line arguments 'arg1'.
+
+$csvfilegeneration.sh arg1 
+
+Here first argument "arg1" is the file containing all urls for which for we need to extract all the from the yslow reports. Each line of 'arg1' contains a url. For example look at the 'urls' file which contains url in each line of the file.After execution of script ,a stats.csv file will be generated .

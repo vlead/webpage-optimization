@@ -1,0 +1,119 @@
+TAP version 13
+1..24
+ok 1 B (83) overall score
+ok 2 A (100) ynumreq: Make fewer HTTP requests
+not ok 3 F (0) ycdn: Use a Content Delivery Network (CDN)
+  ---
+  message: There are 35 static components that are not on CDN. <p>You can specify CDN hostnames in your preferences. See <a href="https://github.com/marcelduran/yslow/wiki/FAQ#wiki-faq_cdn">YSlow FAQ</a> for details.</p>
+  ...
+ok 4 A (100) yemptysrc: Avoid empty src or href
+not ok 5 F (0) yexpires: Add Expires headers
+  ---
+  message: There are 36 static components without a far-future expiration date.
+  offenders:
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/7.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/1.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/2.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/3.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/4.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/5.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/6.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/8.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/9.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/10.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/11.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/12.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/13.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/14.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/15.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/16.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/17.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/18.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/19.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/20.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/21.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/22.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/23.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/24.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/25.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/27.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/28.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/29.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/30.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/31.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/32.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/33.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/34.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/35.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/36.jpg"
+    - "http://10.4.14.31/favicon.ico"
+  ...
+ok 6 A (100) ycompress: Compress components with gzip
+ok 7 A (100) ycsstop: Put CSS at top
+ok 8 A (100) yjsbottom: Put JavaScript at bottom
+ok 9 A (100) yexpressions: Avoid CSS expressions
+ok 10 N/A (-1) yexternal: Make JavaScript and CSS external # SKIP score N/A
+  ---
+  message: Only consider this if your property is a common user home page.
+  offenders:
+    - "There is a total of 1 inline css"
+    - "There is a total of 3 inline scripts"
+  ...
+ok 11 A (100) ydns: Reduce DNS lookups
+ok 12 A (100) yminify: Minify JavaScript and CSS
+ok 13 A (100) yredirects: Avoid URL redirects
+ok 14 A (100) ydupes: Remove duplicate JavaScript and CSS
+ok 15 A (100) yetags: Configure entity tags (ETags)
+ok 16 A (100) yxhr: Make AJAX cacheable
+ok 17 A (100) yxhrmethod: Use GET for AJAX requests
+ok 18 A (100) ymindom: Reduce the number of DOM elements
+not ok 19 F (0) yno404: Avoid HTTP 404 (Not Found) error
+  ---
+  message: There are 36 requests that are 404 Not Found
+  offenders:
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/7.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/1.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/2.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/3.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/4.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/5.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/6.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/8.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/9.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/10.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/11.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/12.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/13.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/14.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/15.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/16.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/17.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/18.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/19.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/20.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/21.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/22.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/23.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/24.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/25.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/27.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/28.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/29.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/30.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/31.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/32.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/33.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/34.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/35.jpg"
+    - "http://10.4.14.31/labs/hss02/eng/tiwaimages/36.jpg"
+    - "http://10.4.14.31/favicon.ico"
+  ...
+ok 20 A (100) ymincookie: Reduce cookie size
+ok 21 A (100) ycookiefree: Use cookie-free domains
+ok 22 A (100) ynofilter: Avoid AlphaImageLoader filter
+ok 23 A (100) yimgnoscale: Do not scale images in HTML
+ok 24 A (90) yfavicon: Make favicon small and cacheable
+  ---
+  message: Favicon was not found
+Favicon is not cacheable
+  ...

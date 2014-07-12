@@ -1,0 +1,191 @@
+TAP version 13
+1..24
+ok 1 B (82) overall score
+ok 2 A (100) ynumreq: Make fewer HTTP requests
+not ok 3 F (0) ycdn: Use a Content Delivery Network (CDN)
+  ---
+  message: There are 68 static components that are not on CDN. <p>You can specify CDN hostnames in your preferences. See <a href="https://github.com/marcelduran/yslow/wiki/FAQ#wiki-faq_cdn">YSlow FAQ</a> for details.</p>
+  offenders:
+    - "deploy.virtual-labs.ac.in: 68 components, 22.7K (22.7K GZip)"
+  ...
+ok 4 A (100) yemptysrc: Avoid empty src or href
+not ok 5 F (0) yexpires: Add Expires headers
+  ---
+  message: There are 69 static components without a far-future expiration date.
+  offenders:
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_2.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_3.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_4.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_5.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_6.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_7.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_8.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_9.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_10.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_11.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_12.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_13.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_14.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_15.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_16.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_17.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_18.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_19.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_20.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_21.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_22.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_23.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_24.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_25.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_26.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_27.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_28.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_29.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_30.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_31.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_32.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_33.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_34.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_35.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_36.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_37.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_38.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_39.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_40.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_41.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_42.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_43.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_44.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_45.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_46.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_47.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_48.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_49.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_50.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_51.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_52.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_53.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_54.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_55.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_56.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_57.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_58.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_59.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_60.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_61.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_62.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_63.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_64.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_65.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_66.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_67.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_68.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_69.png"
+    - "http://deploy.virtual-labs.ac.in/favicon.ico"
+  ...
+ok 6 A (100) ycompress: Compress components with gzip
+ok 7 A (100) ycsstop: Put CSS at top
+ok 8 A (100) yjsbottom: Put JavaScript at bottom
+ok 9 A (100) yexpressions: Avoid CSS expressions
+ok 10 N/A (-1) yexternal: Make JavaScript and CSS external # SKIP score N/A
+  ---
+  message: Only consider this if your property is a common user home page.
+  ...
+ok 11 A (100) ydns: Reduce DNS lookups
+  ---
+  offenders:
+    - "deploy.virtual-labs.ac.in: 70 components, 60.6K (60.3K GZip)"
+  ...
+ok 12 A (100) yminify: Minify JavaScript and CSS
+ok 13 A (100) yredirects: Avoid URL redirects
+ok 14 A (100) ydupes: Remove duplicate JavaScript and CSS
+ok 15 A (100) yetags: Configure entity tags (ETags)
+ok 16 A (100) yxhr: Make AJAX cacheable
+ok 17 A (100) yxhrmethod: Use GET for AJAX requests
+ok 18 B (89) ymindom: Reduce the number of DOM elements
+  ---
+  message: There are 1089 DOM elements on the page
+  ...
+not ok 19 F (0) yno404: Avoid HTTP 404 (Not Found) error
+  ---
+  message: There are 69 requests that are 404 Not Found
+  offenders:
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_2.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_3.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_4.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_5.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_6.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_7.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_8.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_9.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_10.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_11.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_12.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_13.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_14.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_15.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_16.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_17.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_18.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_19.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_20.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_21.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_22.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_23.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_24.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_25.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_26.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_27.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_28.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_29.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_30.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_31.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_32.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_33.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_34.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_35.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_36.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_37.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_38.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_39.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_40.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_41.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_42.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_43.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_44.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_45.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_46.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_47.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_48.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_49.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_50.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_51.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_52.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_53.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_54.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_55.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_56.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_57.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_58.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_59.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_60.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_61.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_62.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_63.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_64.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_65.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_66.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_67.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_68.png"
+    - "http://deploy.virtual-labs.ac.in/labs/cse19/temp/images/temp/1383982862_69.png"
+    - "http://deploy.virtual-labs.ac.in/favicon.ico"
+  ...
+ok 20 A (100) ymincookie: Reduce cookie size
+ok 21 A (100) ycookiefree: Use cookie-free domains
+ok 22 A (100) ynofilter: Avoid AlphaImageLoader filter
+ok 23 A (100) yimgnoscale: Do not scale images in HTML
+ok 24 A (90) yfavicon: Make favicon small and cacheable
+  ---
+  message: Favicon was not found
+Favicon is not cacheable
+  ...

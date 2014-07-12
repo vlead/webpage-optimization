@@ -1,0 +1,120 @@
+* Abstract
+We propose web page optimization as necessary step in web application development. In context of virtual labs,several online experiments were designed by domain experts from various disciplines and thousands of web pages were developed.But domain expert would not know best practices for web development, therefore end user suffer from performance issues.Performance of an web application largely depends upon the content of the web page because rendering takes place on client side. And client machine may have limited resources at his side.Therefore web page optimization seems an necessary step to improve user experience.In contrast to existing work on this field,here we focus on large scale web performance visualization approach.Based on this large scale visualization,we present a utility of existing web optimization tool  by experimentation on a MHRD web project "virtual labs".
+
+* Keywords
+
+web-page performance,best practices
+
+
+* Introduction
+
+Earlier people while talking about web performance meant about optimizing the server side but nowadays optimization on the client side is also needed.Presently,front-end developers use a lot of javascipt ,CSS and images to make a good user interface but this all adds overhead during page rendering which means lesser user experience.Success of a website comes with a good user's experience which also includes fast response time.
+
+Optimized web pages not only renders a web page faster but also saves network bandwidth.Along with making a good responsive web page,web developers should also focus on using a optimal number of critical resources and its size should also be minified.Critical rendering path is the chain of necessary events that occurs to make webpage appear on browser.The main critical resources on a web pages are CSS,javascript and images.For each critical resource on a wepage,browser makes a request to server. CSS and javascript are the two critical resources that blocks the rendering of the webpage.Therefore,correct order of http requests can reduce the perceived page load time which means page load time will not reduce but important components which user wants to see first is loaded first and rest resources are loaded in background.The main focus should be made to:\\1.minify size of crictical resources.\\
+2.minify number of critical resources.\\
+3.minify critical rendering path.\\
+Nowadays,there are some important performace best practices that are suggested to developers to follow :
+[[/home/utkarsh/Desktop/approach.svg]]
+- Minimize http requests ::
+For each critical resource in the page, browser have to make a request  for it to server and then its get loaded.So,almost 80% of the response time is consumed in downloading all the resources.So to reduce number of http requests,one can combine multiple CSS into one,also multiple javascipt files can be combined into one.Other ways include image spriting ,etc.
+
+- Use a Content Delievery Networks ::
+Nearest server is selected for delievering the content which reduces load time.
+
+- Add Cache Control Header ::
+For static components,set far future expires header.
+For dynamic components ,use an appropriate Cache control header to help browser with conditional requests.This reduces unnecessary http requests.
+
+- Gzip components ::
+Compression reduces response time by reducing the size of http response.
+Gzip is most popular and effective compression method at this time.It reduces response time by 70%.If a web client indicates for support for compression in the http request header,server sends a compressed components.
+
+- Stylesheets at the Top ::
+Problem with putting style sheets not in the head tag is that it blocks progessive rendering and till the sytlesheets are not fetched users sees nothing on screen.
+
+- Put Scripts at Bottom ::
+Putting scripts at the top,blocks parallel downloading of resources per hostname.
+
+- Make Inline Small CSS and javascript files ::
+If file size is to small, then it should be made inline as it will reduce number of http requests.
+
+- Make large css and javascript file external ::
+CSS abd javscript files are catched by browser.So everytime it is not downloaded.First time it will take time to download but as its is cached ,it will reduce http request.
+
+- Minify javascript and css ::
+Unnecessary characters from code should be reduced which includes removing comments,duplicacy and removing whitespaces.
+
+- Avoid Redirects ::
+Connecting an old page to new one takes time  and increases page load time.It should be avoided.
+
+- Configure ETags ::
+Entity tags is a way that browser and server use to determine whether the component in cache is same as that on server.
+
+- Flush the buffer early ::
+It allows to send partially ready response to browser.It should be written as early as possible in the code, preferably in the head section.
+In php there is function flush() to flush the buffer. 
+
+- No 404 error ::
+Http requests made and getting a response like 404 Not found is totally useless and it increases response time.
+
+- Make favicon small and cacheable ::
+Favicon stays in the core of server and  it is necessary as if its not there , browser will still request for it and getting 404 error will increase response time.
+
+The goal of our experimentation , performed in collaboration with VLEAD lab, IIIT-Hyderabad :\\
+
+1.devising a technique for large scale analysis of webpages for virtual labs.\\
+2.Comparison between the web performance of virtual labs's  web pages with a web optimization tool Google Pagespeed and without a web optimization tool so as to evaluate the utility of the Pagespeed which can be used for the virtuals labs.
+
+
+* Background and Related work
+
+Yahoo yslow and Google pagespeed are well known tools that are capable of finding optimal solutions with regards to web page optimization but the latter is capable of solving it also.Both techniques follow their performance best practices to evaluate the web performance of a webpage.
+
+Yahoo yslow.js is javascript apis which runs on phantomjs.We used Yslow as performance measuring tool because it not only analizes a webpage but gives suggestions on how to improve it.It works on three process:1.It crawls the DOM to find each component 2.Collect information for each component and analizes each component.3.It generates scores for each rule which produces the overall score for page.Grade computation have been discussed in the next section.
+Computation rules: \\
+Mod\_pagespeed is the web page optimization tool developed by google.It not only analizes a web page but also optimizes it .Based on best practices it has certain set of filters which optimizes web page during run time.As the server gets request for the webpage, it dynamically rewrites the page using its filters and sends an highly optimized page.There are total of 40+ filters which supports optimization.These filters can be turned on or off based on requirements 
+
+
+* Grade computation
+
+
+* Experimentation
+
+Our work is broadly divided into four major phases namely Data Collection, Data Visualization, Analysis of Data and optimizing web pages based on analysis. During data collection phase we first collected all the urls of virtual labs hosted at IIIT-Hyderabad. Then we collected yslow reports for each web page using an automated script and phantomJS. After collecting all the reports we extracted scores for each rule from reports and stored it in a csv file. During visualization phase all data is visualized using an automated script indicating performance for each rule and also overall performance of web pages. Later we did analysis for optimized pages of virtuals labs.
+
+- URls and Report Collection ::
+
+To visualize the performance of all the webpages,first of all ,our need was to collect all the urls which are in deploy.virtuals-labs.ac.in hosted at IIIT-Hyderabed.Since we have access to server,to get all the urls,we wrote an automated bash script to extract all the html and php pages links from the server and stored it into the text file.
+To test the performance of vlab.co.in, we also collected the 5000 urls for this website.This time since we do not have the access of server ,we used an online sitemap generator to get the urls.
+We wrote an automated script to generate the reports for each web page using yslow.js and phantomJS .This automated script read a url from a file containing all the urls and generate report for each web page.In these script,we are making ten phantomjs  call at a time.For urls which are inactive ,failed reports will be generated and we are pushing that url into the failed urls file and deleting the failed reports.These reports are input to CSV file generation.
+
+- CSV File Generation ::
+CSV file is generated using a bash script.This CSV file will contain the overall score and scores corresponding to each rule.Script will extract all the scores for corresponding rule and will dump into the  CSV file  line by line.The content in the CSV file is the statistics which will be used for visualization.
+
+- Visualization ::
+
+
+- Analysis ::
+
+
+
+
+
+* Conclusion   
+
+* References
+ 1.Andrew B.King,2008.Website Optimization:Web performance Optimization.155-185,282-290.
+ 2.Steve Souders,2007.High Performance Websites.10-84
+ 3.Steve Souders,2009.Even Faster Web Sites 
+ 4.Yslow Official Website.Available:http://yslow.org/phantomjs/
+ 5.Yslow Documentation Page.Available:http://yslow.org/faq/
+ 6.Yahoo Developer Network.Best Practices for Speeding Up Your Web Site.Available:https://developer.yahoo.com/performance/rules.html
+ 7.Google Developers.Optimizing The Critical Rendering Path.Available:https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path
+ 8.Critical Rendering Path.Available:http://www.feedthebot.com/pagespeed/critical-render-path.html
+ 9.Google Pagespeed Tools.Official Documentation.Available:https://developers.google.com/speed/pagespeed/
+ 10.Google Mod\_pagespeed.Available:https://developers.google.com/speed/pagespeed/module
+ 11.Pagespeed Filters.Availbale:https://developers.google.com/speed/pagespeed/module/filters
+   
+
+
+

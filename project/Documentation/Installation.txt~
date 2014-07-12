@@ -1,0 +1,150 @@
+Installation
+
+* Apache2
+open terminal and type the following command.
+
+#+BEGIN_SRC python :tangle a.py
+$sudo apt-get update
+
+$sudo apt-get install apache2
+#+END_SRC
+
+Then open any browser and type your IP address.
+
+If it shows like this:
+#+begin_src python :tangle a.py
+It works
+#+end_src 
+Then your apache2 is installed.
+
+* Yslow
+Yslow runs on PhantomJS.
+
+PhantomJS is headless webkit with javascript APIs.
+
+1.To install PhantomJS ,go to terminal and type  :
+#+begin_src: tangle a.py
+
+$sudo apt-get install phantomjs
+#+end_src
+
+2.then go to http://yslow.org/phantomjs/ and download yslow for PhantomJS.
+
+Extract it into folder.
+
+* Pagespeed
+Supported platforms.
+ - CentOS/Fedora (32-bit and 64-bit)
+ - Debian/Ubuntu (32-bit and 64-bit)
+** Installation from packages
+To install the packages, on Debian/Ubuntu, please run the following command:
+
+#+begin_src: tangle a.py
+$sudo dpkg -i mod-pagespeed-*.deb
+$sudo apt-get -f install
+#+end_src
+
+For CentOS/Fedora, please execute:
+
+#+begin_src :tangle a.py
+$sudo yum install at  # if you do not already have 'at' installed
+$sudo rpm -U mod-pagespeed-*.rpm
+#+end_src
+
+This will install latest updated version of modpagespeed.
+
+** Installation from source
+
+To install these on Debian or Ubuntu run:
+
+#+begin_src :tangle a.py
+sudo apt-get install apache2 g++ python subversion gperf make devscripts fakeroot git
+#+end_src
+
+We require the Chromium depot\_tools, which are used to build open-source projects with dependencies on other open-source projects. Download it with:
+
+#+begin_src :tangle a.py
+  mkdir -p ~/bin
+  cd ~/bin
+  svn co http://src.chromium.org/svn/trunk/tools/depot_tools
+#+end_src
+You will need to add the depot\_tools to your path. In bash you would run:
+#+begin_src :tangle a.py 
+export PATH=$PATH:~/bin/depot_tools
+#+end_src
+
+*Check out mod\_pagespeed and dependencies*
+
+You need to download the source code for mod\_pagespeed and all of its dependenceies. The gclient command (which is one of the depot\_tools) will do this for you:
+
+#+begin_src :tangle a.py
+  mkdir ~/mod_pagespeed    # Any directory is fine.
+  cd ~/mod_pagespeed
+#+end_src
+
+Use it to get the latest stable version:
+#+begin_src  :tangle a.py 
+ gclient config http://modpagespeed.googlecode.com/svn/branches/latest-beta/src
+ gclient sync --force --jobs=1
+#+end_src
+
+The current trunk uses https URLs to fetch some third party dependencies.
+
+Depending on your system, you may need to verify and accept an updated SSL certificate for SourceForge. You can test by running:
+
+#+begin_src :tangle a.py
+svn ls https://svn.code.sf.net/p/jsoncpp/code/trunk/jsoncpp
+#+end_src
+
+If you see a message like the following, you'll need to accept the new certificate.
+#+begin_src :tangle a.py
+  Error validating server certificate for 'https://svn.code.sf.net:443':
+   - The certificate is not issued by a trusted authority. Use the
+     fingerprint to validate the certificate manually!
+  Certificate information:
+   - Hostname: *.code.sf.net
+   - Valid: from Tue, 18 Mar 2014 00:00:00 GMT until Fri, 17 Apr 2015 23:59:59 GMT
+   - Issuer: GeoTrust Inc., US
+   - Fingerprint: 5e:d2:2a:09:0a:39:5e:f4:05:87:03:3a:13:2b:7d:52:3f:b8:1e:45
+  (R)eject, accept (t)emporarily or accept (p)ermanently?
+#+end_src
+
+
+You should open https://svn.code.sf.net/p/jsoncpp/code/trunk/jsoncpp in a browser and verify that the fingerprint matches.
+
+In Chrome, this can be done by clicking the lock icon next to the URL, clicking the "Certificate Information" link underneath the "Connection" tab, and verifying that the SHA-1 fingerprint matches.
+
+
+*Run Tests*
+
+The commands below will first build mod_pagespeed and then run the tests:
+
+#+begin_src :tangle a.py
+   cd ~/mod_pagespeed/src
+   make AR.host=`pwd`/build/wrappers/ar.sh AR.target=`pwd`/build/wrappers/ar.sh \
+      BUILDTYPE=Release mod_pagespeed_test pagespeed_automatic_test
+   ./out/Release/mod_pagespeed_test
+   ./out/Release/pagespeed_automatic_test 
+#+end_src
+
+*Compile*
+
+To compile mod\_pagespeed, run:
+
+#+begin_src :tangle a.py 
+cd ~/mod_pagespeed/src
+make AR.host=`pwd`/build/wrappers/ar.sh AR.target=`pwd`/build/wrappers/ar.sh BUILDTYPE=Release
+#+end_src
+
+*Install*
+
+#+begin_src :tangle a.py
+cd install
+./install_apxs.sh
+
+./ubuntu.sh staging
+sudo ./ubuntu.sh install
+sudo ./ubuntu.sh stop start
+#+end_src
+
+ *For more detailed information regarding installation ,you can visit:* [[https://developers.google.com/speed/pagespeed/module/build_mod_pagespeed_from_source#build-packages][pagespeed web-site]]

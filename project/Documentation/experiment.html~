@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title><b>Experimentation</b></title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-06-24 09:50:54 IST"/>
+<meta name="author" content="utkarsh"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title"><b>Experimentation</b></h1>
+
+<p>To start with experimentation on web performance test for urls in virtual-labs and vlab using yslow.Our first need is collect the urls in <b>deploy.virtuals-labs.ac.in</b> and <b>www.vlab.co.in</b>.
+</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 URL Collection </a></li>
+<li><a href="#sec-2">2 report generation using Yslow </a>
+<ul>
+<li><a href="#sec-2.1">2.1 Problem </a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Generating CSV file </a></li>
+<li><a href="#sec-4">4 GRAPH GENERATION </a></li>
+<li><a href="#sec-5">5 Statistics for urls under http:deploy.virtual-labs.ac.in </a></li>
+<li><a href="#sec-6">6 Bar graph for landing pages of different educational websites. </a></li>
+<li><a href="#sec-7">7 Statistics for 42 urls under cse14(VLSI lab) and bio16(Biomedical and Signal Processing Lab) </a>
+<ul>
+<li><a href="#sec-7.1">7.1 No pagespeed </a></li>
+<li><a href="#sec-7.2">7.2 When pagespeed on with default filters </a></li>
+<li><a href="#sec-7.3">7.3 When pagespeed on with more filters </a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> URL Collection </h2>
+<div class="outline-text-2" id="text-1">
+
+<p>For url collection,we needed to have some crawler to extract all the urls inside it.Therefore ,we started with <b>nutch</b>, but we could not install it properly on our system, so we left using <b>nutch</b> and   
+queried on internet for sitemap generator.We got one sitemap generator which give 5000 urls under the seed url.Link for that website is <a href="http://www.internetmarketingninjas.com/seo-tools/google-sitemap-generator/">http://www.internetmarketingninjas.com/seo-tools/google-sitemap-generator/</a>.
+Only thing we have to do is to give the seed url in it and it will give list of 5000 urls in excel format or Xml format.We downloaded report in XML format and wrote a script to store it in text file containing urls in each line.
+Here in our case we have given seed url <a href="http://vlab.co.in">http://vlab.co.in</a>. and <a href="http://deploy.virtual-labs.ac.in">http://deploy.virtual-labs.ac.in</a>
+</p>
+<p>
+Script to generate url file 
+This script will take two command line arguments ,$1 will be given XML file and $2 will be output text file. 
+</p>
+
+
+
+<pre class="example">grep -o '&lt;loc&gt;.*&lt;/loc&gt;' $1 | sed 's/\(&lt;loc&gt;\|&lt;\/loc&gt;\)//g' &gt; $2
+#extracts all the urls which is present between &lt;loc&gt; and &lt;/loc&gt;from given XML file i.e $1  and will stote it into the destination file i.e $2
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> report generation using Yslow </h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+For report generation  using yslow,firstly,we have to install <b>phantomjs</b> on machine. Phantomjs is the headless webkit with javascript APIs. <b>Yslow.js</b> runs on phantomjs. It can be install simply by following command.
+</p>
+
+
+<pre class="example">sudo apt-get install phantomjs
+</pre>
+
+
+
+
+<p>
+Then we download the yslow.js file from <a href="http://yslow.org/phantomjs/">http://yslow.org/phantomjs/</a> and we save this file in the folder where url file is present.
+To generate full report for each url ,we wrote a automated script which will read url line by line and will generate report for each url.
+This script will take only one command line argument ,$1 i.e. file containing url
+</p>
+
+
+
+<pre class="example">
+#function to run phantomjs for each url
+Fulltest() 
+{
+while read url; do                    #loop reads a line from urls file i.e $1 
+echo "Running tests for $url"         #echo on outputstream to indicate flow
+dir=$(echo $url | sed 's/[:/.-]/_/g') #extracting filename 'dir' from 'url'     
+phantomjs yslow.js --info grade --format tap --threshold '{"overall": "B", "ycdn": 65}' $url &gt; $dir #running phantomjs command with url and redirecting output to a file named $dir
+done &lt; $1       #passing 'urls' file as parameter
+}
+
+Fulltest $1   #invoking Fulltest() function with command line arguments $1
+
+</pre>
+
+
+
+
+<p>
+Above script will generate report for each url present in the url file.These report will have overall score  out of 100 for each url and score out of 100 for each rule and suggestions on how to improve this scores.The sample report has been added to my bit-bucket account.
+</p>
+</div>
+
+<div id="outline-container-2.1" class="outline-3">
+<h3 id="sec-2.1"><span class="section-number-3">2.1</span> Problem </h3>
+<div class="outline-text-3" id="text-2.1">
+
+<p>Sometimes phantomjs crashes for some url and hence it doesn't generate report for that url.
+Also, as the number of urls increases ,these script takes larger time.
+We thought this was problem for a url i.e url is bad but we went to community and saw this is problem of phantomjs.
+</p>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Generating CSV file </h2>
+<div class="outline-text-2" id="text-3">
+
+<p>For graph generation ,we need to have a CSV file which will contain in each line  name of the url,Overallscore,scores and scores for each rule separated with a <b>comma</b>.
+We wrote a automated script to generate CSV file extracting scores from each report.
+This script should be kept in the same folder where all the reports are present and the url file.
+</p>
+
+
+
+<pre class="example">
+#FUNCTION TO EXTRACT REQUIRED FIELDS REPORTS PREVIOUSLY GENERATED
+EXTRACTCSV() {
+RES="URL,OVERALL_SCORE,URL,Overall_Score,Make fewer HTTP requests,Use a Content Delivery Network (CDN),Avoid empty src or href,Add Expires headers,Compress components with gzip,Put CSS at top,Put JavaScript at bottom,Avoid CSS expressions,Reduce DNS lookups,Minify JavaScript and CSS,Avoid URL redirects,Remove duplicate JavaScript and CSS,Configure entity tags (ETags),Make AJAX cacheable,Use GET for AJAX requests,Reduce the number of DOM elements,Avoid HTTP 404 (Not Found) error,Reduce cookie size,Use cookie-free domains,Avoid AlphaImageLoader filter,Do not scale images in HTML,Make favicon small and cacheable"
+WHILE READ URL; DO #LOOP TO READ URL FROM 'URL' FILE
+  RES="$RES"$'\N'
+  RES="$RES$URL"
+  DIR=$(ECHO $URL | SED 'S/[:/.-]/_/G') #EXTRACTING FILENAME 'DIR' FROM 'URL'
+  RES="$RES,$(CAT $DIR | GREP -O '[A-Z] ([[:DIGIT:]]*)' | AWK -VORS=, '{ PRINT $1 $2 }' | SED 'S/,$/\N/')"
+DONE &lt; $1
+ECHO "$RES" &gt; STATS.CSV #REDIRECTING CONTENT IN 'RES' TO A CSV FILE NAMED STATS.CSV
+ECHO "REPORTS ARE GENERATED SUCCESSFULLY IN CSV FORMAT"  #ECHOING SCRIPT COMPLETION       
+}
+
+#INVOKING EXTRACCSV() FUNTION
+EXTRACTCSV $1
+
+</pre>
+
+
+
+
+<p>
+THIS SCRIPT WILL TAKE  ONE COMMAND LINE ARGUMENT,$1 I.E. URL FILE AND WILL STORE OUTPUT IN STATS.CSV FILE.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> GRAPH GENERATION </h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+FOR GRAPH GENERATION,SOUMYA HAS WRITTEN  A AUTOMATED SCRIPT TO GENERATE ALL THE 24 GRAPHS.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Statistics for urls under <a href="http:deploy.virtual-labs.ac.in">http:deploy.virtual-labs.ac.in</a> </h2>
+<div class="outline-text-2" id="text-5">
+
+<ul>
+<li>
+ We collected around 21000 urls from the deploy server.
+</li>
+<li>
+ Then we ran the above script for fulltest to generate yslow report for each url.For some url its crashes on its own and it  took time around one day ,but it could generate report only 2700 urls.
+</li>
+<li>
+ So we stopped the script and will generate statistics for only these 2700 urls
+</li>
+<li>
+ Then we ran script to generate csv file.
+</li>
+<li>
+ After generating csv file for all the url,I removed those url from csv file for which there was no statistics because matplotlib will not plot graph for empty fields.
+</li>
+<li>
+After getting a fully correct csv, we plotted graphs for each rules and overall score.
+</li>
+<li>
+In these bar graphs, there is plot for no. of urls falling in each grade.
+</li>
+<li>
+These graphs gave us idea how good are web pages.and each graph also tells about how many urls are following best practices as we ave generated graph for each rule.
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Bar graph for landing pages of different educational websites. </h2>
+<div class="outline-text-2" id="text-6">
+
+
+<p>
+we collected url of landing page  of <b>coursera.org</b>, <b>edx.org</b>, <b>nptel.ac.in</b> , <b>vlab.co.in</b>, <b>virtual-labs.ac.in</b> .
+and ran the script for report generation for yslow.
+After report generation, we made csv file for it.
+But this time ,our aim was to show the difference between the overall scores of the landing page of educational web sites.
+So we used only first field of csv file and generated graph for it.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Statistics for 42 urls under cse14(VLSI lab) and bio16(Biomedical and Signal Processing Lab) </h2>
+<div class="outline-text-2" id="text-7">
+
+
+
+</div>
+
+<div id="outline-container-7.1" class="outline-3">
+<h3 id="sec-7.1"><span class="section-number-3">7.1</span> No pagespeed </h3>
+<div class="outline-text-3" id="text-7.1">
+
+
+<p>
+we collected 42 urls for the above mentioned two labs.
+Then we ran our reportgeneration script to generate reports for yslow.
+Then we ran our csv file generation script .
+Now, for this csv file we plotted graph with respect to overall score.
+from this graph , we observed that  out of 42,only 11 were in grade A,24 in grade B ,7 in grade C and none in other grades.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7.2" class="outline-3">
+<h3 id="sec-7.2"><span class="section-number-3">7.2</span> When pagespeed on with default filters </h3>
+<div class="outline-text-3" id="text-7.2">
+
+<p>This time ,we enabled pagespeed on our system with only default filters .
+Then again we ran the same scripts to generate csv file.
+Again,we plotted graph .
+From this we observed that out of 42,27 url were in grade A,12 in grade B and 3 in grade C.
+That is no.of url grade A increases.This means performance of web pages was improved by pagespeed.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7.3" class="outline-3">
+<h3 id="sec-7.3"><span class="section-number-3">7.3</span> When pagespeed on with more filters </h3>
+<div class="outline-text-3" id="text-7.3">
+
+<p>This time , we enabled some more filters other than default filters.
+To enable we went to pagespeed.conf file which is located in etc/apaache2/mods-enabled folder and mods-avaliable folder. and enabled some filters like combine<sub>css</sub>,collapse<sub>whitespaces</sub>,rewrite<sub>images</sub>,css<sub>sprites</sub>.
+Again we ran our scripts to generate the CSV file.
+Again , we plotted graph for it. 
+From this ,we observed that out of 42 urls,26 url were in grade A,15 in grade B and only 1 in grade C.
+That again pagespeed with its filters improves the performance of the web page.
+</p></div>
+</div>
+</div>
+<div id="postamble">
+<p class="author"> Author: utkarsh
+<a href="mailto:utkarsh@utkarsh-Inspiron-N5110">&lt;utkarsh@utkarsh-Inspiron-N5110&gt;</a>
+</p>
+<p class="date"> Date: 2014-06-24 09:50:54 IST</p>
+<p class="creator">HTML generated by org-mode 6.33x in emacs 23</p>
+</div>
+</div>
+</body>
+</html>
