@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.4.8)  22 JUL 2014 19:11
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.4.8)  23 JUL 2014 19:01
 entering extended mode
  %&-line parsing enabled.
 **wpo.tex
@@ -346,6 +346,50 @@ LaTeX Font Info:    Try loading font information for T1+ptm on input line 100.
 (/usr/share/texmf-texlive/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ))
+(/usr/share/texmf-texlive/tex/latex/oberdiek/grffile.sty
+Package: grffile 2009/09/25 v1.10 Extended file name support for graphics (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
+t (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
+ (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
+)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)
+Package grffile Info: Option `multidot' is set to `true'.
+Package grffile Info: Option `extendedchars' is set to `false'.
+Package grffile Info: Option `space' is set to `true'.
+)
 (/usr/share/texmf-texlive/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip44
@@ -406,10 +450,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
 
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode detected.
-)
 (/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
@@ -433,27 +473,9 @@ File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)
 (/usr/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
-t (HO)
-))
 Package hyperref Info: Hyper figures OFF on input line 2975.
 Package hyperref Info: Link nesting OFF on input line 2980.
 Package hyperref Info: Hyper index ON on input line 2983.
@@ -476,23 +498,7 @@ Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 )
 (/usr/share/texmf-texlive/tex/generic/oberdiek/bigintcalc.sty
 Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
- (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
-)
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-)))
+))
 \Fld@menulength=\count101
 \Field@Width=\dimen126
 \Fld@charsize=\dimen127
@@ -516,99 +522,162 @@ Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 (/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
 \Fld@listcount=\count105
+)
+(/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen128
+\captionmargin@=\dimen129
+\captionwidth=\dimen130
+\caption@indent=\dimen131
+\caption@parindent=\dimen132
+\caption@hangindent=\dimen133
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used on input line 1068.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEta
+blestring \footnotesize {\centering \normalfont \footnotesize #1.\qquad \scshap
+e #2\par }\@IEEEtablecaptionsepspace \else \@IEEEfigurecaptionsepspace \setbox 
+\@tempboxa \hbox {\normalfont \footnotesize {#1.}~~ #2}\ifdim \wd \@tempboxa >\
+hsize \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}~~ }\parbox [t]{
+\hsize }{\normalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLA
+SSOPTIONconference \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \h
+fil }\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi
+ \fi \fi .
+\c@ContinuedFloat=\count106
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+(/usr/share/texmf-texlive/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2008/03/28 v1.2 longtable captions (AR)
+)
+Package caption Info: wrapfig package is loaded.
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2009/10/17 v2.4 Conversion with epstopdf on the fly (HO)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2009/10/17 v2.4 Base part for package epstopdf
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
+Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
+)
+
+Package epstopdf Warning: Shell escape feature is not enabled.
+
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 433.
+(/usr/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2009/10/26 v1.1 Configuration of epstopdf for TeX Live
+)))
+(/usr/share/texmf-texlive/tex/latex/caption/subcaption.sty
+Package: subcaption 2008/08/31 v1.0b Adding subcaptions (AR)
+\c@subfigure=\count107
+\c@subtable=\count108
 ) (./wpo.aux)
 \openout1 = `wpo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 19.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 24.
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
-\scratchdimen=\dimen128
+\scratchcounter=\count109
+\scratchdimen=\dimen134
 \scratchbox=\box34
-\nofMPsegments=\count107
-\nofMParguments=\count108
+\nofMPsegments=\count110
+\nofMParguments=\count111
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count109
-\MPscratchDim=\dimen129
-\MPnumerator=\count110
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen135
+\MPnumerator=\count113
 \everyMPtoPDFconversion=\toks30
 )
-Package hyperref Info: Link coloring OFF on input line 19.
+Package hyperref Info: Link coloring OFF on input line 24.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count111
+\c@section@level=\count114
 )
-LaTeX Info: Redefining \ref on input line 19.
-LaTeX Info: Redefining \pageref on input line 19.
+LaTeX Info: Redefining \ref on input line 24.
+LaTeX Info: Redefining \pageref on input line 24.
  (./wpo.out)
 (./wpo.out)
 \@outlinefile=\write3
 \openout3 = `wpo.out'.
 
 \AtBeginShipoutBox=\box35
-LaTeX Font Info:    Try loading font information for U+msa on input line 71.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 76.
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 71.
+LaTeX Font Info:    Try loading font information for U+msb on input line 76.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -616,75 +685,172 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 
 ] [2]
-<img/vlab+/Overall_Score.jpg, id=92, 803.0pt x 602.25pt>
-File: img/vlab+/Overall_Score.jpg Graphic file (type jpg)
+Underfull \hbox (badness 10000) in paragraph at lines 300--300
+ []\T1/ptm/m/it/10 Optimization of deploy.virtual-labs.ac.in us-ing
+ []
 
-<use img/vlab+/Overall_Score.jpg> [3 <./img/vlab+/Overall_Score.jpg>]
-Underfull \hbox (badness 3713) in paragraph at lines 379--384
-[]\T1/ptm/m/n/10 From the graphs,we can see that w.r.t \T1/ptm/b/n/10 mini-fied
+Package epstopdf Info: Source file: <img/vlab-co-in/Overall_Score.eps>
+(epstopdf)                    date: 2014-07-23 18:48:03
+(epstopdf)                    size: 93067 bytes
+(epstopdf)             Output file: <img/vlab-co-in/Overall_Score-eps-converted
+-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=img/vlab-co-in/Overall_Scor
+e-eps-converted-to.pdf img/vlab-co-in/Overall_Score.eps>
+(epstopdf)             \includegraphics on input line 315.
+runsystem(epstopdf --outfile=img/vlab-co-in/Overall_Score-eps-converted-to.pdf 
+img/vlab-co-in/Overall_Score.eps)...disabled.
 
+Package epstopdf Info: Result file: <img/vlab-co-in/Overall_Score-eps-converted
+-to.pdf>.
+
+! Package pdftex.def Error: File `img/vlab-co-in/Overall_Score-eps-converted-to
+.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.315 ...e=0.50]{img/vlab-co-in/Overall_Score.eps}
+                                                  $
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 315.
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+) [3]
+Underfull \hbox (badness 1810) in paragraph at lines 386--391
+[]\T1/ptm/m/n/10 From the graphs, we can see that w.r.t \T1/ptm/b/n/10 mini-fie
+d
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--416
-[]\T1/ptm/m/n/8 Andrew B.King,2008.Website Op-ti-miza-tion : Web per-for-mance
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 433--440
+Underfull \hbox (badness 10000) in paragraph at lines 440--447
 [] \T1/ptm/m/n/8 https://developers.google.com/web/fundamentals/performance/cri
 tical-
  []
 
-File: img/vlab+/Overall_Score.jpg Graphic file (type jpg)
-<use img/vlab+/Overall_Score.jpg>
-Overfull \hbox (28.00435pt too wide) in paragraph at lines 471--472
- []$[]$ 
- []
+<img/vlab-co-in/Put-CSS-at-top.pdf, id=102, 578.16pt x 433.62pt>
+File: img/vlab-co-in/Put-CSS-at-top.pdf Graphic file (type pdf)
 
-<img/vlab+/Put-CSS-at-top.jpg, id=106, 803.0pt x 602.25pt>
-File: img/vlab+/Put-CSS-at-top.jpg Graphic file (type jpg)
+<use img/vlab-co-in/Put-CSS-at-top.pdf>
+<img/vlab-co-in/Put JavaScript at bottom.pdf, id=104, 578.16pt x 433.62pt>
+File: img/vlab-co-in/Put JavaScript at bottom.pdf Graphic file (type pdf)
 
-<use img/vlab+/Put-CSS-at-top.jpg>
-File: img/vlab+/Overall_Score.jpg Graphic file (type jpg)
- <use img/vlab+/Overall_Score.jpg>
-File: img/vlab+/Overall_Score.jpg Graphic file (type jpg)
+<use img/vlab-co-in/Put JavaScript at bottom.pdf>
+<img/vlab-co-in/Use a Content Delivery Network (CDN).pdf, id=106, 578.16pt x 43
+3.62pt>
+File: img/vlab-co-in/Use a Content Delivery Network (CDN).pdf Graphic file (typ
+e pdf)
+ <use img/vlab-co-in/Use a Content Delivery Network (CDN).pdf>
+<img/vlab-co-in/Add Expires headers.pdf, id=108, 578.16pt x 433.62pt>
+File: img/vlab-co-in/Add Expires headers.pdf Graphic file (type pdf)
 
-<use img/vlab+/Overall_Score.jpg>
-File: img/vlab+/Overall_Score.jpg Graphic file (type jpg)
- <use img/vlab+/Overall_Score.jpg>
-File: img/vlab+/Overall_Score.jpg Graphic file (type jpg)
+<use img/vlab-co-in/Add Expires headers.pdf>
+<img/vlab-co-in/Compress components with gzip.pdf, id=110, 578.16pt x 433.62pt>
+File: img/vlab-co-in/Compress components with gzip.pdf Graphic file (type pdf)
+<use img/vlab-co-in/Compress components with gzip.pdf>
+<img/vlab-co-in/Configure entity tags (ETags).pdf, id=112, 578.16pt x 433.62pt>
+File: img/vlab-co-in/Configure entity tags (ETags).pdf Graphic file (type pdf)
+<use img/vlab-co-in/Configure entity tags (ETags).pdf>
+<img/vlab-co-in/Make favicon small and cacheable.pdf, id=114, 578.16pt x 433.62
+pt>
+File: img/vlab-co-in/Make favicon small and cacheable.pdf Graphic file (type pd
+f)
+ <use img/vlab-co-in/Make favicon small and cacheable.pdf>
+<img/vlab-co-in/Make fewer HTTP requests.pdf, id=116, 578.16pt x 433.62pt>
+File: img/vlab-co-in/Make fewer HTTP requests.pdf Graphic file (type pdf)
 
-<use img/vlab+/Overall_Score.jpg>
-File: img/vlab+/Overall_Score.jpg Graphic file (type jpg)
- <use img/vlab+/Overall_Score.jpg>
-File: img/vlab+/Overall_Score.jpg Graphic file (type jpg)
+<use img/vlab-co-in/Make fewer HTTP requests.pdf>
+<img/virtual-labs/container/Overall_Score.pdf, id=118, 578.16pt x 433.62pt>
+File: img/virtual-labs/container/Overall_Score.pdf Graphic file (type pdf)
 
-<use img/vlab+/Overall_Score.jpg>
-File: img/vlab+/Overall_Score.jpg Graphic file (type jpg)
- <use img/vlab+/Overall_Score.jpg>
-File: img/vlab+/Overall_Score.jpg Graphic file (type jpg)
+<use img/virtual-labs/container/Overall_Score.pdf>
+<img/virtual-labs/deploy/Overall_Score.pdf, id=120, 578.16pt x 433.62pt>
+File: img/virtual-labs/deploy/Overall_Score.pdf Graphic file (type pdf)
 
-<use img/vlab+/Overall_Score.jpg> [4] [5 <./img/vlab+/Put-CSS-at-top.jpg>]
-[6
+<use img/virtual-labs/deploy/Overall_Score.pdf>
+<img/virtual-labs/container/Add Expires headers.pdf, id=122, 578.16pt x 433.62p
+t>
+File: img/virtual-labs/container/Add Expires headers.pdf Graphic file (type pdf
+)
+ <use img/virtual-labs/container/Add Expires headers.pdf>
+<img/virtual-labs/deploy/Add Expires headers.pdf, id=124, 578.16pt x 433.62pt>
+File: img/virtual-labs/deploy/Add Expires headers.pdf Graphic file (type pdf)
 
-] (./wpo.aux) ) 
+<use img/virtual-labs/deploy/Add Expires headers.pdf>
+<img/virtual-labs/container/Compress components with gzip.pdf, id=126, 578.16pt
+ x 433.62pt>
+File: img/virtual-labs/container/Compress components with gzip.pdf Graphic file
+ (type pdf)
+
+<use img/virtual-labs/container/Compress components with gzip.pdf>
+<img/virtual-labs/deploy/Compress components with gzip.pdf, id=128, 578.16pt x 
+433.62pt>
+File: img/virtual-labs/deploy/Compress components with gzip.pdf Graphic file (t
+ype pdf)
+ <use img/virtual-labs/deploy/Compress components with gzip.pdf>
+<img/virtual-labs/container/Configure entity tags (ETags).pdf, id=130, 578.16pt
+ x 433.62pt>
+File: img/virtual-labs/container/Configure entity tags (ETags).pdf Graphic file
+ (type pdf)
+
+<use img/virtual-labs/container/Configure entity tags (ETags).pdf>
+<img/virtual-labs/container/Make fewer HTTP requests.pdf, id=132, 578.16pt x 43
+3.62pt>
+File: img/virtual-labs/container/Make fewer HTTP requests.pdf Graphic file (typ
+e pdf)
+ <use img/virtual-labs/container/Make fewer HTTP requests.pdf>
+<img/virtual-labs/deploy/Make fewer HTTP requests.pdf, id=134, 578.16pt x 433.6
+2pt>
+File: img/virtual-labs/deploy/Make fewer HTTP requests.pdf Graphic file (type p
+df)
+ <use img/virtual-labs/deploy/Make fewer HTTP requests.pdf>
+<img/virtual-labs/container/Minify JavaScript and CSS.pdf, id=136, 578.16pt x 4
+33.62pt>
+File: img/virtual-labs/container/Minify JavaScript and CSS.pdf Graphic file (ty
+pe pdf)
+ <use img/virtual-labs/container/Minify JavaScript and CSS.pdf>
+<img/virtual-labs/deploy/Minify JavaScript and CSS.pdf, id=138, 578.16pt x 433.
+62pt>
+File: img/virtual-labs/deploy/Minify JavaScript and CSS.pdf Graphic file (type 
+pdf)
+ <use img/virtual-labs/deploy/Minify JavaScript and CSS.pdf> [4 <./img/vlab-co-
+in/Put-CSS-at-top.pdf> <./img/vlab-co-in/Put JavaScript at bottom.pdf>]
+[5 <./img/virtual-labs/container/Overall_Score.pdf> <./img/virtual-labs/deploy/
+Overall_Score.pdf> <./img/virtual-labs/container/Add Expires headers.pdf> <./im
+g/virtual-labs/deploy/Add Expires headers.pdf>] [6 <./img/virtual-labs/containe
+r/Compress components with gzip.pdf> <./img/virtual-labs/deploy/Compress compon
+ents with gzip.pdf> <./img/virtual-labs/container/Make fewer HTTP requests.pdf>
+ <./img/virtual-labs/deploy/Make fewer HTTP requests.pdf>] [7 <./img/virtual-la
+bs/container/Minify JavaScript and CSS.pdf> <./img/virtual-labs/deploy/Minify J
+avaScript and CSS.pdf>] [8 <./img/vlab-co-in/Use a Content Delivery Network (CD
+N).pdf> <./img/vlab-co-in/Add Expires headers.pdf> <./img/vlab-co-in/Compress c
+omponents with gzip.pdf> <./img/vlab-co-in/Configure entity tags (ETags).pdf> <
+./img/vlab-co-in/Make favicon small and cacheable.pdf> <./img/vlab-co-in/Make f
+ewer HTTP requests.pdf>] [9
+
+
+ <./img/virtual-labs/container/Configure entity tags (ETags).pdf>] (./wpo.aux) 
+) 
 Here is how much of TeX's memory you used:
- 6068 strings out of 495061
- 86870 string characters out of 1182622
- 165560 words of memory out of 3000000
- 9084 multiletter control sequences out of 15000+50000
- 115020 words of font info for 128 fonts, out of 3000000 for 9000
+ 7345 strings out of 495061
+ 112564 string characters out of 1182622
+ 195243 words of memory out of 3000000
+ 10328 multiletter control sequences out of 15000+50000
+ 116719 words of font info for 131 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 38i,8n,36p,248b,371s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-tex
-live/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw
-/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb><
-/usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on wpo.pdf (6 pages, 224985 bytes).
+ 36i,9n,38p,238b,408s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/typ
+e1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8
+a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/t
+exmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on wpo.pdf (9 pages, 916918 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 54 named destinations out of 1000 (max. 500000)
- 155 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1921 PDF objects out of 2073 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
+ 232 words of extra memory for PDF output out of 10000 (max. 10000000)
 
