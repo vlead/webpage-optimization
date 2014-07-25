@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.4.8)  24 JUL 2014 19:23
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.4.8)  25 JUL 2014 16:52
 entering extended mode
  %&-line parsing enabled.
 **wpo.tex
@@ -735,89 +735,18 @@ Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 305--305
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
  []\T1/ptm/m/it/10 Optimization of deploy.virtual-labs.ac.in us-ing
  []
 
-<img/vlab-co-in/Overall_Score.pdf, id=88, 578.16pt x 433.62pt>
+<img/vlab-co-in/Overall_Score.pdf, id=84, 578.16pt x 433.62pt>
 File: img/vlab-co-in/Overall_Score.pdf Graphic file (type pdf)
 
 <use img/vlab-co-in/Overall_Score.pdf> [3 <./img/vlab-co-in/Overall_Score.pdf>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 444--451
+Underfull \hbox (badness 10000) in paragraph at lines 448--455
 [] \T1/ptm/m/n/8 https://developers.google.com/web/fundamentals/performance/cri
 tical-
- []
-
-<img/virtual-labs/container/Overall_Score.pdf, id=193, 578.16pt x 433.62pt>
-File: img/virtual-labs/container/Overall_Score.pdf Graphic file (type pdf)
-
-<use img/virtual-labs/container/Overall_Score.pdf>
-<img/virtual-labs/deploy/Overall_Score.pdf, id=195, 578.16pt x 433.62pt>
-File: img/virtual-labs/deploy/Overall_Score.pdf Graphic file (type pdf)
-
-<use img/virtual-labs/deploy/Overall_Score.pdf>
-<img/virtual-labs/container/Add Expires headers.pdf, id=197, 578.16pt x 433.62p
-t>
-File: img/virtual-labs/container/Add Expires headers.pdf Graphic file (type pdf
-)
- <use img/virtual-labs/container/Add Expires headers.pdf>
-<img/virtual-labs/deploy/Add Expires headers.pdf, id=199, 578.16pt x 433.62pt>
-File: img/virtual-labs/deploy/Add Expires headers.pdf Graphic file (type pdf)
-
-<use img/virtual-labs/deploy/Add Expires headers.pdf>
-<img/virtual-labs/container/Compress components with gzip.pdf, id=201, 578.16pt
- x 433.62pt>
-File: img/virtual-labs/container/Compress components with gzip.pdf Graphic file
- (type pdf)
-
-<use img/virtual-labs/container/Compress components with gzip.pdf>
-<img/virtual-labs/deploy/Compress components with gzip.pdf, id=203, 578.16pt x 
-433.62pt>
-File: img/virtual-labs/deploy/Compress components with gzip.pdf Graphic file (t
-ype pdf)
- <use img/virtual-labs/deploy/Compress components with gzip.pdf>
-<img/virtual-labs/container/Configure entity tags (ETags).pdf, id=205, 578.16pt
- x 433.62pt>
-File: img/virtual-labs/container/Configure entity tags (ETags).pdf Graphic file
- (type pdf)
-
-<use img/virtual-labs/container/Configure entity tags (ETags).pdf>
-<img/virtual-labs/container/Make fewer HTTP requests.pdf, id=207, 578.16pt x 43
-3.62pt>
-File: img/virtual-labs/container/Make fewer HTTP requests.pdf Graphic file (typ
-e pdf)
- <use img/virtual-labs/container/Make fewer HTTP requests.pdf>
-<img/virtual-labs/deploy/Make fewer HTTP requests.pdf, id=209, 578.16pt x 433.6
-2pt>
-File: img/virtual-labs/deploy/Make fewer HTTP requests.pdf Graphic file (type p
-df)
- <use img/virtual-labs/deploy/Make fewer HTTP requests.pdf>
-<img/virtual-labs/container/Minify JavaScript and CSS.pdf, id=211, 578.16pt x 4
-33.62pt>
-File: img/virtual-labs/container/Minify JavaScript and CSS.pdf Graphic file (ty
-pe pdf)
- <use img/virtual-labs/container/Minify JavaScript and CSS.pdf>
-<img/virtual-labs/deploy/Minify JavaScript and CSS.pdf, id=213, 578.16pt x 433.
-62pt>
-File: img/virtual-labs/deploy/Minify JavaScript and CSS.pdf Graphic file (type 
-pdf)
- <use img/virtual-labs/deploy/Minify JavaScript and CSS.pdf>
-File: img/virtual-labs/deploy/Minify JavaScript and CSS.pdf Graphic file (type 
-pdf)
-
-<use img/virtual-labs/deploy/Minify JavaScript and CSS.pdf>
-File: img/virtual-labs/container/Minify JavaScript and CSS.pdf Graphic file (ty
-pe pdf)
-
-<use img/virtual-labs/container/Minify JavaScript and CSS.pdf>
-Overfull \hbox (9.0pt too wide) in paragraph at lines 724--734
- []$[]$ 
- []
-
-
-Overfull \hbox (9.0pt too wide) in paragraph at lines 724--734
- []$ 
  []
 
 
@@ -831,34 +760,23 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4] [5 <./img/virtual-labs/container/Overall_Score.pdf> <./img/virtual-labs/dep
-loy/Overall_Score.pdf> <./img/virtual-labs/container/Add Expires headers.pdf> <
-./img/virtual-labs/deploy/Add Expires headers.pdf>] [6 <./img/virtual-labs/cont
-ainer/Compress components with gzip.pdf> <./img/virtual-labs/deploy/Compress co
-mponents with gzip.pdf> <./img/virtual-labs/container/Make fewer HTTP requests.
-pdf> <./img/virtual-labs/deploy/Make fewer HTTP requests.pdf>] [7 <./img/virtua
-l-labs/container/Minify JavaScript and CSS.pdf> <./img/virtual-labs/deploy/Mini
-fy JavaScript and CSS.pdf>] [8
-
-
- <./img/virtual-labs/container/Configure entity tags (ETags).pdf>] (./wpo.aux) 
-) 
+[4] (./wpo.aux) ) 
 Here is how much of TeX's memory you used:
- 8565 strings out of 495061
- 125410 string characters out of 1182622
- 232134 words of memory out of 3000000
- 11555 multiletter control sequences out of 15000+50000
- 107623 words of font info for 112 fonts, out of 3000000 for 9000
+ 8471 strings out of 495061
+ 121959 string characters out of 1182622
+ 227712 words of memory out of 3000000
+ 11476 multiletter control sequences out of 15000+50000
+ 106545 words of font info for 111 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 36i,10n,38p,238b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texliv
-e/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/typ
-e1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8a
-.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/tex
-mf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on wpo.pdf (8 pages, 624819 bytes).
+ 36i,8n,38p,238b,374s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-t
+exlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/u
+rw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb
+></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on wpo.pdf (4 pages, 133833 bytes).
 PDF statistics:
- 1268 PDF objects out of 1440 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
- 197 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 231 PDF objects out of 1000 (max. 8388607)
+ 36 named destinations out of 1000 (max. 500000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 

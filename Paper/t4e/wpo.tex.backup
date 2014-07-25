@@ -45,19 +45,19 @@ MHRD web project ``virtual labs''.
 \section{Introduction}\label{sec-2}
 After onset of world wide web, performance of web implied optimizing the server side but nowadays
 optimization on the client side has become bottle neck because of complex web
-application. Now days, front-end developers use a lot of resources like
-javascipt, CSS and images to make a good user interface but this all adds
+application. Now days, front-end developers use a lot of critical resources like
+javascipt, CSS and images to make a good user interface which becomes
 overhead during page rendering which means lesser user experience. Success of a web
-application is judged based user's experience which also includes fast response
-time. Optimized web pages not only renders a web page faster but also saves network
-bandwidth. Along with making a good responsive web page, web developers should
-also focus on using a optimal number of critical resources and its size should
-also be minified. Critical rendering path is the chain of necessary events that
+application is judged based on user's experience which also includes fast response
+time. Optimized web pages not only render a web page fast but also saves network
+bandwidth. Along with a good responsive web page, web developers should
+also focus on optimizing critical resources by minifying size and number of resources
+Critical rendering path is the chain of necessary events that
 occurs to render webpage on browser. The main critical resources on a web
 pages are CSS, javascript and images. For each critical resource on a
 webpage, browser makes a new request to server. CSS and javascript are the two
 critical resources that blocks the rendering of a webpage. Therefore, correct
-order of http requests can reduce the perceived page load time which means page
+sequence of http requests can reduce the perceived page load time which means page
 load time will not reduce in reality but critical resources needed to render webpage are
 fetched first and remaining resources are fetched in background. Therefore,
 while optimizing web page for speed we should focus on 
@@ -67,7 +67,7 @@ while optimizing web page for speed we should focus on
  \item Minifying critical rendering path.
 \end{enumerate}
 
-The goals of our experimentation, performed in collaboration with VLEAD lab,
+The goals of our experimentation, performed in collaboration with VLEAD,
 IIIT-Hyderabad were :
 
 \begin{itemize}
@@ -97,44 +97,45 @@ requests, one can combine multiple CSS into one, also multiple javascipt files c
 be combined into one. Other ways include image spriting, etc.
 
 \item \textbf{Use a Content Delievery Networks :}
-Nearest geographical server is selected for delivering the content which reduces load time.
+The nearest geographical server is selected for delivering the content which reduces load time.
 
 \item \textbf{Add Cache Control Header :}
 For static components, setting far future expires header will reduce number of http request
-so that browser can load from cache when request to same webpage is made again.
+so that browser can fetch resources from cache when request to same webpage is made again.
 For dynamic components, use an appropriate Cache control header to help browser
 with conditional requests. This reduces unnecessary http requests.
 
 \item \textbf{Gzip components :}
 Compression reduces response time by reducing the size of http response.
-Gzip is most popular and effective compression method at this time.It reduces
-response time by 70\%.If a web client indicates for support for compression in
-the http request header,server sends a compressed components.
+Gzip is most popular and effective compression method at this time. It reduces
+response time by 70\%. If a web client indicates for support for compression in
+the http request header, server sends a compressed components.
 
 \item \textbf{Stylesheets at the Top: }
-Problem with putting style sheets not in the head tag is that it blocks
-progessive rendering and till the sytlesheets are not fetched users sees nothing
+Problem with not including link to style sheets in the head tag is that it blocks
+progressive rendering and till the style sheets are not fetched users sees nothing
 on screen.
 
 \item \textbf{Put Scripts at Bottom :}
-Putting scripts at the top,blocks parallel downloading of resources per
-hostname.
+Putting scripts at the top, blocks parallel downloading of resources from same host.
+In most of the cases scripts are needed when users starts interacting with the web page. 
 
 \item \textbf{Make Inline Small CSS and javascript files :}
 If file size is to small, then it should be made inline as it will reduce number
 of http requests.
 
 \item \textbf{Make large css and javascript file external :}
-CSS and javscript files are cached by browser. So we avoid downloading it every time make request.
-First time it will take time to download but after caching http request.
+CSS and javscript files are cached by browser. So we avoid downloading it every time a request is made.
+First time it will take time to download but all later requests are served from the user's browser cache.
 
 \item \textbf{ Minify javascript and css :}
 Unnecessary characters from code should be reduced which includes removing
-comments, duplicacy and removing white spaces.
+comments, redundant code and removing white spaces. Removing this unnecessary
+characters reduces number of critical bytes served to client-side and increases response time.
 
 \item \textbf{Avoid Redirects :}
-Connecting an old page to new one takes time  and increases page load time.It
-should be avoided.
+Connecting an old page to new one takes leads to an extra cycle of dns lookup and tcp handshake adding latency
+and delaying the response. Therfore, it should be avoided.
 
 \item \textbf{Configure ETags :}
 Entity tags is a way that browser and server use to determine whether the
@@ -150,15 +151,14 @@ Http requests made and getting a response like 404 Not found is totally useless
 and it increases response time.
 
 \item \textbf{Make favicon small and cacheable :}
-Favicon stays in the core of server and  it is necessary as if its not there ,
-browser will still request for it and getting 404 error will increase response
-time.
+Favicon stays in the core of server and  it is necessary because if its missing,
+browser will still request for it and adding to the latency.
 \end{itemize}
 
 Yahoo {\bf Yslow} and {\bf Google Pagespeed} are well known tools that are capable of
 evaluating webpages performance and providing suggestions to optimize webpages
-based on performance best practices listed above. But the pagespeed is more than a performance analysis
-tool and is also capable of optimizing webpages without changing semantic of webpage.
+based on the best practices listed above. But the pagespeed is more than a performance analysis
+tool and is also capable of optimizing webpages without changing semantics of a webpage.
 
 Yahoo yslow.js is javascript API which runs on phantomjs. PhantomJS is a
 headless browser with JavaScript API. We used Yslow as performance measuring
@@ -167,25 +167,25 @@ improve it.
 It works on three process:
 \begin{itemize}
 \item It crawls the DOM to find each component.
-\item Collects information for each component and analyzes each component.
+\item Collects information for each component and analyzes each of them.
 \item It generates scores out of 100 for each rule which produces the overall
 score for page.
 \end{itemize}
 The grades for individual rules are computed differently depending on the rule.
-For example, for Rule 1, three external scripts are allowed. For each script
-above that, four points are deducted from the grade. The code for grading each
+For example, for Rule 1, three external scripts are allowed and each extra script
+four points are deducted from the overall weight. The code for grading each
 rule is found in rules.js. The overall grade is a weighted average of the
 individual grades for each rule, calculated in controller.js The rules are
 approximately in order of importance, most important first. The specific weights
 are in the ruleset objects in rules.js. Score computation is shown in
 the following table no 1 in Appendix section.
 
-Mod\_pagespeed is an automated web page optimization tool developed by Google for post
+Mod\_pagespeed is an automated web page optimization tool developed by Google for
 optimization of web pages. It not only
-analyzes a web page but also optimizes it .Based on best practices, it has
+analyzes a web page but also optimizes it. Based on best practices, it has
 certain set of filters which optimizes web page during run time. As the server
 gets request for the webpage, it dynamically rewrites the page using its filters
-and sends an highly optimized page. Note that rewriting happens only when the first
+and sends a highly optimized page. The rewriting happens only when the first
 request for web page is made and for all later request web page is served from the cache
 at server side. There are total of 40+ filters which supports
 optimization. These filters can be turned on or off based on requirements. 
@@ -260,8 +260,8 @@ visualization phase all data is visualized using an automated script indicating
 performance for each rule and also overall performance of web pages. Later we
 did analysis for optimized pages of virtuals labs.
 
-\subsection{URls and Report Collection}\label{sec-4.1}
-As first step to visualize the performance of all the webpages, we
+\subsection{Urls and Report Collection}\label{sec-4.1}
+As first step to collect data and generate reports, we
 collected urls of all the webpages at following domain deploy.virtuals-labs.ac.in hosted at
 IIIT-Hyderabed. Since we have access to server, to get all the urls, we wrote an
 automated bash script to extract all the html and php pages links from the
@@ -270,21 +270,22 @@ To test the performance of vlab.co.in, we also collected the 5000 urls for this
 website. This time since we do not have the access of server ,we used an online
 sitemap generator to get the urls.
 We wrote an automated script to generate the reports for each web page using
-yslow.js and phantomJS. This automated script read an url from a file containing
+yslow.js and phantomJS. This automated script read a url from a file containing
 all the urls and generate report for each web page. In this script, we are making
 ten phantomjs call as background process for ten different webpages. For urls which are inactive, failed reports will
 be generated and we are pushing that url into the failed urls file and deleting
 the failed reports. These reports serves as input to CSV file generation.
 
 \subsection{CSV File Generation}\label{sec-4.2}
-CSV file is generated using a bash script. This CSV file will contain the overall
+CSV file are generated using a bash script. This CSV file will contain the overall
 score and scores corresponding to each rule. Script will extract all the scores
 for corresponding rule and will dump into the CSV file line by line. The
 content in the CSV file will be used for visualization.
 
 \subsection{Visualization}\label{sec-4.3}
-Visualization is done using python matplotlib. Soumya has written an automated
-scripts to generate all the graphs at one shot. Scripts takes csv file as input.
+Visualization is done using python matplotlib and csvkit. We have written an automated
+scripts to generate all the graphs needed for visualization. Scripts takes csv file as input
+and set of bar graphs specific to each rule.
 
 \section{Experimentation}\label{sec-5}
 
@@ -408,17 +409,17 @@ best practices which are suggested to use in your webpages.
  Our framework is mainly to visualize website performance on a large scale and
 it can be used to suggest lab developers to work on these best practices. Also it
 gives the list of inactive urls. Google Pagespeed is the automated web optimization
-tool that comes as a Saviour for optimizing webpages of already existing web applications. It have 40+
+tool that comes as a saviour for optimizing webpages of already existing web applications. It has 40+
 filters which optimizes page and can be used according to our requirement. Also,
-it is an open source and available for free. It should be used for huge websites like virtual labs
+it is open source and available for free. It should be used for huge websites like virtual labs
 application developers comes various domains and backgrounds.
  
 \section{Future Work}\label{sec-8}
-These framework can modified to give the list of urls of web pages that perform badly.
-Generating report takes atleast 24 hrs to process 5000 urls but buy
-making phantomjs clusters on framework like Hadoop can be reduced.Also, in pagespeed many
-more filters can be added.For example, there is no filter to give default
-favicon for a webpage if it is not there.
+This framework can be modified to give the list of urls of web pages that perform badly.
+Generating report takes atleast 24 hrs to process 5000 urls but by
+making phantomjs clusters on framework like Hadoop we can parallelized. Also functionality of pagespeed
+can be improved by adding more filters. For example, there is no filter to give default
+favicon for a webpage.
 
 \begin{thebibliography}{1}
 \bibitem{wpo08}
@@ -471,54 +472,54 @@ Pagespeed Filters:\\
 \end{thebibliography}
 %\newpage
 % \appendices
-% \section{Figures for www.vlabs.co.in}
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Put-CSS-at-top.pdf}
-% \caption{Number of urls versus Put CSS at top CSS}	
-% \end{figure}
-% 
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab+/Put JavaScript at bottom.jpg}
-% \caption{Number of urls versus Put JavaScript at bottom}	
-% \end{figure}
-%            
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Use a Content Delivery Network (CDN).pdf}
-% \caption{Number of urls versus Use a Content Delivery Network (CDN)}	
-% \end{figure}        
-% 
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Add Expires headers.pdf}
-% \caption{Number of urls versus Add Expires Headers}	
-% \end{figure}
-% 
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Compress components with gzip.pdf}
-% \caption{Number of urls versus Compress components with gzip}	
-% \end{figure}
-% 
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Configure entity tags (ETags).pdf}
-% \caption{Number of urls versus Configure entity tags (ETags)}	
-% \end{figure}
-% 
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Make favicon small and cacheable.pdf}
-% \caption{Number of urls versus Make favicon small and cacheable}	
-% \end{figure}
-% 
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Make fewer HTTP requests.pdf}
-% \caption{Make fewer HTTP requests Versus Number of urls}	
-% \end{figure}
+% \section{Figures}
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Put-CSS-at-top.pdf}
+% % \caption{Number of urls versus Put CSS at top CSS}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab+/Put JavaScript at bottom.jpg}
+% % \caption{Number of urls versus Put JavaScript at bottom}	
+% % \end{figure}
+% %            
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Use a Content Delivery Network (CDN).pdf}
+% % \caption{Number of urls versus Use a Content Delivery Network (CDN)}	
+% % \end{figure}        
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Add Expires headers.pdf}
+% % \caption{Number of urls versus Add Expires Headers}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Compress components with gzip.pdf}
+% % \caption{Number of urls versus Compress components with gzip}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Configure entity tags (ETags).pdf}
+% % \caption{Number of urls versus Configure entity tags (ETags)}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Make favicon small and cacheable.pdf}
+% % \caption{Number of urls versus Make favicon small and cacheable}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Make fewer HTTP requests.pdf}
+% % \caption{Make fewer HTTP requests Versus Number of urls}	
+% % \end{figure}
 % 
 % %\newpage
 % %\section{Comparison before optimization and after optimization using for deploy.virtual-labs.ac.in}
@@ -718,7 +719,7 @@ Pagespeed Filters:\\
 %     \caption{ROC curve of failure detection;}
 %     \label{fig:roc_curve}
 % \end{figure*}
-
+% 
 % \begin{figure}
 % \centering
 % \begin{minipage}{.5\textwidth}

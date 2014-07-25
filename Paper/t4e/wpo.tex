@@ -45,19 +45,19 @@ MHRD web project ``virtual labs''.
 \section{Introduction}\label{sec-2}
 After onset of world wide web, performance of web implied optimizing the server side but nowadays
 optimization on the client side has become bottle neck because of complex web
-application. Now days, front-end developers use a lot of resources like
-javascipt, CSS and images to make a good user interface but this all adds
+application. Now days, front-end developers use a lot of critical resources like
+javascipt, CSS and images to make a good user interface which becomes
 overhead during page rendering which means lesser user experience. Success of a web
-application is judged based user's experience which also includes fast response
-time. Optimized web pages not only renders a web page faster but also saves network
-bandwidth. Along with making a good responsive web page, web developers should
-also focus on using a optimal number of critical resources and its size should
-also be minified. Critical rendering path is the chain of necessary events that
+application is judged based on user's experience which also includes fast response
+time. Optimized web pages not only render a web page fast but also saves network
+bandwidth. Along with a good responsive web page, web developers should
+also focus on optimizing critical resources by minifying size and number of resources
+Critical rendering path is the chain of necessary events that
 occurs to render webpage on browser. The main critical resources on a web
 pages are CSS, javascript and images. For each critical resource on a
 webpage, browser makes a new request to server. CSS and javascript are the two
 critical resources that blocks the rendering of a webpage. Therefore, correct
-order of http requests can reduce the perceived page load time which means page
+sequence of http requests can reduce the perceived page load time which means page
 load time will not reduce in reality but critical resources needed to render webpage are
 fetched first and remaining resources are fetched in background. Therefore,
 while optimizing web page for speed we should focus on 
@@ -67,7 +67,7 @@ while optimizing web page for speed we should focus on
  \item Minifying critical rendering path.
 \end{enumerate}
 
-The goals of our experimentation, performed in collaboration with VLEAD lab,
+The goals of our experimentation, performed in collaboration with VLEAD,
 IIIT-Hyderabad were :
 
 \begin{itemize}
@@ -97,44 +97,45 @@ requests, one can combine multiple CSS into one, also multiple javascipt files c
 be combined into one. Other ways include image spriting, etc.
 
 \item \textbf{Use a Content Delievery Networks :}
-Nearest geographical server is selected for delivering the content which reduces load time.
+The nearest geographical server is selected for delivering the content which reduces load time.
 
 \item \textbf{Add Cache Control Header :}
 For static components, setting far future expires header will reduce number of http request
-so that browser can load from cache when request to same webpage is made again.
+so that browser can fetch resources from cache when request to same webpage is made again.
 For dynamic components, use an appropriate Cache control header to help browser
 with conditional requests. This reduces unnecessary http requests.
 
 \item \textbf{Gzip components :}
 Compression reduces response time by reducing the size of http response.
-Gzip is most popular and effective compression method at this time.It reduces
-response time by 70\%.If a web client indicates for support for compression in
-the http request header,server sends a compressed components.
+Gzip is most popular and effective compression method at this time. It reduces
+response time by 70\%. If a web client indicates for support for compression in
+the http request header, server sends a compressed components.
 
 \item \textbf{Stylesheets at the Top: }
-Problem with putting style sheets not in the head tag is that it blocks
-progessive rendering and till the sytlesheets are not fetched users sees nothing
+Problem with not including link to style sheets in the head tag is that it blocks
+progressive rendering and till the style sheets are not fetched users sees nothing
 on screen.
 
 \item \textbf{Put Scripts at Bottom :}
-Putting scripts at the top,blocks parallel downloading of resources per
-hostname.
+Putting scripts at the top, blocks parallel downloading of resources from same host.
+In most of the cases scripts are needed when users starts interacting with the web page. 
 
 \item \textbf{Make Inline Small CSS and javascript files :}
 If file size is to small, then it should be made inline as it will reduce number
 of http requests.
 
 \item \textbf{Make large css and javascript file external :}
-CSS and javscript files are cached by browser. So we avoid downloading it every time make request.
-First time it will take time to download but after caching http request.
+CSS and javscript files are cached by browser. So we avoid downloading it every time a request is made.
+First time it will take time to download but all later requests are served from the user's browser cache.
 
 \item \textbf{ Minify javascript and css :}
 Unnecessary characters from code should be reduced which includes removing
-comments, duplicacy and removing white spaces.
+comments, redundant code and removing white spaces. Removing this unnecessary
+characters reduces number of critical bytes served to client-side and increases response time.
 
 \item \textbf{Avoid Redirects :}
-Connecting an old page to new one takes time  and increases page load time.It
-should be avoided.
+Connecting an old page to new one takes leads to an extra cycle of dns lookup and tcp handshake adding latency
+and delaying the response. Therfore, it should be avoided.
 
 \item \textbf{Configure ETags :}
 Entity tags is a way that browser and server use to determine whether the
@@ -150,15 +151,14 @@ Http requests made and getting a response like 404 Not found is totally useless
 and it increases response time.
 
 \item \textbf{Make favicon small and cacheable :}
-Favicon stays in the core of server and  it is necessary as if its not there ,
-browser will still request for it and getting 404 error will increase response
-time.
+Favicon stays in the core of server and  it is necessary because if its missing,
+browser will still request for it and adding to the latency.
 \end{itemize}
 
 Yahoo {\bf Yslow} and {\bf Google Pagespeed} are well known tools that are capable of
 evaluating webpages performance and providing suggestions to optimize webpages
-based on performance best practices listed above. But the pagespeed is more than a performance analysis
-tool and is also capable of optimizing webpages without changing semantic of webpage.
+based on the best practices listed above. But the pagespeed is more than a performance analysis
+tool and is also capable of optimizing webpages without changing semantics of a webpage.
 
 Yahoo yslow.js is javascript API which runs on phantomjs. PhantomJS is a
 headless browser with JavaScript API. We used Yslow as performance measuring
@@ -167,25 +167,25 @@ improve it.
 It works on three process:
 \begin{itemize}
 \item It crawls the DOM to find each component.
-\item Collects information for each component and analyzes each component.
+\item Collects information for each component and analyzes each of them.
 \item It generates scores out of 100 for each rule which produces the overall
 score for page.
 \end{itemize}
 The grades for individual rules are computed differently depending on the rule.
-For example, for Rule 1, three external scripts are allowed. For each script
-above that, four points are deducted from the grade. The code for grading each
+For example, for Rule 1, three external scripts are allowed and each extra script
+four points are deducted from the overall weight. The code for grading each
 rule is found in rules.js. The overall grade is a weighted average of the
 individual grades for each rule, calculated in controller.js The rules are
 approximately in order of importance, most important first. The specific weights
 are in the ruleset objects in rules.js. Score computation is shown in
 the following table no 1 in Appendix section.
 
-Mod\_pagespeed is an automated web page optimization tool developed by Google for post
+Mod\_pagespeed is an automated web page optimization tool developed by Google for
 optimization of web pages. It not only
-analyzes a web page but also optimizes it .Based on best practices, it has
+analyzes a web page but also optimizes it. Based on best practices, it has
 certain set of filters which optimizes web page during run time. As the server
 gets request for the webpage, it dynamically rewrites the page using its filters
-and sends an highly optimized page. Note that rewriting happens only when the first
+and sends a highly optimized page. The rewriting happens only when the first
 request for web page is made and for all later request web page is served from the cache
 at server side. There are total of 40+ filters which supports
 optimization. These filters can be turned on or off based on requirements. 
@@ -260,8 +260,8 @@ visualization phase all data is visualized using an automated script indicating
 performance for each rule and also overall performance of web pages. Later we
 did analysis for optimized pages of virtuals labs.
 
-\subsection{URls and Report Collection}\label{sec-4.1}
-As first step to visualize the performance of all the webpages, we
+\subsection{Urls and Report Collection}\label{sec-4.1}
+As first step to collect data and generate reports, we
 collected urls of all the webpages at following domain deploy.virtuals-labs.ac.in hosted at
 IIIT-Hyderabed. Since we have access to server, to get all the urls, we wrote an
 automated bash script to extract all the html and php pages links from the
@@ -270,26 +270,27 @@ To test the performance of vlab.co.in, we also collected the 5000 urls for this
 website. This time since we do not have the access of server ,we used an online
 sitemap generator to get the urls.
 We wrote an automated script to generate the reports for each web page using
-yslow.js and phantomJS. This automated script read an url from a file containing
+yslow.js and phantomJS. This automated script read a url from a file containing
 all the urls and generate report for each web page. In this script, we are making
 ten phantomjs call as background process for ten different webpages. For urls which are inactive, failed reports will
 be generated and we are pushing that url into the failed urls file and deleting
 the failed reports. These reports serves as input to CSV file generation.
 
 \subsection{CSV File Generation}\label{sec-4.2}
-CSV file is generated using a bash script. This CSV file will contain the overall
+CSV file are generated using a bash script. This CSV file will contain the overall
 score and scores corresponding to each rule. Script will extract all the scores
 for corresponding rule and will dump into the CSV file line by line. The
 content in the CSV file will be used for visualization.
 
 \subsection{Visualization}\label{sec-4.3}
-Visualization is done using python matplotlib. Soumya has written an automated
-scripts to generate all the graphs at one shot. Scripts takes csv file as input.
+Visualization is done using python matplotlib and csvkit. We have written an automated
+scripts to generate all the graphs needed for visualization. Scripts takes csv file as input
+and set of bar graphs specific to each rule.
 
 \section{Experimentation}\label{sec-5}
 
 \subsection{www.vlab.co.in}\label{sec-5.1}
-We started our experiment with collecting Yslow reports for vlabs. 
+We started our experiment by collecting Yslow reports for vlabs. 
 We collected 5000 urls of www.vlab.co.in. and generated
 Yslow reports corresponding webpages and generated CSV file for the
 scores. Finally, we plotted data accumulated in csv files and analyzed the
@@ -304,10 +305,10 @@ Later we visualized scores to analyze the current status of web pages.
 
 \subsection{Optimization of deploy.virtual-labs.ac.in using mod\_pagespeed}\label{sec-5.3}
 We made a replica of deploy.virtual-labs.ac.in server on a container. We installed
-Google mod\_pagespeed on the container to what extent pagespeed optimizes.
+Google mod\_pagespeed on the container to see what extent pagespeed optimizes.
 Then, we collected reports for all the web pages and
 generated CSV file. After generating bar graphs we compared results with deploy.virtual-labs.ac.in without pagespeed
- to observe how much optimization was done by pagespeed.
+to observe how much optimization was done by pagespeed.
 
  \begin{figure}[ht]
   \centering
@@ -316,9 +317,9 @@ generated CSV file. After generating bar graphs we compared results with deploy.
   \label{overallscore-vlab}
 \end{figure}
 \section{Analysis}\label{sec-6}
-In this section we analyze web page performance of virtual-las.ac.in in two different settings on data set containing 9000 web pages.
+In this section we analyze web page performance of virtual-labs.ac.in in two different settings on data set containing 9000 web pages.
 One when page speed module is installed on our system and other one without page speed. We also analyze web page performance of vlab.co.in  
-on data containing 5000 web pages.
+on data set containing 5000 web pages.
 \subsection{Analysis of vlabs.co.in}
  Out of 5000 urls we collected statistics for 4945 web pages.
 \begin{itemize}
@@ -348,8 +349,8 @@ set expire far future.
 pages are in compressed form and rest are in uncompressed form. This will lead to
 large payload size and thus will increase network traffic and will slow page
 rendering.
-\item From the graph below, we can observe that this website does ot use entity
-tags. Due to this it has download critical resoures everytime request for page is
+\item From the graph below, we can observe that this website does not use entity
+tags. Due to this it has to download critical resources every time request for page is
 made.
 \item From the graph, we can see that all pages vlabs are having favicon for it.
 \item from the graph, we can see that number of critical resources  on the pages
@@ -370,44 +371,47 @@ A+ grades for \textbf{overall score} while with pagespeed this rises to 6051. It
 shows pagespeed is imroving the performance of web pages by optimizing it. Also
 we can see see without pagespeed only 1226 wepages are in A- grade but with
 pagespeed it increased to 1667. From the graphs we can analyze that overall
-number of webpages is going to low to high grades.
+performance of webpages has improved after using pagespeed.
+
 \item From the graphs, we can observe that without pagespeed  mostly only 3214
 webpages are in B+  and have \textbf{added expires headers} followed  and around
 45\% are not follwing it. But with pagespeed, 4729 webpages were in B+ grade and
 there was shift of number from low grades to high grades.
+
 \item From the graphs, we can observe that most webpages are \textbf{compressed
 using Gzip} and 8257 urls falls under A+ grades while with pagespeed this number
 rises to 8761.
-\item From the graphs,we can see that w.r.t \textbf{Etags} without pagespeed
-3535 pages have A+ grade,831 have B+ grade,384 have C+ grade, 3704 have score
+
+\item From the graphs,Please send your dress code request positively on or before 30th July, 2014.
+we can see that w.r.t \textbf{Etags} without pagespeed
+3535 pages have A+ grade, 831 have B+ grade, 384 have C+ grade, 3704 have score
 less than 50 but with pagespeed this number shifted to more higher grades. We can
-see now 6441 pages in A+  in comparison with 3534. But major difference is seen
+see now 6441 pages in A+ in comparison with 3534. But the major difference is seen
 at below 50 score pages, now this have reduced to 633 in comparison to previous
 3704.
+
 \item From th graphs we can see that w.r.t \textbf{make fewer http
 requests}, without pagespeed only 7791 webpages were in grade A+ and 461 pages
 were in A- but with pagespeed 8202 pages were in A+ grades. Major shift was from 
 A- grade to A+ grade. Rest pages shows no observable changes.
+
 \item From the graphs, we can see that w.r.t \textbf{minified JavaScript and CSS}
-without pagespeed 7059 webpages were in grade A+,1395 pages in A- ,then 254 in
-B- and 20 were below F but with pagespeed this pages shifted to higher
-grades. After optimizing with pagespeed 8639 pages were in grade A+ ,94 in A- and only 3 below F w.r.t to
-previous 20 below F.
+without pagespeed 7059 webpages were in grade A+, 1395 pages in A-, then 254 in
+B- and 20 were below F. After optimizing with pagespeed 8639 pages were in grade A+ ,94 in A- and only 3 below F.
 \end{itemize}
 
 \section{Conclusion}
 \label{sec-7}
 This paper is concerned about Web Page Optimization of virtual labs which means fast rendering and less
 network bandwidth. This lead us to think us how to decrease the number and size of
-resource and also how to decrease the perceived load time. This webpages consists
+resource and also how to decrease the perceived load time. These webpages consists
 of critical resources like CSS, JavaScript and images. This optimization can be
 achieved by minimizing the number of critical resources, minimizing the size of
-critical resources and minimizing the critical path length. There are several
-best practices which are suggested to use in your webpages.
+critical resources and minimizing the critical path length.
 
- Our framework is mainly to visualize website performance on a large scale and
+ Our framework is helps in visualizing website performance and
 it can be used to suggest lab developers to work on these best practices. Also it
-gives the list of inactive urls. Google Pagespeed is the automated web optimization
+gives the list of urls pages which are broken. Google Pagespeed is the automated web optimization
 tool that comes as a saviour for optimizing webpages of already existing web applications. It has 40+
 filters which optimizes page and can be used according to our requirement. Also,
 it is open source and available for free. It should be used for huge websites like virtual labs
@@ -470,266 +474,266 @@ Pagespeed Filters:\\
 
 \end{thebibliography}
 %\newpage
-\appendices
-\section{Figures}
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Put-CSS-at-top.pdf}
-% \caption{Number of urls versus Put CSS at top CSS}	
-% \end{figure}
+% \appendices
+% \section{Figures}
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Put-CSS-at-top.pdf}
+% % \caption{Number of urls versus Put CSS at top CSS}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab+/Put JavaScript at bottom.jpg}
+% % \caption{Number of urls versus Put JavaScript at bottom}	
+% % \end{figure}
+% %            
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Use a Content Delivery Network (CDN).pdf}
+% % \caption{Number of urls versus Use a Content Delivery Network (CDN)}	
+% % \end{figure}        
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Add Expires headers.pdf}
+% % \caption{Number of urls versus Add Expires Headers}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Compress components with gzip.pdf}
+% % \caption{Number of urls versus Compress components with gzip}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Configure entity tags (ETags).pdf}
+% % \caption{Number of urls versus Configure entity tags (ETags)}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Make favicon small and cacheable.pdf}
+% % \caption{Number of urls versus Make favicon small and cacheable}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   \includegraphics[scale=0.40]{img/vlab-co-in/Make fewer HTTP requests.pdf}
+% % \caption{Make fewer HTTP requests Versus Number of urls}	
+% % \end{figure}
+% 
+% %\newpage
+% %\section{Comparison before optimization and after optimization using for deploy.virtual-labs.ac.in}
+% 
+% % \begin{figure}[ht]
+% %  \centering
+% % $\includegraphics[scale=0.40]{img/virtual-labs/container/Overall_Score.pdf}$
+% % \caption{Number of urls versus Overscore on container}
+% % \end{figure} 
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% % $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Overall_Score.pdf}$
+% % \caption{Number of urls versus Overscore on deploy}
+% % \end{figure}
+% 
+% \begin{figure*}
+%     \centering
+%     \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+%         \centering
+% 	\includegraphics[scale=0.40]{img/virtual-labs/container/Overall_Score.pdf}
+%         \caption{Overall Score With PageSpeed}
+%         \label{fig:overallscore-pagespeed}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+%         \centering
+% 	 \includegraphics[scale=0.40]{img/virtual-labs/deploy/Overall_Score.pdf}
+%         \caption{Overall Score without PageSpeed}
+%         \label{fig:overallscore-nopagespeed}
+%     \end{subfigure}
+%     \caption{Comparing Overall Scores}
+%     \label{fig:overallscore-comparison}
+% \end{figure*}
+% 
+% % \begin{figure}[ht]
+% %  \centering
+% %   $\includegraphics[scale=0.40]{img/virtual-labs/container/Add Expires headers.pdf}$
+% % \caption{Number of urls versus Add Expires Headers on container}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Add Expires headers.pdf}$
+% % \caption{Number of urls versus Add Expires Headers on deploy}	
+% % \end{figure}
+% 
+% \begin{figure*}
+%     \centering
+%     \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+%         \centering
+% 	\includegraphics[scale=0.40]{img/virtual-labs/container/Add Expires headers.pdf}
+%         \caption{'Add Expires Header' Rule with PageSpeed}
+%         \label{fig:addexpireheader-pagespeed}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+%         \centering
+%   \includegraphics[scale=0.40]{img/virtual-labs/deploy/Add Expires headers.pdf}
+%         \caption{'Add Expires Header' Rule without PageSpeed}
+%         \label{fig:addexpireheader-nppagespeed}
+%     \end{subfigure}
+%     \caption{Comparing 'Add Expire Header' rule}
+%     \label{fig:addexpireheader-comparison}
+% \end{figure*}
+% 
+% % \begin{figure}[ht]
+% %  \centering
+% %   $\includegraphics[scale=0.40]{img/virtual-labs/container/Compress components with gzip.pdf}$
+% % \caption{Number of urls versus Compress components with gzip on container}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Compress components with gzip.pdf}$
+% % \caption{Number of urls versus Compress components with gzip on deploy}	
+% % \end{figure}
+% 
+% \begin{figure*}
+%     \centering
+%     \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+%         \centering
+% 	\includegraphics[scale=0.40]{img/virtual-labs/container/Compress components with gzip.pdf}
+%         \caption{'Compress Components with gzip' rule with PageSpeed}
+%         \label{fig:ccg-pagespeed}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+%         \centering
+% 	 \includegraphics[scale=0.40]{img/virtual-labs/deploy/Compress components with gzip.pdf}
+%         \caption{'Compress Components with gzip' rule without PageSpeed}
+%         \label{fig:ccg-nopagespeed}
+%     \end{subfigure}
+%     \caption{Comparing 'Components with gzip' rule}
+%     \label{fig:ccg-comparison}
+% \end{figure*}
 % 
 % \begin{figure}[ht]
 %  \centering
-%   \includegraphics[scale=0.40]{img/vlab+/Put JavaScript at bottom.jpg}
-% \caption{Number of urls versus Put JavaScript at bottom}	
-% \end{figure}
-%            
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Use a Content Delivery Network (CDN).pdf}
-% \caption{Number of urls versus Use a Content Delivery Network (CDN)}	
-% \end{figure}        
-% 
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Add Expires headers.pdf}
-% \caption{Number of urls versus Add Expires Headers}	
+%   \includegraphics[scale=0.40]{img/virtual-labs/container/Configure entity tags (ETags).pdf}
+% \caption{Number of urls versus Configure entity tags (ETags) on container}	
 % \end{figure}
 % 
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Compress components with gzip.pdf}
-% \caption{Number of urls versus Compress components with gzip}	
-% \end{figure}
+% % \begin{figure}[ht]
+% %  \centering
+% %   $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Configure entity tags (ETags).pdf}$
+% % \caption{Number of urls versus Configure entity tags (ETags)}	
 % 
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Configure entity tags (ETags).pdf}
-% \caption{Number of urls versus Configure entity tags (ETags)}	
-% \end{figure}
 % 
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Make favicon small and cacheable.pdf}
-% \caption{Number of urls versus Make favicon small and cacheable}	
-% \end{figure}
+% % \begin{figure}[ht]
+% %  \centering
+% %   $\includegraphics[scale=0.40]{img/virtual-labs/container/Make fewer HTTP requests.pdf}$
+% % \caption{Number of urls versus Make fewer HTTP requests on container}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Make fewer HTTP requests.pdf}$
+% % \caption{Number of urls versus Make fewer HTTP requests on deploy}	
+% % \end{figure}
 % 
-% \begin{figure}[ht]
-%  \centering
-%   \includegraphics[scale=0.40]{img/vlab-co-in/Make fewer HTTP requests.pdf}
-% \caption{Make fewer HTTP requests Versus Number of urls}	
-% \end{figure}
-
-%\newpage
-%\section{Comparison before optimization and after optimization using for deploy.virtual-labs.ac.in}
-
-% \begin{figure}[ht]
-%  \centering
-% $\includegraphics[scale=0.40]{img/virtual-labs/container/Overall_Score.pdf}$
-% \caption{Number of urls versus Overscore on container}
-% \end{figure} 
+% \begin{figure*}
+%     \centering
+%     \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+%         \centering
+% 	\includegraphics[scale=0.40]{img/virtual-labs/container/Make fewer HTTP requests.pdf}
+%         \caption{Caption A}
+%         \label{fig:C}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+%         \centering
+% 	\includegraphics[scale=0.40]{img/virtual-labs/deploy/Make fewer HTTP requests.pdf}
+%         \caption{Caption B}
+%         \label{fig:D}
+%     \end{subfigure}
+%     \caption{ROC curve of failure detection;}
+%     \label{fig:roc_curve2}
+% \end{figure*}
 % 
-% \begin{figure}[ht]
-%  \centering
-% $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Overall_Score.pdf}$
-% \caption{Number of urls versus Overscore on deploy}
-% \end{figure}
-
-\begin{figure*}
-    \centering
-    \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
-        \centering
-	\includegraphics[scale=0.40]{img/virtual-labs/container/Overall_Score.pdf}
-        \caption{Overall Score With PageSpeed}
-        \label{fig:overallscore-pagespeed}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
-        \centering
-	 \includegraphics[scale=0.40]{img/virtual-labs/deploy/Overall_Score.pdf}
-        \caption{Overall Score without PageSpeed}
-        \label{fig:overallscore-nopagespeed}
-    \end{subfigure}
-    \caption{Comparing Overall Scores}
-    \label{fig:overallscore-comparison}
-\end{figure*}
-
-% \begin{figure}[ht]
-%  \centering
-%   $\includegraphics[scale=0.40]{img/virtual-labs/container/Add Expires headers.pdf}$
-% \caption{Number of urls versus Add Expires Headers on container}	
-% \end{figure}
+% % \begin{figure}
+% % \centering
+% % \begin{minipage}{.5\textwidth}
+% %   \centering
+% %   $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Make fewer HTTP requests.pdf}$
+% %   \captionof{HTTP Requests Without Pagespeed}
+% %   \label{fig:test7}
+% % \end{minipage}%
+% % \begin{minipage}{.5\textwidth}
+% %   \centering
+% %   $\includegraphics[scale=0.40]{img/virtual-labs/container/Make fewer HTTP requests.pdf}$
+% %   \captionof{HTTP Requests With Pagespeed}
+% %   \label{fig:test8}
+% % \end{minipage}
+% % \end{figure}
 % 
-% \begin{figure}[ht]
-%  \centering
-%   $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Add Expires headers.pdf}$
-% \caption{Number of urls versus Add Expires Headers on deploy}	
-% \end{figure}
-
-\begin{figure*}
-    \centering
-    \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
-        \centering
-	\includegraphics[scale=0.40]{img/virtual-labs/container/Add Expires headers.pdf}
-        \caption{'Add Expires Header' Rule with PageSpeed}
-        \label{fig:addexpireheader-pagespeed}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
-        \centering
-  \includegraphics[scale=0.40]{img/virtual-labs/deploy/Add Expires headers.pdf}
-        \caption{'Add Expires Header' Rule without PageSpeed}
-        \label{fig:addexpireheader-nppagespeed}
-    \end{subfigure}
-    \caption{Comparing 'Add Expire Header' rule}
-    \label{fig:addexpireheader-comparison}
-\end{figure*}
-
-% \begin{figure}[ht]
-%  \centering
-%   $\includegraphics[scale=0.40]{img/virtual-labs/container/Compress components with gzip.pdf}$
-% \caption{Number of urls versus Compress components with gzip on container}	
-% \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   $\includegraphics[scale=0.40]{img/virtual-labs/container/Minify JavaScript and CSS.pdf}$
+% % \caption{Number of urls versus Minify JavaScript and CSS on Container}	
+% % \end{figure}
+% % 
+% % \begin{figure}[ht]
+% %  \centering
+% %   $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Minify JavaScript and CSS.pdf}$
+% % \caption{Number of urls versus Minify JavaScript and CSS on deploy}	
+% % \end{figure}
 % 
-% \begin{figure}[ht]
-%  \centering
-%   $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Compress components with gzip.pdf}$
-% \caption{Number of urls versus Compress components with gzip on deploy}	
-% \end{figure}
-
-\begin{figure*}
-    \centering
-    \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
-        \centering
-	\includegraphics[scale=0.40]{img/virtual-labs/container/Compress components with gzip.pdf}
-        \caption{'Compress Components with gzip' rule with PageSpeed}
-        \label{fig:ccg-pagespeed}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
-        \centering
-	 \includegraphics[scale=0.40]{img/virtual-labs/deploy/Compress components with gzip.pdf}
-        \caption{'Compress Components with gzip' rule without PageSpeed}
-        \label{fig:ccg-nopagespeed}
-    \end{subfigure}
-    \caption{Comparing 'Components with gzip' rule}
-    \label{fig:ccg-comparison}
-\end{figure*}
-
-\begin{figure}[ht]
- \centering
-  \includegraphics[scale=0.40]{img/virtual-labs/container/Configure entity tags (ETags).pdf}
-\caption{Number of urls versus Configure entity tags (ETags) on container}	
-\end{figure}
-
-% \begin{figure}[ht]
-%  \centering
-%   $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Configure entity tags (ETags).pdf}$
-% \caption{Number of urls versus Configure entity tags (ETags)}	
-
-
-% \begin{figure}[ht]
-%  \centering
-%   $\includegraphics[scale=0.40]{img/virtual-labs/container/Make fewer HTTP requests.pdf}$
-% \caption{Number of urls versus Make fewer HTTP requests on container}	
-% \end{figure}
+% % \begin{figure}[H]
+% % 		\begin{subfigure}[b]{\columnwidth}
+% % 			$\includegraphics[scale=0.40]{img/virtual-labs/container/Minify JavaScript and CSS.pdf}$
+% % 			\caption{Picture 1}
+% % 		\end{subfigure}
+% % 		\begin{subfigure}[b]{\columnwidth}
+% % 			$\includegraphics[scale=0.40]{img/virtual-labs/deploy/Minify JavaScript and CSS.pdf}$
+% % 			\caption{Picture 2}
+% % 		\end{subfigure}
+% % 		\caption{Two pictures}
+% % \end{figure}
 % 
-% \begin{figure}[ht]
-%  \centering
-%   $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Make fewer HTTP requests.pdf}$
-% \caption{Number of urls versus Make fewer HTTP requests on deploy}	
-% \end{figure}
-
-\begin{figure*}
-    \centering
-    \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
-        \centering
-	\includegraphics[scale=0.40]{img/virtual-labs/container/Make fewer HTTP requests.pdf}
-        \caption{Caption A}
-        \label{fig:C}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
-        \centering
-	\includegraphics[scale=0.40]{img/virtual-labs/deploy/Make fewer HTTP requests.pdf}
-        \caption{Caption B}
-        \label{fig:D}
-    \end{subfigure}
-    \caption{ROC curve of failure detection;}
-    \label{fig:roc_curve2}
-\end{figure*}
-
+% \begin{figure*}
+%     \centering
+%     \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+%         \centering
+%         \includegraphics[width=\linewidth]{img/virtual-labs/container/Minify JavaScript and CSS.pdf}
+%         \caption{Caption A}
+%         \label{fig:A}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+%         \centering
+%         \includegraphics[width=\linewidth]{img/virtual-labs/deploy/Minify JavaScript and CSS.pdf}
+%         \caption{Caption B}
+%         \label{fig:B}
+%     \end{subfigure}
+%     \caption{ROC curve of failure detection;}
+%     \label{fig:roc_curve}
+% \end{figure*}
+% 
 % \begin{figure}
 % \centering
 % \begin{minipage}{.5\textwidth}
 %   \centering
-%   $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Make fewer HTTP requests.pdf}$
-%   \captionof{HTTP Requests Without Pagespeed}
-%   \label{fig:test7}
-% \end{minipage}%
+%     $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Minify JavaScript and CSS.pdf}$%\captionof{Without Pagespeed}
+%   \label{fig:test9}
+% \end{minipage}
 % \begin{minipage}{.5\textwidth}
 %   \centering
-%   $\includegraphics[scale=0.40]{img/virtual-labs/container/Make fewer HTTP requests.pdf}$
-%   \captionof{HTTP Requests With Pagespeed}
-%   \label{fig:test8}
+%   $\includegraphics[scale=0.40]{img/virtual-labs/container/Minify JavaScript and CSS.pdf}$%\captionof{With Pagespeed}
+%   \label{fig:test10}
 % \end{minipage}
 % \end{figure}
-
-% 
-% \begin{figure}[ht]
-%  \centering
-%   $\includegraphics[scale=0.40]{img/virtual-labs/container/Minify JavaScript and CSS.pdf}$
-% \caption{Number of urls versus Minify JavaScript and CSS on Container}	
-% \end{figure}
-% 
-% \begin{figure}[ht]
-%  \centering
-%   $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Minify JavaScript and CSS.pdf}$
-% \caption{Number of urls versus Minify JavaScript and CSS on deploy}	
-% \end{figure}
-
-% \begin{figure}[H]
-% 		\begin{subfigure}[b]{\columnwidth}
-% 			$\includegraphics[scale=0.40]{img/virtual-labs/container/Minify JavaScript and CSS.pdf}$
-% 			\caption{Picture 1}
-% 		\end{subfigure}
-% 		\begin{subfigure}[b]{\columnwidth}
-% 			$\includegraphics[scale=0.40]{img/virtual-labs/deploy/Minify JavaScript and CSS.pdf}$
-% 			\caption{Picture 2}
-% 		\end{subfigure}
-% 		\caption{Two pictures}
-% \end{figure}
-
-\begin{figure*}
-    \centering
-    \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
-        \centering
-        \includegraphics[width=\linewidth]{img/virtual-labs/container/Minify JavaScript and CSS.pdf}
-        \caption{Caption A}
-        \label{fig:A}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
-        \centering
-        \includegraphics[width=\linewidth]{img/virtual-labs/deploy/Minify JavaScript and CSS.pdf}
-        \caption{Caption B}
-        \label{fig:B}
-    \end{subfigure}
-    \caption{ROC curve of failure detection;}
-    \label{fig:roc_curve}
-\end{figure*}
-
-\begin{figure}
-\centering
-\begin{minipage}{.5\textwidth}
-  \centering
-    $\includegraphics[scale=0.40]{img/virtual-labs/deploy/Minify JavaScript and CSS.pdf}$%\captionof{Without Pagespeed}
-  \label{fig:test9}
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-  \centering
-  $\includegraphics[scale=0.40]{img/virtual-labs/container/Minify JavaScript and CSS.pdf}$%\captionof{With Pagespeed}
-  \label{fig:test10}
-\end{minipage}
-\end{figure}
 \end{document}
