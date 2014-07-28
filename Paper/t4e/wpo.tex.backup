@@ -19,7 +19,7 @@
 \DeclareGraphicsExtensions{.eps}
 %opening
 \title{Large Scale Web Page Optimization of Virtual Labs}
-\author{Jatin Agarwal, Utkarsh Rastogi, Prateek Pandey, Maddala Saraswati Soumya and Venkatesh Chopella}
+%\author{Jatin Agarwal, Utkarsh Rastogi, Prateek Pandey, Maddala Saraswati Soumya and Venkatesh Chopella}
 
 \begin{document}
 
@@ -43,7 +43,7 @@ MHRD web project ``virtual labs''.
 \end{abstract}
 
 \section{Introduction}\label{sec-2}
-After onset of world wide web, performance of web implied optimizing the server side but nowadays
+After onset of world wide web, web performance implied optimizing the server side but nowadays
 optimization on the client side has become bottle neck because of complex web
 application. Now days, front-end developers use a lot of critical resources like
 javascipt, CSS and images to make a good user interface which becomes
@@ -60,11 +60,11 @@ critical resources that blocks the rendering of a webpage. Therefore, correct
 sequence of http requests can reduce the perceived page load time which means page
 load time will not reduce in reality but critical resources needed to render webpage are
 fetched first and remaining resources are fetched in background. Therefore,
-while optimizing web page for speed we should focus on 
+while optimizing web page for speed we should focus on \cite{crpo}
 \begin{enumerate}
- \item Minifying size of critical resources
- \item Minifying number of critical resources
- \item Minifying critical rendering path.
+ \item Minimize the size of critical resources
+ \item Minimize the number of critical resources
+ \item Minimize the critical rendering path.
 \end{enumerate}
 
 The goals of our experimentation, performed in collaboration with VLEAD,
@@ -85,7 +85,7 @@ like CSS, javascript and media content like images, audio, video etc. Now render
 following three major criteria`s. Firstly order in which critical resources are fetched, secondly on
 number of critical sources and lastly on size of critical resources. Web gaints like Yahoo and Google
 have listed best practices for web developers to improve performance of web pages. So now we briefly
-explain some of the best practices in order to appreciate significance of web performance optimization.
+explain some of the best practices in order to appreciate significance of web performance optimization \cite{best-practices}.
 \begin{itemize}
 \item \textbf{Minimize http requests :}
 Number of http requests to render any web page is directly proportional to
@@ -155,16 +155,15 @@ Favicon stays in the core of server and  it is necessary because if its missing,
 browser will still request for it and adding to the latency.
 \end{itemize}
 
-Yahoo {\bf Yslow} and {\bf Google Pagespeed} are well known tools that are capable of
+Yahoo {\bf Yslow}\cite{yslow} and {\bf Google Pagespeed}\cite{gps} are well known tools that are capable of
 evaluating webpages performance and providing suggestions to optimize webpages
 based on the best practices listed above. But the pagespeed is more than a performance analysis
 tool and is also capable of optimizing webpages without changing semantics of a webpage.
 
 Yahoo yslow.js is javascript API which runs on phantomjs. PhantomJS is a
-headless browser with JavaScript API. We used Yslow as performance measuring
+headless browser with JavaScript API\cite{pjs}. We used Yslow as performance measuring
 tool because it not only analyzes a webpage but gives suggestions on how to
-improve it.
-It works on three process:
+improve it. It works on following three ways:
 \begin{itemize}
 \item It crawls the DOM to find each component.
 \item Collects information for each component and analyzes each of them.
@@ -177,55 +176,18 @@ four points are deducted from the overall weight. The code for grading each
 rule is found in rules.js. The overall grade is a weighted average of the
 individual grades for each rule, calculated in controller.js The rules are
 approximately in order of importance, most important first. The specific weights
-are in the ruleset objects in rules.js. Score computation is shown in
-the following table no 1 in Appendix section.
+are in the ruleset objects in rules.js. For score computation please refer \cite{rulematrix}.
 
-Mod\_pagespeed is an automated web page optimization tool developed by Google for
+Mod\_pagespeed\cite{google:mod-pagespeed} is an automated web page optimization tool developed by Google for
 optimization of web pages. It not only
 analyzes a web page but also optimizes it. Based on best practices, it has
 certain set of filters which optimizes web page during run time. As the server
-gets request for the webpage, it dynamically rewrites the page using its filters
+gets request for the webpage, it dynamically rewrites the page using its filters\cite{pagespeed:filters}
 and sends a highly optimized page. The rewriting happens only when the first
 request for web page is made and for all later request web page is served from the cache
 at server side. There are total of 40+ filters which supports
 optimization. These filters can be turned on or off based on requirements. 
-% \begin{center}
-% \begin{tabular}{lll}
-%  Rule                               &  Configs                     & Computation                 \\
-%  Make fewer HTTP requests           &  N(JS-3)*3                   &            
-%                  \\
-%                                     &  max images=6                & 
-% N(images-6)*3               \\
-%                                     &  max css=2                   &  N(CSS-2)*4
-%                  \\
-%  Use a CDN                          &  patterns=CDN hostname       &  N RegExp
-% mismatches*10      \\
-%  Avoid empty src or href            &                              &  N empty
-% tags*100            \\
-%  Add Expires headers                &  how far=172800s             &  N(expiring
-% 2 days)*11       \\
-%  Compress components with GZip      &  min file size = 500 bytes   & 
-% N(uncompressed file) * 11   \\
-%  Put CSS at top                     &                              &  1+N link
-% tag on BODY*10     \\
-%  Put JavaScript at bottom           &                              &  N JS on
-% HEAD * 5            \\
-%  Reduce DNS lookups                 &  max domains = 4             &  (N domains
-% - 4) * 5         \\
-%  Minify JavaScript and CSS          &  types = js, css             & 
-% N(unminified JS or CSS)*10  \\
-%  Avoid URL redirects                &                              &  N
-% redirects * 10            \\
-%  Remove duplicate js and CSS        &  types = js, css             &  N
-% (duplicated JS or CSS)*5  \\
-%  Configure ETags                    &  types=js,css,image,flash    &  N bad etag
-% of any type*11   \\
-%  Reduce the number of DOM elements  &  range = 250,max dom = 900   &            
-%                  \\
-%  Avoid HTTP 404 (Not Found) error   &  types=js,css,image,favicon  &  N 404 * 5 
-%                  \\
-% \end{tabular}
-% \end{center}
+
 % 
 % 
 % 
@@ -323,49 +285,50 @@ on data set containing 5000 web pages.
 \subsection{Analysis of vlabs.co.in}
  Out of 5000 urls we collected statistics for 4945 web pages.
 \begin{itemize}
-\item From the figure \ref{overallscore-vlab}, we can observe that only 1 web page is having good
+\item From the bar graph in figure \ref{overallscore-vlab}, we can observe that only 1 web page is having good
 performance. Rest of the web pages does not get good grades and need to be
 optimized to improve performacne. Out of rest 687 i.e 13\% webpages are in above average conditions, 1038
 webpages are performing average and rest 3220 webpages are not in good
 condition. Therefore, statistics are shows that these pages are not following
 performance best practices and performace of webpages can be improved.  
  
-\item From the graph below, we can observe that all the webpages are having their
+\item From the bar graph in figure \ref{fig:cssattop}, we can observe that all the webpages are having their
 CSS files inside the head tag else they block the progressive rendering.
 
-\item From the graph below, we can observe that all the webpages are having their
+\item From the bar graph in figure \ref{fig:jsatbottom}, we can observe that all the webpages are having their
 script files at the bottom else they block parallel downloading.
 
-\item From the graph below, we can observe there is no usage of Content Delivery
-Networks. Actually it should have been used for such large website so that page
-rendering speed is high.
+\item From the bar graph in figure \ref{fig:usecdn}, we can observe there is no usage of Content Delivery
+Networks(CDN). It suggested to use CDN's for large web sites like www.vlab.co.in in order to reduce latency.
 
-\item From the graph below, we can observe that there is no use of Expires
-Headers in the wepages. This practice is not followed in the pages and it has to
-fetch each static critical resources everytime page is requested as it is not
-set expire far future.
+\item From the bar graph in figure \ref{fig:add-eh}, we can observe that there is no use of Expires
+Headers in the web pages. If this practice is not followed in the pages and it has to
+fetch each static critical resources every time page is requested.
 
-\item From the graph below, we can observe that only 89 webpages out of 4945
+\item From the bar graph in figure \ref{fig:ccg}, we can observe that only 89 webpages out of 4945
 pages are in compressed form and rest are in uncompressed form. This will lead to
-large payload size and thus will increase network traffic and will slow page
+large payload size and will increase network traffic and will slow page
 rendering.
-\item From the graph below, we can observe that this website does not use entity
-tags. Due to this it has to download critical resources every time request for page is
-made.
-\item From the graph, we can see that all pages vlabs are having favicon for it.
-\item from the graph, we can see that number of critical resources  on the pages
-are more than required. Only 1 web page is getting A+ grade.Around 4500 webpages
+
+\item From the bar graph in figure \ref{fig:configure-et}, we can observe that this website does not use entity
+tags. Due to this it has to download critical resources every time request for page is made.
+
+\item From the graph in figure \ref{fig:favicon}, we can see that all pages vlabs are having favicon for it.
+
+\item from the graph in figure \ref{fig:httpr}, we can see that number of critical resources on the pages
+are more than required. Only 1 web page is getting A+ grade. Around 4500 webpages
 have scores between 65 to 75 means they are loaded with multiple css, javascript
-and images.For each resource, browser have to make a request to server and most
-of the time is wasted downloading the resources.This resources  number should be
+and images. For each resource, browser have to make a request to server and most
+of the time is wasted downloading the resources. This resources  number should be
 reduced for fast rendering.
 \end{itemize}
-\subsection{Optmization using Pagespeed.}\label{sec-6.2}
 
+
+\subsection{Optmization using Pagespeed.}\label{sec-6.2}
 As we have generated statistics for 8986 webpages under
-deploy.vitual-labs.ac.in and for replica of deploy server on which pagespeed has
-been installed. Here we observed how much pagespeed optimizes the webpages in comparison
-when pagespeed is not used. Note that all fugures are palced in the Appendix Section.
+deploy.virtual-labs.ac.in without pagespeed and for replica of deploy server with pagespeed
+installed. Here we observed how much pagespeed optimizes the webpages in comparison
+when pagespeed is not used. Note that all figures are palced in the Appendix Section.
 \begin{itemize}
 \item From the bar graph in figure \ref{fig:overallscore-comparison} we can notice that 4299 webpages fall under
 A+ grade for \textbf{overall score} while with pagespeed this rises to 6051. It
@@ -440,23 +403,27 @@ Yslow Official Website.Available:\\
 Yslow Documentation Page:\\
 \href{http://yslow.org/faq/}{http://yslow.org/faq/}
 \bibitem{best-practices}
-Yahoo Developer Network.Best Practices for Speeding Up Your Web
-Site.Available:\\
+Yahoo Developer Network. Best Practices for Speeding Up Your Website:\\
 \href{https://developer.yahoo.com/performance/rules.html}{
 https://developer.yahoo.com/performance/rules.html}
+\bibitem{pjs}
+PhantomJs:\\
+\href{http://phantomjs.org/}
+{http://phantomjs.org/}
+\bibitem{rulematrix}
+Yslow Score Computation:\\
+\href{http://yslow.org/ruleset-matrix/}
+{http://yslow.org/ruleset-matrix/}
 \bibitem{crp}
-Google Developers. Optimizing The Critical Rendering
-Path\\
+Google Developers. Analyzing The Critical Rendering Path\\
 \href{
-https://developers.google.com/web/fundamentals/performance/critical-rendering-pa
-th/optimizing-critical-rendering-path}{
-https://developers.google.com/web/fundamentals/performance/critical-rendering-pa
-th/optimizing-critical-rendering-path}
-\bibitem{crpp}
-Critical Rendering Path.Available:\\
+https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp}
+{https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp}
+\bibitem{crpo}
+Google Developers. Optimizing The Critical Rendering Path:\\
 \href{
-http://www.feedthebot.com/pagespeed/critical-render-path.html}{
-http://www.feedthebot.com/pagespeed/critical-render-path.html}
+https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path}
+{https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path}
 \bibitem{gps}
 Google Pagespeed Tools.Official Documentation:\\
 \href{https://developers.google.com/speed/pagespeed/}{
@@ -652,4 +619,7 @@ Pagespeed Filters:\\
 \caption{Make fewer HTTP requests Versus Number of urls}	
 \label{fig:httpr}
 \end{figure}
+
+%\begin{center}
+%\end{center}
 \end{document}
