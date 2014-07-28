@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.4.8)  25 JUL 2014 16:52
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.4.8)  28 JUL 2014 12:50
 entering extended mode
  %&-line parsing enabled.
 **wpo.tex
@@ -548,82 +548,10 @@ Package: ltcaption 2008/03/28 v1.2 longtable captions (AR)
 )
 Package caption Info: wrapfig package is loaded.
 )
-(/usr/share/texmf-texlive/tex/latex/oberdiek/epstopdf.sty
-Package: epstopdf 2009/10/17 v2.4 Conversion with epstopdf on the fly (HO)
-
-(/usr/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2009/10/17 v2.4 Base part for package epstopdf
-
-(/usr/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
-Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
-)
-
-Package epstopdf Warning: Shell escape feature is not enabled.
-
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 433.
-(/usr/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2009/10/26 v1.1 Configuration of epstopdf for TeX Live
-)))
-(/usr/share/texmf-texlive/tex/latex/pstricks/pstricks.sty
-Package: pstricks 2008/11/26 v0.40 LaTeX wrapper for `PSTricks' (RN,HV)
-
-(/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.tex
-`PSTricks' v1.29  <2009/05/19> (tvz)
-\pst@dima=\dimen131
-\pst@dimb=\dimen132
-\pst@dimc=\dimen133
-\pst@dimd=\dimen134
-\pst@dimg=\dimen135
-\pst@dimh=\dimen136
-\pst@hbox=\box34
-\pst@boxg=\box35
-\pst@cnta=\count107
-\pst@cntb=\count108
-\pst@cntc=\count109
-\pst@cntd=\count110
-\pst@cntg=\count111
-\pst@cnth=\count112
-\pst@toks=\toks24
-(/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.con)
-\psunit=\dimen137
-\psxunit=\dimen138
-\psyunit=\dimen139
-\pslinewidth=\dimen140
-\pst@customdefs=\toks25
-\pslinearc=\dimen141
-\everypsbox=\toks26
-\psframesep=\dimen142
-\pslabelsep=\dimen143
-\pst@shift=\dimen144
-\theoverlaybox=\box36
-)
-File: pstricks.tex 2009/05/19 v1.29 `PSTricks' (tvz,hv)
-
-(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
-
-(/etc/texmf/tex/latex/config/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package xcolor Info: Package option `pdf' ignored on input line 216.
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-))
 (/usr/share/texmf-texlive/tex/latex/caption/subcaption.sty
 Package: subcaption 2008/08/31 v1.0b Adding subcaptions (AR)
-\c@subfigure=\count113
-\c@subtable=\count114
+\c@subfigure=\count107
+\c@subtable=\count108
 )
 (/usr/share/texmf-texlive/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 285.
@@ -689,16 +617,16 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24> not available
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count115
-\scratchdimen=\dimen145
-\scratchbox=\box37
-\nofMPsegments=\count116
-\nofMParguments=\count117
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count118
-\MPscratchDim=\dimen146
-\MPnumerator=\count119
-\everyMPtoPDFconversion=\toks28
+\scratchcounter=\count109
+\scratchdimen=\dimen131
+\scratchbox=\box34
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen132
+\MPnumerator=\count113
+\everyMPtoPDFconversion=\toks25
 )
 Package hyperref Info: Link coloring OFF on input line 24.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
@@ -707,7 +635,7 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count120
+\c@section@level=\count114
 )
 LaTeX Info: Redefining \ref on input line 24.
 LaTeX Info: Redefining \pageref on input line 24.
@@ -716,7 +644,7 @@ LaTeX Info: Redefining \pageref on input line 24.
 \@outlinefile=\write3
 \openout3 = `wpo.out'.
 
-\AtBeginShipoutBox=\box38
+\AtBeginShipoutBox=\box35
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for U+msa on input line 74.
@@ -727,26 +655,220 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 74.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [1
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-[2]
+] [2]
 Underfull \hbox (badness 10000) in paragraph at lines 306--306
  []\T1/ptm/m/it/10 Optimization of deploy.virtual-labs.ac.in us-ing
  []
 
-<img/vlab-co-in/Overall_Score.pdf, id=84, 578.16pt x 433.62pt>
-File: img/vlab-co-in/Overall_Score.pdf Graphic file (type pdf)
+<new-img-jpg/vlab-jpg/Overall_Score.jpg, id=88, 803.0pt x 602.25pt>
+File: new-img-jpg/vlab-jpg/Overall_Score.jpg Graphic file (type jpg)
 
-<use img/vlab-co-in/Overall_Score.pdf> [3 <./img/vlab-co-in/Overall_Score.pdf>]
+<use new-img-jpg/vlab-jpg/Overall_Score.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 315--316
+ []$[]$ 
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 448--455
+[3 <./new-img-jpg/vlab-jpg/Overall_Score.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 449--456
 [] \T1/ptm/m/n/8 https://developers.google.com/web/fundamentals/performance/cri
 tical-
+ []
+
+<new-img-jpg/container-jpg/Overall_Score.jpg, id=124, 803.0pt x 602.25pt>
+File: new-img-jpg/container-jpg/Overall_Score.jpg Graphic file (type jpg)
+
+<use new-img-jpg/container-jpg/Overall_Score.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 485--486
+ [][] 
+ []
+
+<new-img-jpg/deploy-jpg/Overall_Score.jpg, id=125, 803.0pt x 602.25pt>
+File: new-img-jpg/deploy-jpg/Overall_Score.jpg Graphic file (type jpg)
+
+<use new-img-jpg/deploy-jpg/Overall_Score.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 492--493
+ [][] 
+ []
+
+
+<new-img-jpg/container-jpg/Add Expires headers.jpg, id=126, 803.0pt x 602.25pt>
+File: new-img-jpg/container-jpg/Add Expires headers.jpg Graphic file (type jpg)
+
+<use new-img-jpg/container-jpg/Add Expires headers.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 504--505
+ [][] 
+ []
+
+<new-img-jpg/deploy-jpg/Add Expires headers.jpg, id=127, 803.0pt x 602.25pt>
+File: new-img-jpg/deploy-jpg/Add Expires headers.jpg Graphic file (type jpg)
+
+<use new-img-jpg/deploy-jpg/Add Expires headers.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 511--512
+ [][] 
+ []
+
+
+<new-img-jpg/container-jpg/Compress components with gzip.jpg, id=128, 803.0pt x
+ 602.25pt>
+File: new-img-jpg/container-jpg/Compress components with gzip.jpg Graphic file 
+(type jpg)
+ <use new-img-jpg/container-jpg/Compress components with gzip.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 523--524
+ [][] 
+ []
+
+
+<new-img-jpg/deploy-jpg/Compress components with gzip.jpg, id=129, 803.0pt x 60
+2.25pt>
+File: new-img-jpg/deploy-jpg/Compress components with gzip.jpg Graphic file (ty
+pe jpg)
+ <use new-img-jpg/deploy-jpg/Compress components with gzip.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 530--531
+ [][] 
+ []
+
+
+<new-img-jpg/container-jpg/Configure entity tags (ETags).jpg, id=130, 803.0pt x
+ 602.25pt>
+File: new-img-jpg/container-jpg/Configure entity tags (ETags).jpg Graphic file 
+(type jpg)
+ <use new-img-jpg/container-jpg/Configure entity tags (ETags).jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 542--543
+ [][] 
+ []
+
+
+<new-img-jpg/deploy-jpg/Configure entity tags (ETags).jpg, id=131, 803.0pt x 60
+2.25pt>
+File: new-img-jpg/deploy-jpg/Configure entity tags (ETags).jpg Graphic file (ty
+pe jpg)
+ <use new-img-jpg/deploy-jpg/Configure entity tags (ETags).jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 549--550
+ [][] 
+ []
+
+File: new-img-jpg/container-jpg/Configure entity tags (ETags).jpg Graphic file 
+(type jpg)
+<use new-img-jpg/container-jpg/Configure entity tags (ETags).jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 559--560
+ [][] 
+ []
+
+
+<new-img-jpg/container-jpg/Make fewer HTTP requests.jpg, id=132, 803.0pt x 602.
+25pt>
+File: new-img-jpg/container-jpg/Make fewer HTTP requests.jpg Graphic file (type
+ jpg)
+ <use new-img-jpg/container-jpg/Make fewer HTTP requests.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 567--568
+ [][] 
+ []
+
+
+<new-img-jpg/deploy-jpg/Make fewer HTTP requests.jpg, id=133, 803.0pt x 602.25p
+t>
+File: new-img-jpg/deploy-jpg/Make fewer HTTP requests.jpg Graphic file (type jp
+g)
+ <use new-img-jpg/deploy-jpg/Make fewer HTTP requests.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 574--575
+ [][] 
+ []
+
+
+<new-img-jpg/container-jpg/Minify JavaScript and CSS.jpg, id=134, 803.0pt x 602
+.25pt>
+File: new-img-jpg/container-jpg/Minify JavaScript and CSS.jpg Graphic file (typ
+e jpg)
+ <use new-img-jpg/container-jpg/Minify JavaScript and CSS.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 586--587
+ [][] 
+ []
+
+
+<new-img-jpg/deploy-jpg/Minify JavaScript and CSS.jpg, id=135, 803.0pt x 602.25
+pt>
+File: new-img-jpg/deploy-jpg/Minify JavaScript and CSS.jpg Graphic file (type j
+pg)
+ <use new-img-jpg/deploy-jpg/Minify JavaScript and CSS.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 593--594
+ [][] 
+ []
+
+<new-img-jpg/vlab-jpg/Put CSS at top.jpg, id=136, 803.0pt x 602.25pt>
+File: new-img-jpg/vlab-jpg/Put CSS at top.jpg Graphic file (type jpg)
+
+<use new-img-jpg/vlab-jpg/Put CSS at top.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 603--604
+ [][] 
+ []
+
+<img/vlab+/Put JavaScript at bottom.jpg, id=137, 803.0pt x 602.25pt>
+File: img/vlab+/Put JavaScript at bottom.jpg Graphic file (type jpg)
+
+<use img/vlab+/Put JavaScript at bottom.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 610--611
+ [][] 
+ []
+
+
+<new-img-jpg/vlab-jpg/Use a Content Delivery Network (CDN).jpg, id=138, 803.0pt
+ x 602.25pt>
+File: new-img-jpg/vlab-jpg/Use a Content Delivery Network (CDN).jpg Graphic fil
+e (type jpg)
+
+<use new-img-jpg/vlab-jpg/Use a Content Delivery Network (CDN).jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 617--618
+ [][] 
+ []
+
+<new-img-jpg/vlab-jpg/Add Expires headers.jpg, id=139, 803.0pt x 602.25pt>
+File: new-img-jpg/vlab-jpg/Add Expires headers.jpg Graphic file (type jpg)
+
+<use new-img-jpg/vlab-jpg/Add Expires headers.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 624--625
+ [][] 
+ []
+
+
+<new-img-jpg/vlab-jpg/Compress components with gzip.jpg, id=140, 803.0pt x 602.
+25pt>
+File: new-img-jpg/vlab-jpg/Compress components with gzip.jpg Graphic file (type
+ jpg)
+ <use new-img-jpg/vlab-jpg/Compress components with gzip.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 631--632
+ [][] 
+ []
+
+
+<new-img-jpg/vlab-jpg/Configure entity tags (ETags).jpg, id=141, 803.0pt x 602.
+25pt>
+File: new-img-jpg/vlab-jpg/Configure entity tags (ETags).jpg Graphic file (type
+ jpg)
+ <use new-img-jpg/vlab-jpg/Configure entity tags (ETags).jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 638--639
+ [][] 
+ []
+
+
+<new-img-jpg/vlab-jpg/Make favicon small and cacheable.jpg, id=142, 803.0pt x 6
+02.25pt>
+File: new-img-jpg/vlab-jpg/Make favicon small and cacheable.jpg Graphic file (t
+ype jpg)
+ <use new-img-jpg/vlab-jpg/Make favicon small and cacheable.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 645--646
+ [][] 
+ []
+
+
+<new-img-jpg/vlab-jpg/Make fewer HTTP requests.jpg, id=143, 803.0pt x 602.25pt>
+File: new-img-jpg/vlab-jpg/Make fewer HTTP requests.jpg Graphic file (type jpg)
+
+<use new-img-jpg/vlab-jpg/Make fewer HTTP requests.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 652--653
+ [][] 
  []
 
 
@@ -760,23 +882,40 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4] (./wpo.aux) ) 
+[4] [5 <./new-img-jpg/container-jpg/Overall_Score.jpg> <./new-img-jpg/deploy-jp
+g/Overall_Score.jpg> <./new-img-jpg/container-jpg/Add Expires headers.jpg> <./n
+ew-img-jpg/deploy-jpg/Add Expires headers.jpg>] [6 <./new-img-jpg/container-jpg
+/Compress components with gzip.jpg> <./new-img-jpg/deploy-jpg/Compress componen
+ts with gzip.jpg> <./new-img-jpg/container-jpg/Configure entity tags (ETags).jp
+g> <./new-img-jpg/deploy-jpg/Configure entity tags (ETags).jpg>] [7 <./new-img-
+jpg/container-jpg/Make fewer HTTP requests.jpg> <./new-img-jpg/deploy-jpg/Make 
+fewer HTTP requests.jpg> <./new-img-jpg/container-jpg/Minify JavaScript and CSS
+.jpg> <./new-img-jpg/deploy-jpg/Minify JavaScript and CSS.jpg>] [8 <./new-img-j
+pg/vlab-jpg/Put CSS at top.jpg> <./img/vlab+/Put JavaScript at bottom.jpg> <./n
+ew-img-jpg/vlab-jpg/Use a Content Delivery Network (CDN).jpg>] [9 <./new-img-jp
+g/vlab-jpg/Add Expires headers.jpg> <./new-img-jpg/vlab-jpg/Compress components
+ with gzip.jpg> <./new-img-jpg/vlab-jpg/Configure entity tags (ETags).jpg> <./n
+ew-img-jpg/vlab-jpg/Make favicon small and cacheable.jpg>] [10
+
+
+ <./new-img-jpg/vlab-jpg/Make fewer HTTP requests.jpg>] (./wpo.aux) ) 
 Here is how much of TeX's memory you used:
- 8471 strings out of 495061
- 121959 string characters out of 1182622
- 227712 words of memory out of 3000000
- 11476 multiletter control sequences out of 15000+50000
- 106545 words of font info for 111 fonts, out of 3000000 for 9000
+ 7120 strings out of 495061
+ 110083 string characters out of 1182622
+ 199811 words of memory out of 3000000
+ 10132 multiletter control sequences out of 15000+50000
+ 107623 words of font info for 112 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 36i,8n,38p,238b,374s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-t
-exlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/u
-rw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb
-></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on wpo.pdf (4 pages, 133833 bytes).
+ 36i,8n,38p,238b,410s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/shar
+e/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/time
+s/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/
+share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on wpo.pdf (10 pages, 1536268 bytes).
 PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 228 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
+ 242 words of extra memory for PDF output out of 10000 (max. 10000000)
 
