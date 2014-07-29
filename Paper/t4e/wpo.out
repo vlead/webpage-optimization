@@ -5,13 +5,9 @@
 \BOOKMARK [2][-]{subsection.3.2}{CSV File Generation}{section.3}
 \BOOKMARK [2][-]{subsection.3.3}{Data Visualization}{section.3}
 \BOOKMARK [1][-]{section.4}{Experimentation}{}
-\BOOKMARK [2][-]{subsection.4.1}{Analysis of performance for 5000 web pages of www.vlab.co.in}{section.4}
-\BOOKMARK [2][-]{subsection.4.2}{Data collection for deploy.virtual-labs.ac.in without pagespeed}{section.4}
-\BOOKMARK [2][-]{subsection.4.3}{Data collection for deploy.virtual-labs.ac.in with pagespeed}{section.4}
 \BOOKMARK [1][-]{section.5}{Analysis}{}
-\BOOKMARK [2][-]{subsection.5.1}{Analysis of performance for 5000 web pages of www.vlab.co.invlabs.co.in}{section.5}
-\BOOKMARK [2][-]{subsection.5.2}{Optmization using Pagespeed.}{section.5}
-\BOOKMARK [1][-]{section.6}{Conclusion}{}
-\BOOKMARK [1][-]{section.7}{Future Work}{}
-\BOOKMARK [1][-]{section*.2}{References}{}
-\BOOKMARK [1][-]{section*.3}{Appendix}{}
+\BOOKMARK [2][-]{subsection.5.1}{Analysis of performance for 5000 web pages of www.vlab.co.in}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{Comparison with and without Pagespeed}{section.5}
+\BOOKMARK [1][-]{section.6}{Conclusion and Future Work}{}
+\BOOKMARK [1][-]{section*.1}{References}{}
+\BOOKMARK [1][-]{section*.2}{Appendix}{}
