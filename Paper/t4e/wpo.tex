@@ -28,16 +28,16 @@
 \begin{abstract}
 We propose web page optimization as a necessary step for virtual lab.
 In context of virtual labs, several web applications were designed by people who are 
-experts in their respective disciplines and hundreds of virtual labs were developed as a result.
+experts in their respective disciplines and as a result hundreds of virtual labs were developed.
 Based on the complexity of each virtual lab, each lab developer decided to use his own 
-set of tools and technologies, therefore virtual lab had lot of performance issues.
-So end user suffered from slow rendering of pages on the client side.
-Performance of a web application largely depends upon the content of the web
+set of tools and technologies, therefore virtual lab had a lot of performance issues.
+So end user suffer slow rendering of pages on the client side.
+Performance of a web application depends upon the content of the web
 page because rendering takes place on client side. 
 And client machine may have limited resources on his side. Therefore web page
 optimization is a necessary step to improve user experience.
 In contrast to existing work in this field, here we focus on large scale web
-performance analysis through data visualization. This visualization gives a
+performance analysis through data visualization. This visualization gives
 us an understanding of performance issues of virtual labs. Based on this large scale visualization,
 we present a utility of existing web optimization tools by experimentation of an
 MHRD project virtual labs.
@@ -46,7 +46,7 @@ MHRD project virtual labs.
 \section{Introduction}\label{sec-2}
 Virtual Labs is a project initiated by the Ministry of Human Resource Development, Government of India,
 under the National Mission on Education through Information and Communication Technology.
-The project aims to provide remote-access to Laboratories in various disciplines of science
+The project aims to provide remote-access to laboratories in various disciplines of science
 and engineering for students at all levels from under-graduate to research.
 It also intends to develop a complete Learning Management System where the students can avail the
 various tools for learning, including additional web-resources, video-lectures, animated demonstrations
@@ -78,8 +78,8 @@ load time does not reduce in reality. So critical resources needed to render web
 fetched first and remaining resources should be fetched in the background. Therefore,
 while optimizing web page for speed we should focus on \cite{crpo}
 \begin{enumerate}
- \item Minimizing the size of critical resources
- \item Minimizing the number of critical resources
+ \item Minimizing the size of critical resources.
+ \item Minimizing the number of critical resources.
  \item Minimizing the critical rendering path.
 \end{enumerate}
 
@@ -167,7 +167,7 @@ Http requests are expensive and getting a response like '404 Not found' is total
 and adds to latency. Therefore, all such web pages should be avoided.
 
 \item \textbf{Make favicon small and cacheable :}
-Favicon stays in the core of server and  it is necessary because if its missing then
+Favicon stays in the core of server and  it is necessary because if it is missing then
 browser will still request for it and that adds to latency.
 \end{itemize}
 
@@ -178,7 +178,7 @@ tool and is also capable of optimizing web pages without changing semantics of a
 
 Yahoo yslow.js is a javascript API which runs on phantomjs. PhantomJS is a
 headless browser with JavaScript API\cite{pjs}. We used Yslow as performance measuring
-tool because it not only analyzes a web page but gives suggestions on how to
+tool because it not only analyzes a web page but also gives suggestions on how to
 improve it. It works on following three ways:
 \begin{itemize}
 \item It crawls the DOM to find each component.
@@ -187,7 +187,7 @@ improve it. It works on following three ways:
 score for page.
 \end{itemize}
 The grades for individual rules are computed differently depending on the rule.
-For example, for Rule 1, three external scripts are allowed and each extra script
+For example, for Rule 1, three external scripts are allowed and for each extra script
 four points are deducted from the overall weight. The code for grading each
 rule is found in rules.js. The overall grade is a weighted average of the
 individual grades for each rule, calculated in controller.js. The rules are applied
@@ -201,8 +201,8 @@ certain set of filters which optimizes web page during run time. As the server
 gets request for the web page, it dynamically rewrites the page using its filters\cite{pagespeed:filters}
 and sends a highly optimized page. The rewriting happens only when the first
 request for web page is made and for all later requests web page is served from the cache
-at server side. There are more than 40 filters which support
-optimization. These filters can be turned on or off based on requirements. 
+at server side. There are more than 40 filters which can be used for
+optimization. These filters can be turned on or off based on our requirements. 
 % 
 % 
 \section{Approach}\label{sec-4}
@@ -222,7 +222,7 @@ collected urls of all the web pages at following domain deploy.virtuals-labs.ac.
 Since we have access to server, to get all the urls, we extracted
 all the html and php pages' links from the server and stored it into the text file
 using an automated bash script.
-In order to test the performance of web pages www.vlab.co.in, we collected the 5000 urls
+In order to test the performance of web pages www.vlab.co.in, we collected 5000 urls
 using an online sitemap generator since we did not had access to server.
 We extracted {\it yslow} report for each web page using yslow.js and phantomJS using automated bash
 script. This automated script read the url line by line from a text file containing
@@ -246,9 +246,9 @@ and return set of bar graphs specific to each rule as output.
 \section{Experimentation}\label{sec-5}
 In order to achieve our goals we carried out experimentation on three different set of urls:
 \begin{enumerate}
- \item set containing 4945 urls of {\it www.vlab.co.in} without {\it pagespeed}
- \item set containing 8786 urls of {\it www.deploy.virtual-labs.ac.in} without {\it pagespeed}
- \item set containing 8786 urls of {\it www.deploy.virtual-labs.ac.in} with pagespeed
+ \item set containing 5000 urls of {\it www.vlab.co.in} without {\it pagespeed}
+ \item set containing 9000 urls of {\it www.deploy.virtual-labs.ac.in} without {\it pagespeed}
+ \item set containing 9000 urls of {\it www.deploy.virtual-labs.ac.in} with pagespeed
 \end{enumerate}
 For each of the above set of urls we generate {\it yslow} reports and accumulate scores
 in three different CSV files. Later statistics are visualized in the form of bar graphs for each csv file.
@@ -276,9 +276,10 @@ with and without {\it pagespeed}.
 % The obtained statistics were compared with results of deploy.virtual-labs.ac.in without pagespeed
 % to observe how much optimization was done by pagespeed.
 \section{Analysis}\label{sec-6}
-In this section we analyze web page performance of {\it www.virtual-labs.ac.in} in two different settings on a data set containing 8786 web pages.
-One when page speed module is installed on our system, other one without it. We also analyze web page performance of vlab.co.in  
-on data set containing 4945 web pages.
+In this section we analyze web page performance of {\it www.virtual-labs.ac.in} in two different settings on a data set containing 8786 web pages
+out of 9000 pages.
+One when page speed module is installed on our system, other one without it. We also analyze web page performance of {\it www.vlab.co.in}  
+on data set containing 4945 web pages out of 5000.
 \subsection{Analysis of performance for 5000 web pages of {\it www.vlab.co.in}}
  Out of 5000 urls, we collected statistics for 4945 web pages. Note that all figures are placed in the Appendix Section.
 \begin{itemize}
