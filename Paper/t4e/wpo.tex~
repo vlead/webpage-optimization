@@ -26,24 +26,38 @@
 \maketitle
 
 \begin{abstract}
-We propose web page optimization as necessary step in web application
-development. In context of virtual labs, several web applications were designed by people who are 
+We propose web page optimization as a necessary step for virtual lab.
+In context of virtual labs, several web applications were designed by people who are 
 experts in their respective disciplines and hundreds of virtual labs were developed as a result.
-Based on complexity of each virtual lab, each lab developer decided to use his own 
+Based on the complexity of each virtual lab, each lab developer decided to use his own 
 set of tools and technologies, therefore virtual lab had lot of performance issues.
 So end user suffered from slow rendering of pages on the client side.
 Performance of a web application largely depends upon the content of the web
 page because rendering takes place on client side. 
 And client machine may have limited resources on his side. Therefore web page
-optimization seems a necessary step to improve user experience.
+optimization is a necessary step to improve user experience.
 In contrast to existing work in this field, here we focus on large scale web
 performance analysis through data visualization. This visualization gives a
 us an understanding of performance issues of virtual labs. Based on this large scale visualization,
 we present a utility of existing web optimization tools by experimentation of an
-MHRD web project ``virtual labs''.
+MHRD project virtual labs.
 \end{abstract}
 
 \section{Introduction}\label{sec-2}
+Virtual Labs is a project initiated by the Ministry of Human Resource Development, Government of India,
+under the National Mission on Education through Information and Communication Technology.
+The project aims to provide remote-access to Laboratories in various disciplines of science
+and engineering for students at all levels from under-graduate to research.
+It also intends to develop a complete Learning Management System where the students can avail the
+various tools for learning, including additional web-resources, video-lectures, animated demonstrations
+and self-evaluation. There is also a component wherein costly equipment and resources are shared, which
+are otherwise available to only a limited number of users due to constraints on time and geographical distances.
+Seven IIT's (Delhi, Bombay, Kanpur, Kharagpur, Madras, Roorkee and Guwahati), IIIT Hyderabad, Amrita University,
+Dayalbagh University, NIT Karnataka, and College of Engineering, Pune, are the institutions participating in the project.
+The Project intends to cover physical sciences, chemical science and various branches of engineering like electronics and
+communications, computer science and engineering, electrical engineering, mechanical engineering, chemical engineering,
+biotechnology engineering and civil engineering.
+
 After the onset of the world wide web, web performance implied optimizing the
 server side but according to current trends
 optimization on the client side has become bottle neck because of complex web
@@ -69,8 +83,7 @@ while optimizing web page for speed we should focus on \cite{crpo}
  \item Minimizing the critical rendering path.
 \end{enumerate}
 
-The goals of our experimentation, performed in collaboration with VLEAD,
-IIIT-Hyderabad were :
+The goals of our experimentation, performed in collaboration with virtual labs were :
 
 \begin{itemize}
 \item To analyze performance of thousands of web pages hosted at virtual labs.
@@ -431,11 +444,74 @@ CSV Kit:\\
 % Steve Souders, 2009. Even Faster Web Sites
 
 \end{thebibliography}
-\newpage
+%\newpage
 \appendix
 \label{appendixx}
 %\section{Comparison before optimization and after optimization using for deploy.virtual-labs.ac.in}
 %\section{figures}
+\begin{figure}[ht]
+  \centering
+  $\includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Overall_Score.jpg}$
+  \caption{Number of urls versus Overscore}
+  \label{overallscore-vlab}
+\end{figure}
+
+\begin{figure}[ht]
+ \centering
+  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Put CSS at top.jpg}
+\caption{Number of urls versus Put CSS at top}
+\label{fig:cssattop}
+\end{figure}
+
+\begin{figure}[ht]
+ \centering
+  \includegraphics[scale=0.33]{img/vlab+/Put JavaScript at bottom.jpg}
+\caption{Number of urls versus Put JavaScript at bottom}	
+\label{fig:jsatbottom}
+\end{figure}
+           
+\begin{figure}[ht]
+ \centering
+  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Use a Content Delivery Network (CDN).jpg}
+\caption{Number of urls versus Use a Content Delivery Network (CDN)}	
+\label{fig:usecdn}
+\end{figure}        
+
+\begin{figure}[ht]
+ \centering
+  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Add Expires headers.jpg}
+\caption{Number of urls versus Add Expires Headers}	
+\label{fig:add-eh}
+\end{figure}
+
+\begin{figure}[ht]
+ \centering
+  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Compress components with gzip.jpg}
+\caption{Number of urls versus Compress components with gzip}	
+\label{fig:ccg}
+\end{figure}
+
+\begin{figure}[ht]
+ \centering
+  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Configure entity tags (ETags).jpg}
+\caption{Number of urls versus Configure entity tags (ETags)}	
+\label{fig:configure-et}
+\end{figure}
+
+\begin{figure}[ht]
+ \centering
+  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Make favicon small and cacheable.jpg}
+\caption{Number of urls versus Make favicon small and cacheable}	
+\label{fig:favicon}
+\end{figure}
+
+\begin{figure}[ht]
+ \centering
+  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Make fewer HTTP requests.jpg}
+\caption{Make fewer HTTP requests Versus Number of urls}	
+\label{fig:httpr}
+\end{figure}
+
 \begin{figure*}
     \centering
     \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
@@ -549,69 +625,6 @@ CSV Kit:\\
     \caption{Comparing 'Minify JavaScript and CSS' rule}
     \label{fig:minify-comparison}
 \end{figure*}
-
-\begin{figure}[ht]
-  \centering
-  $\includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Overall_Score.jpg}$
-  \caption{Number of urls versus Overscore}
-  \label{overallscore-vlab}
-\end{figure}
-
-\begin{figure}[ht]
- \centering
-  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Put CSS at top.jpg}
-\caption{Number of urls versus Put CSS at top}
-\label{fig:cssattop}
-\end{figure}
-
-\begin{figure}[ht]
- \centering
-  \includegraphics[scale=0.33]{img/vlab+/Put JavaScript at bottom.jpg}
-\caption{Number of urls versus Put JavaScript at bottom}	
-\label{fig:jsatbottom}
-\end{figure}
-           
-\begin{figure}[ht]
- \centering
-  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Use a Content Delivery Network (CDN).jpg}
-\caption{Number of urls versus Use a Content Delivery Network (CDN)}	
-\label{fig:usecdn}
-\end{figure}        
-
-\begin{figure}[ht]
- \centering
-  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Add Expires headers.jpg}
-\caption{Number of urls versus Add Expires Headers}	
-\label{fig:add-eh}
-\end{figure}
-
-\begin{figure}[ht]
- \centering
-  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Compress components with gzip.jpg}
-\caption{Number of urls versus Compress components with gzip}	
-\label{fig:ccg}
-\end{figure}
-
-\begin{figure}[ht]
- \centering
-  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Configure entity tags (ETags).jpg}
-\caption{Number of urls versus Configure entity tags (ETags)}	
-\label{fig:configure-et}
-\end{figure}
-
-\begin{figure}[ht]
- \centering
-  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Make favicon small and cacheable.jpg}
-\caption{Number of urls versus Make favicon small and cacheable}	
-\label{fig:favicon}
-\end{figure}
-
-\begin{figure}[ht]
- \centering
-  \includegraphics[scale=0.33]{new-img-jpg/vlab-jpg/Make fewer HTTP requests.jpg}
-\caption{Make fewer HTTP requests Versus Number of urls}	
-\label{fig:httpr}
-\end{figure}
 %\begin{center}
 %\end{center}
 \end{document}
