@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.4.8)  31 JUL 2014 15:56
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.4.8)  1 AUG 2014 11:42
 entering extended mode
  %&-line parsing enabled.
 **wpo.tex
@@ -675,214 +675,214 @@ al-
  []
 
 
-Underfull \hbox (badness 6893) in paragraph at lines 283--283
+Underfull \hbox (badness 6893) in paragraph at lines 302--302
  []\T1/ptm/m/it/10 Analysis of per-for-mance for 5000 web pages of
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 380--384
+Underfull \hbox (badness 10000) in paragraph at lines 399--403
 []\T1/ptm/m/n/8 https://developers.google.com/web/fundamentals/performance/crit
 ical-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--390
+Underfull \hbox (badness 10000) in paragraph at lines 405--409
 []\T1/ptm/m/n/8 https://developers.google.com/web/fundamentals/performance/crit
 ical-
  []
 
-<new-img-jpg/vlab-jpg/Overall_Score.jpg, id=138, 803.0pt x 602.25pt>
+<new-img-jpg/vlab-jpg/Overall_Score.jpg, id=139, 803.0pt x 602.25pt>
 File: new-img-jpg/vlab-jpg/Overall_Score.jpg Graphic file (type jpg)
 
 <use new-img-jpg/vlab-jpg/Overall_Score.jpg>
-Overfull \hbox (11.94095pt too wide) in paragraph at lines 455--456
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 474--475
  []$[]$ 
  []
 
-<new-img-jpg/vlab-jpg/Put CSS at top.jpg, id=139, 803.0pt x 602.25pt>
+<new-img-jpg/vlab-jpg/Put CSS at top.jpg, id=140, 803.0pt x 602.25pt>
 File: new-img-jpg/vlab-jpg/Put CSS at top.jpg Graphic file (type jpg)
 
 <use new-img-jpg/vlab-jpg/Put CSS at top.jpg>
-Overfull \hbox (11.94095pt too wide) in paragraph at lines 462--463
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 481--482
  [][] 
  []
 
-<img/vlab+/Put JavaScript at bottom.jpg, id=140, 803.0pt x 602.25pt>
+<img/vlab+/Put JavaScript at bottom.jpg, id=141, 803.0pt x 602.25pt>
 File: img/vlab+/Put JavaScript at bottom.jpg Graphic file (type jpg)
 
 <use img/vlab+/Put JavaScript at bottom.jpg>
-Overfull \hbox (11.94095pt too wide) in paragraph at lines 469--470
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 488--489
  [][] 
  []
 
 
-<new-img-jpg/vlab-jpg/Use a Content Delivery Network (CDN).jpg, id=141, 803.0pt
+<new-img-jpg/vlab-jpg/Use a Content Delivery Network (CDN).jpg, id=142, 803.0pt
  x 602.25pt>
 File: new-img-jpg/vlab-jpg/Use a Content Delivery Network (CDN).jpg Graphic fil
 e (type jpg)
 
 <use new-img-jpg/vlab-jpg/Use a Content Delivery Network (CDN).jpg>
-Overfull \hbox (11.94095pt too wide) in paragraph at lines 476--477
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 495--496
  [][] 
  []
 
-<new-img-jpg/vlab-jpg/Add Expires headers.jpg, id=142, 803.0pt x 602.25pt>
+<new-img-jpg/vlab-jpg/Add Expires headers.jpg, id=143, 803.0pt x 602.25pt>
 File: new-img-jpg/vlab-jpg/Add Expires headers.jpg Graphic file (type jpg)
 
 <use new-img-jpg/vlab-jpg/Add Expires headers.jpg>
-Overfull \hbox (11.94095pt too wide) in paragraph at lines 483--484
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 502--503
  [][] 
  []
 
 
-<new-img-jpg/vlab-jpg/Compress components with gzip.jpg, id=143, 803.0pt x 602.
+<new-img-jpg/vlab-jpg/Compress components with gzip.jpg, id=144, 803.0pt x 602.
 25pt>
 File: new-img-jpg/vlab-jpg/Compress components with gzip.jpg Graphic file (type
  jpg)
  <use new-img-jpg/vlab-jpg/Compress components with gzip.jpg>
-Overfull \hbox (11.94095pt too wide) in paragraph at lines 490--491
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 509--510
  [][] 
  []
 
 
-<new-img-jpg/vlab-jpg/Configure entity tags (ETags).jpg, id=144, 803.0pt x 602.
+<new-img-jpg/vlab-jpg/Configure entity tags (ETags).jpg, id=145, 803.0pt x 602.
 25pt>
 File: new-img-jpg/vlab-jpg/Configure entity tags (ETags).jpg Graphic file (type
  jpg)
  <use new-img-jpg/vlab-jpg/Configure entity tags (ETags).jpg>
-Overfull \hbox (11.94095pt too wide) in paragraph at lines 497--498
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 516--517
  [][] 
  []
 
 
-<new-img-jpg/vlab-jpg/Make favicon small and cacheable.jpg, id=145, 803.0pt x 6
+<new-img-jpg/vlab-jpg/Make favicon small and cacheable.jpg, id=146, 803.0pt x 6
 02.25pt>
 File: new-img-jpg/vlab-jpg/Make favicon small and cacheable.jpg Graphic file (t
 ype jpg)
  <use new-img-jpg/vlab-jpg/Make favicon small and cacheable.jpg>
-Overfull \hbox (11.94095pt too wide) in paragraph at lines 504--505
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 523--524
  [][] 
  []
 
 
-<new-img-jpg/vlab-jpg/Make fewer HTTP requests.jpg, id=146, 803.0pt x 602.25pt>
+<new-img-jpg/vlab-jpg/Make fewer HTTP requests.jpg, id=147, 803.0pt x 602.25pt>
 File: new-img-jpg/vlab-jpg/Make fewer HTTP requests.jpg Graphic file (type jpg)
 
 <use new-img-jpg/vlab-jpg/Make fewer HTTP requests.jpg>
-Overfull \hbox (11.94095pt too wide) in paragraph at lines 511--512
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 530--531
  [][] 
  []
 
-<new-img-jpg/container-jpg/Overall_Score.jpg, id=147, 803.0pt x 602.25pt>
+<new-img-jpg/container-jpg/Overall_Score.jpg, id=148, 803.0pt x 602.25pt>
 File: new-img-jpg/container-jpg/Overall_Score.jpg Graphic file (type jpg)
 
 <use new-img-jpg/container-jpg/Overall_Score.jpg>
-Overfull \hbox (11.94095pt too wide) in paragraph at lines 520--521
- [][] 
- []
-
-<new-img-jpg/deploy-jpg/Overall_Score.jpg, id=148, 803.0pt x 602.25pt>
-File: new-img-jpg/deploy-jpg/Overall_Score.jpg Graphic file (type jpg)
-
-<use new-img-jpg/deploy-jpg/Overall_Score.jpg>
-Overfull \hbox (11.94095pt too wide) in paragraph at lines 527--528
- [][] 
- []
-
-
-<new-img-jpg/container-jpg/Add Expires headers.jpg, id=149, 803.0pt x 602.25pt>
-File: new-img-jpg/container-jpg/Add Expires headers.jpg Graphic file (type jpg)
-
-<use new-img-jpg/container-jpg/Add Expires headers.jpg>
 Overfull \hbox (11.94095pt too wide) in paragraph at lines 539--540
  [][] 
  []
 
-<new-img-jpg/deploy-jpg/Add Expires headers.jpg, id=150, 803.0pt x 602.25pt>
-File: new-img-jpg/deploy-jpg/Add Expires headers.jpg Graphic file (type jpg)
+<new-img-jpg/deploy-jpg/Overall_Score.jpg, id=149, 803.0pt x 602.25pt>
+File: new-img-jpg/deploy-jpg/Overall_Score.jpg Graphic file (type jpg)
 
-<use new-img-jpg/deploy-jpg/Add Expires headers.jpg>
+<use new-img-jpg/deploy-jpg/Overall_Score.jpg>
 Overfull \hbox (11.94095pt too wide) in paragraph at lines 546--547
  [][] 
  []
 
 
-<new-img-jpg/container-jpg/Compress components with gzip.jpg, id=151, 803.0pt x
- 602.25pt>
-File: new-img-jpg/container-jpg/Compress components with gzip.jpg Graphic file 
-(type jpg)
- <use new-img-jpg/container-jpg/Compress components with gzip.jpg>
+<new-img-jpg/container-jpg/Add Expires headers.jpg, id=150, 803.0pt x 602.25pt>
+File: new-img-jpg/container-jpg/Add Expires headers.jpg Graphic file (type jpg)
+
+<use new-img-jpg/container-jpg/Add Expires headers.jpg>
 Overfull \hbox (11.94095pt too wide) in paragraph at lines 558--559
  [][] 
  []
 
+<new-img-jpg/deploy-jpg/Add Expires headers.jpg, id=151, 803.0pt x 602.25pt>
+File: new-img-jpg/deploy-jpg/Add Expires headers.jpg Graphic file (type jpg)
 
-<new-img-jpg/deploy-jpg/Compress components with gzip.jpg, id=152, 803.0pt x 60
-2.25pt>
-File: new-img-jpg/deploy-jpg/Compress components with gzip.jpg Graphic file (ty
-pe jpg)
- <use new-img-jpg/deploy-jpg/Compress components with gzip.jpg>
+<use new-img-jpg/deploy-jpg/Add Expires headers.jpg>
 Overfull \hbox (11.94095pt too wide) in paragraph at lines 565--566
  [][] 
  []
 
 
-<new-img-jpg/container-jpg/Configure entity tags (ETags).jpg, id=153, 803.0pt x
+<new-img-jpg/container-jpg/Compress components with gzip.jpg, id=152, 803.0pt x
  602.25pt>
-File: new-img-jpg/container-jpg/Configure entity tags (ETags).jpg Graphic file 
+File: new-img-jpg/container-jpg/Compress components with gzip.jpg Graphic file 
 (type jpg)
- <use new-img-jpg/container-jpg/Configure entity tags (ETags).jpg>
+ <use new-img-jpg/container-jpg/Compress components with gzip.jpg>
 Overfull \hbox (11.94095pt too wide) in paragraph at lines 577--578
  [][] 
  []
 
 
-<new-img-jpg/deploy-jpg/Configure entity tags (ETags).jpg, id=154, 803.0pt x 60
+<new-img-jpg/deploy-jpg/Compress components with gzip.jpg, id=153, 803.0pt x 60
 2.25pt>
-File: new-img-jpg/deploy-jpg/Configure entity tags (ETags).jpg Graphic file (ty
+File: new-img-jpg/deploy-jpg/Compress components with gzip.jpg Graphic file (ty
 pe jpg)
- <use new-img-jpg/deploy-jpg/Configure entity tags (ETags).jpg>
+ <use new-img-jpg/deploy-jpg/Compress components with gzip.jpg>
 Overfull \hbox (11.94095pt too wide) in paragraph at lines 584--585
  [][] 
  []
 
 
-<new-img-jpg/container-jpg/Make fewer HTTP requests.jpg, id=155, 803.0pt x 602.
-25pt>
-File: new-img-jpg/container-jpg/Make fewer HTTP requests.jpg Graphic file (type
- jpg)
- <use new-img-jpg/container-jpg/Make fewer HTTP requests.jpg>
+<new-img-jpg/container-jpg/Configure entity tags (ETags).jpg, id=154, 803.0pt x
+ 602.25pt>
+File: new-img-jpg/container-jpg/Configure entity tags (ETags).jpg Graphic file 
+(type jpg)
+ <use new-img-jpg/container-jpg/Configure entity tags (ETags).jpg>
 Overfull \hbox (11.94095pt too wide) in paragraph at lines 596--597
  [][] 
  []
 
 
-<new-img-jpg/deploy-jpg/Make fewer HTTP requests.jpg, id=156, 803.0pt x 602.25p
-t>
-File: new-img-jpg/deploy-jpg/Make fewer HTTP requests.jpg Graphic file (type jp
-g)
- <use new-img-jpg/deploy-jpg/Make fewer HTTP requests.jpg>
+<new-img-jpg/deploy-jpg/Configure entity tags (ETags).jpg, id=155, 803.0pt x 60
+2.25pt>
+File: new-img-jpg/deploy-jpg/Configure entity tags (ETags).jpg Graphic file (ty
+pe jpg)
+ <use new-img-jpg/deploy-jpg/Configure entity tags (ETags).jpg>
 Overfull \hbox (11.94095pt too wide) in paragraph at lines 603--604
  [][] 
  []
 
 
-<new-img-jpg/container-jpg/Minify JavaScript and CSS.jpg, id=157, 803.0pt x 602
-.25pt>
-File: new-img-jpg/container-jpg/Minify JavaScript and CSS.jpg Graphic file (typ
-e jpg)
- <use new-img-jpg/container-jpg/Minify JavaScript and CSS.jpg>
+<new-img-jpg/container-jpg/Make fewer HTTP requests.jpg, id=156, 803.0pt x 602.
+25pt>
+File: new-img-jpg/container-jpg/Make fewer HTTP requests.jpg Graphic file (type
+ jpg)
+ <use new-img-jpg/container-jpg/Make fewer HTTP requests.jpg>
 Overfull \hbox (11.94095pt too wide) in paragraph at lines 615--616
  [][] 
  []
 
 
-<new-img-jpg/deploy-jpg/Minify JavaScript and CSS.jpg, id=158, 803.0pt x 602.25
+<new-img-jpg/deploy-jpg/Make fewer HTTP requests.jpg, id=157, 803.0pt x 602.25p
+t>
+File: new-img-jpg/deploy-jpg/Make fewer HTTP requests.jpg Graphic file (type jp
+g)
+ <use new-img-jpg/deploy-jpg/Make fewer HTTP requests.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 622--623
+ [][] 
+ []
+
+
+<new-img-jpg/container-jpg/Minify JavaScript and CSS.jpg, id=158, 803.0pt x 602
+.25pt>
+File: new-img-jpg/container-jpg/Minify JavaScript and CSS.jpg Graphic file (typ
+e jpg)
+ <use new-img-jpg/container-jpg/Minify JavaScript and CSS.jpg>
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 634--635
+ [][] 
+ []
+
+
+<new-img-jpg/deploy-jpg/Minify JavaScript and CSS.jpg, id=159, 803.0pt x 602.25
 pt>
 File: new-img-jpg/deploy-jpg/Minify JavaScript and CSS.jpg Graphic file (type j
 pg)
  <use new-img-jpg/deploy-jpg/Minify JavaScript and CSS.jpg>
-Overfull \hbox (11.94095pt too wide) in paragraph at lines 622--623
+Overfull \hbox (11.94095pt too wide) in paragraph at lines 641--642
  [][] 
  []
 
@@ -897,38 +897,41 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4 <./new-img-jpg/vlab-jpg/Overall_Score.jpg>] [5 <./new-img-jpg/container-jpg/
-Overall_Score.jpg> <./new-img-jpg/deploy-jpg/Overall_Score.jpg> <./new-img-jpg/
-container-jpg/Add Expires headers.jpg> <./new-img-jpg/deploy-jpg/Add Expires he
-aders.jpg>] [6 <./new-img-jpg/container-jpg/Compress components with gzip.jpg> 
-<./new-img-jpg/deploy-jpg/Compress components with gzip.jpg> <./new-img-jpg/con
-tainer-jpg/Configure entity tags (ETags).jpg> <./new-img-jpg/deploy-jpg/Configu
-re entity tags (ETags).jpg>] [7 <./new-img-jpg/container-jpg/Make fewer HTTP re
-quests.jpg> <./new-img-jpg/deploy-jpg/Make fewer HTTP requests.jpg> <./new-img-
-jpg/container-jpg/Minify JavaScript and CSS.jpg> <./new-img-jpg/deploy-jpg/Mini
-fy JavaScript and CSS.jpg>] [8 <./new-img-jpg/vlab-jpg/Put CSS at top.jpg> <./i
+[4] [5 <./new-img-jpg/container-jpg/Overall_Score.jpg> <./new-img-jpg/deploy-jp
+g/Overall_Score.jpg> <./new-img-jpg/container-jpg/Add Expires headers.jpg> <./n
+ew-img-jpg/deploy-jpg/Add Expires headers.jpg>] [6 <./new-img-jpg/container-jpg
+/Compress components with gzip.jpg> <./new-img-jpg/deploy-jpg/Compress componen
+ts with gzip.jpg> <./new-img-jpg/container-jpg/Configure entity tags (ETags).jp
+g> <./new-img-jpg/deploy-jpg/Configure entity tags (ETags).jpg>] [7 <./new-img-
+jpg/container-jpg/Make fewer HTTP requests.jpg> <./new-img-jpg/deploy-jpg/Make 
+fewer HTTP requests.jpg> <./new-img-jpg/container-jpg/Minify JavaScript and CSS
+.jpg> <./new-img-jpg/deploy-jpg/Minify JavaScript and CSS.jpg>] [8 <./new-img-j
+pg/vlab-jpg/Overall_Score.jpg> <./new-img-jpg/vlab-jpg/Put CSS at top.jpg> <./i
 mg/vlab+/Put JavaScript at bottom.jpg> <./new-img-jpg/vlab-jpg/Use a Content De
-livery Network (CDN).jpg> <./new-img-jpg/vlab-jpg/Add Expires headers.jpg>]
-[9 <./new-img-jpg/vlab-jpg/Compress components with gzip.jpg> <./new-img-jpg/vl
-ab-jpg/Configure entity tags (ETags).jpg> <./new-img-jpg/vlab-jpg/Make favicon 
-small and cacheable.jpg> <./new-img-jpg/vlab-jpg/Make fewer HTTP requests.jpg>]
-(./wpo.aux) ) 
+livery Network (CDN).jpg>] [9 <./new-img-jpg/vlab-jpg/Add Expires headers.jpg> 
+<./new-img-jpg/vlab-jpg/Compress components with gzip.jpg> <./new-img-jpg/vlab-
+jpg/Configure entity tags (ETags).jpg> <./new-img-jpg/vlab-jpg/Make favicon sma
+ll and cacheable.jpg>] [10
+
+
+ <./new-img-jpg/vlab-jpg/Make fewer HTTP requests.jpg>] (./wpo.aux) ) 
 Here is how much of TeX's memory you used:
- 7109 strings out of 495061
- 109946 string characters out of 1182622
- 195557 words of memory out of 3000000
- 10125 multiletter control sequences out of 15000+50000
- 106545 words of font info for 111 fonts, out of 3000000 for 9000
+ 7114 strings out of 495061
+ 109998 string characters out of 1182622
+ 196559 words of memory out of 3000000
+ 10127 multiletter control sequences out of 15000+50000
+ 107623 words of font info for 112 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 36i,8n,38p,238b,408s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texli
-ve/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/t
-imes/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></u
-sr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on wpo.pdf (9 pages, 1539276 bytes).
+ 36i,8n,38p,238b,410s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/shar
+e/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/time
+s/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/
+share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on wpo.pdf (10 pages, 1540591 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
+ 231 PDF objects out of 1000 (max. 8388607)
+ 58 named destinations out of 1000 (max. 500000)
  210 words of extra memory for PDF output out of 10000 (max. 10000000)
 
