@@ -1,4 +1,4 @@
-#function to create to get results for all urls i
+#function to create to get results for all urls from input file
 Fulltest() 
 {
 while read url; do #loop reads a line from urls file i.e $1 
