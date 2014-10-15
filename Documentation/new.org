@@ -1,4 +1,4 @@
-			 *Testing Framework*
+			 *Webpage Optimization*
 
 * *Introduction*
 * *Background Knowledge*
@@ -451,7 +451,10 @@ This time , we enabled some more filters other than default filters.
 That again pagespeed with its filters improves the performance of the web page.
 
 ** Technical Reviews 
+Our work providea significant insight about performance of web pages in order to rectify problems like gzip compression being
+not used, images spiting and css spiriting.
 ** Further scope of project    
+An continous monitoring system 
 * *Conclusion*
 * *References*
     
