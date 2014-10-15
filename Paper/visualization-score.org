@@ -1,5 +1,0 @@
-* Data Visualization 
-The data gathered in the csv files is used to derive proper statistics of the information. Bar graphs are genrated using Matplotlib 
-and csvkit. The graphs for all the rules of yslow are generated automatically once the program is run. The csv files contain data listed 
-in rows and columns. Each graph requires just a single column of data which is extracted using csvkit and then used to generate it.
-The program runs iteratively over all the columns of the csv file.
