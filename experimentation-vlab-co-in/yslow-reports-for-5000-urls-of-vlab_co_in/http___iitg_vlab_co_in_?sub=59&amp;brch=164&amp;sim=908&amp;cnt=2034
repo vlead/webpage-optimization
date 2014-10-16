@@ -1,0 +1,126 @@
+TAP version 13
+1..24
+not ok 1 C (74) overall score
+not ok 2 C (72) ynumreq: Make fewer HTTP requests
+  ---
+  message: This page has 10 external Javascript scripts.  Try combining them into one.
+  ...
+not ok 3 F (0) ycdn: Use a Content Delivery Network (CDN)
+  ---
+  message: There are 19 static components that are not on CDN. <p>You can specify CDN hostnames in your preferences. See <a href="https://github.com/marcelduran/yslow/wiki/FAQ#wiki-faq_cdn">YSlow FAQ</a> for details.</p>
+  offenders:
+    - "iitg.vlab.co.in: 15 components, 308.8K"
+    - "ahs.amrita.ac.in: 1 component, 22.1K"
+    - "www.google.com: 3 components, 7.0K (5.0K GZip)"
+  ...
+ok 4 A (100) yemptysrc: Avoid empty src or href
+not ok 5 F (0) yexpires: Add Expires headers
+  ---
+  message: There are 21 static components without a far-future expiration date.
+  offenders:
+    - "http://iitg.vlab.co.in/theme/iitg/css/main.css"
+    - "http://www.google-analytics.com/ga.js"
+    - "http://iitg.vlab.co.in/js/gap.min.js"
+    - "http://iitg.vlab.co.in/js/jquery.min.js"
+    - "http://iitg.vlab.co.in/js/top_up-min.js"
+    - "http://iitg.vlab.co.in/js/jquery/fxc-clip.uic-resizable.js"
+    - "http://iitg.vlab.co.in/js/jquery.cycle.lite.min.js"
+    - "http://iitg.vlab.co.in/js/javascript_functions.js"
+    - "http://ahs.amrita.ac.in/logs/piwik.js"
+    - "http://www.google.com/cse/brand?form=cse-search-box&lang=en"
+    - "http://www.google.com/cse/brand?form=cse-search-box2&lang=en"
+    - "http://iitg.vlab.co.in/theme/iitg/images/header_01.jpg"
+    - "http://iitg.vlab.co.in/theme/iitg/images/header-blue.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/seperator.gif"
+    - "http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif"
+    - "http://iitg.vlab.co.in/images/loader.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/logo.png"
+    - "http://iitg.vlab.co.in/images/temp.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/foot_left.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/foot_right.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/favicon.ico"
+  ...
+not ok 6 F (1) ycompress: Compress components with gzip
+  ---
+  message: There are 9 plain text components that should be sent compressed
+  offenders:
+    - "http://iitg.vlab.co.in/?sub=59&amp;brch=164&amp;sim=908&amp;cnt=2034"
+    - "http://iitg.vlab.co.in/theme/iitg/css/main.css"
+    - "http://iitg.vlab.co.in/js/gap.min.js"
+    - "http://iitg.vlab.co.in/js/jquery.min.js"
+    - "http://iitg.vlab.co.in/js/top_up-min.js"
+    - "http://iitg.vlab.co.in/js/jquery/fxc-clip.uic-resizable.js"
+    - "http://iitg.vlab.co.in/js/jquery.cycle.lite.min.js"
+    - "http://iitg.vlab.co.in/js/javascript_functions.js"
+    - "http://ahs.amrita.ac.in/logs/piwik.js"
+  ...
+ok 7 A (100) ycsstop: Put CSS at top
+ok 8 A (100) yjsbottom: Put JavaScript at bottom
+ok 9 A (100) yexpressions: Avoid CSS expressions
+ok 10 N/A (-1) yexternal: Make JavaScript and CSS external # SKIP score N/A
+  ---
+  message: Only consider this if your property is a common user home page.
+  offenders:
+    - "There is a total of 2 inline css"
+    - "There is a total of 3 inline scripts"
+  ...
+ok 11 A (100) ydns: Reduce DNS lookups
+  ---
+  offenders:
+    - "iitg.vlab.co.in: 17 components, 312.1K"
+    - "www.google-analytics.com: 1 component, 40.2K (40.2K GZip)"
+    - "ahs.amrita.ac.in: 1 component, 22.1K"
+    - "www.google.com: 3 components, 7.0K (5.0K GZip)"
+  ...
+ok 12 A (100) yminify: Minify JavaScript and CSS
+ok 13 A (100) yredirects: Avoid URL redirects
+ok 14 A (100) ydupes: Remove duplicate JavaScript and CSS
+not ok 15 F (0) yetags: Configure entity tags (ETags)
+  ---
+  message: There are 17 components with misconfigured ETags
+  offenders:
+    - "http://iitg.vlab.co.in/theme/iitg/css/main.css"
+    - "http://iitg.vlab.co.in/js/gap.min.js"
+    - "http://iitg.vlab.co.in/js/jquery.min.js"
+    - "http://iitg.vlab.co.in/js/top_up-min.js"
+    - "http://iitg.vlab.co.in/js/jquery/fxc-clip.uic-resizable.js"
+    - "http://iitg.vlab.co.in/js/jquery.cycle.lite.min.js"
+    - "http://iitg.vlab.co.in/js/javascript_functions.js"
+    - "http://ahs.amrita.ac.in/logs/piwik.js"
+    - "http://iitg.vlab.co.in/theme/iitg/images/header_01.jpg"
+    - "http://iitg.vlab.co.in/theme/iitg/images/header-blue.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/seperator.gif"
+    - "http://iitg.vlab.co.in/images/loader.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/logo.png"
+    - "http://iitg.vlab.co.in/images/temp.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/foot_left.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/foot_right.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/favicon.ico"
+  ...
+ok 16 A (100) yxhr: Make AJAX cacheable
+ok 17 A (100) yxhrmethod: Use GET for AJAX requests
+ok 18 A (100) ymindom: Reduce the number of DOM elements
+ok 19 A (100) yno404: Avoid HTTP 404 (Not Found) error
+ok 20 A (100) ymincookie: Reduce cookie size
+not ok 21 F (45) ycookiefree: Use cookie-free domains
+  ---
+  message: There are 11 components that are not cookie-free
+  offenders:
+    - "http://iitg.vlab.co.in/js/gap.min.js"
+    - "http://iitg.vlab.co.in/js/jquery/fxc-clip.uic-resizable.js"
+    - "http://ahs.amrita.ac.in/logs/piwik.js"
+    - "http://iitg.vlab.co.in/theme/iitg/images/header_01.jpg"
+    - "http://iitg.vlab.co.in/theme/iitg/images/header-blue.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/seperator.gif"
+    - "http://iitg.vlab.co.in/images/loader.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/logo.png"
+    - "http://iitg.vlab.co.in/images/temp.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/foot_left.gif"
+    - "http://iitg.vlab.co.in/theme/iitg/images/foot_right.gif"
+  ...
+ok 22 A (100) ynofilter: Avoid AlphaImageLoader filter
+ok 23 A (100) yimgnoscale: Do not scale images in HTML
+ok 24 A (95) yfavicon: Make favicon small and cacheable
+  ---
+  message: Favicon is not cacheable
+  ...

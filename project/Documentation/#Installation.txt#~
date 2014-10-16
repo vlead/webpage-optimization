@@ -1,9 +1,0 @@
-Installation
-
-* Apache2
-open terminal and type the following command.
-#+BEGIN_SRC python :tangle a.py
-$sudo apt-get update
-$sudo apt-get install apache2
-#+END_SRC
-
