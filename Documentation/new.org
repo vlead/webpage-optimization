@@ -1,6 +1,26 @@
 			 *Webpage Optimization*
 
 * *Introduction*
+Objective of Our Team was to come with a testing framwork and guide lab developer to test their labs. So that lab developers can make
+identify and fix the bugs. But manual testing will require lot of resources and effort. Webpages hosted on the virtual-labs.ac.in does
+not follow best practices specified by web giants like Yahoo and Google. They don't render fast and optimizing each web page manually
+is daunting task. Same problem was faced by the Google, so they came with a web page optimization tool called 'Page Speed'.
+
+'Page Speed' is open source tool that helps web developer to find faults according to best practices listed by both Google and Yahoo to
+provide suggestions on how to improve web page performance. Speed of the website is very important for any site to become popular. 
+So google decided to come with a automated tool that imposes best practices on a webpage. So google started an open source project called Mod Page Speed which contains filters that analyse and optimize a website. 
+
+In context of the Virtual there are several thousand pages optimizing each page is a daunting task. But 'Page Speed' has vast documentation
+with several core filters and variety of configuration setting. Some filters are very risky which can break an website if enabled. So based
+on structure and behaviour we need to configure filters for each lab. 
+
+Current status of Virtual lab can be explained using following Video:
+
+Outside IIIT Hyderabad network, all the webpages performs very bad and most of the pages takes more than 10 seconds to render even on
+high bandwidth network. Webpage optimization is very significant for a huge project like Virtual labs. Deploying virtual lab on
+cloud will guarantee availability and reliability. But after client request web page from the server, it renders on clients browser.
+So web page optimization should be taken seriously for site to be successfully.
+
 * *Background Knowledge*
 ** Linux Distributions    
 *** Ubuntu
